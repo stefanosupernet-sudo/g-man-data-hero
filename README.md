@@ -5,6 +5,8 @@ Clone statico in HTML della landing page di **[G-Man, Your Data Hero](https://da
 ## Contenuto
 
 - **`gman-data-hero-clone.html`** — pagina unica che riproduce struttura, colori, tipografia, sezioni e contenuti principali del sito originale.
+- **`assets/gman-hero.jpg`** — immagine hero (G-Man con hologram “Advertising · Data · AI · Impact”)
+- **`assets/gman-fullbody.jpg`** — immagine sezione “Chi sono” (full body con dashboard)
 
 ### Sezioni incluse
 
@@ -45,7 +47,8 @@ python -m http.server 8080
 ## Note importanti
 
 - È un **clone statico**: i form non inviano dati (mostrano un alert).
-- Le immagini (logo e ritratto) sono linkate agli URL del sito originale e funzionano finché il dominio è online.
+- Le immagini principali di G-Man sono nella cartella `assets/` (versioni locali del repository).
+- Il logo header è ancora linkato al sito originale (puoi scaricarlo e sostituirlo con un path locale).
 - La sezione **Blog** sul sito originale restituisce 404, quindi non è presente contenuto blog.
 - Design e testi sono ripresi a scopo dimostrativo / portfolio.
 
