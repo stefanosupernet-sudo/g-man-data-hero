@@ -243,6 +243,21 @@
       flex-shrink: 0;
     }
 
+    .hero-visual {
+      margin-top: 2rem;
+      border-radius: 1rem;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      max-width: 420px;
+      box-shadow: 0 20px 50px -20px rgba(0, 0, 0, 0.6);
+    }
+
+    .hero-visual img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
     /* Form card */
     .form-card {
       background: rgba(17, 24, 39, 0.85);
@@ -534,21 +549,23 @@
     }
 
     @media (min-width: 900px) {
-      .about-grid { grid-template-columns: 280px 1fr; }
+      .about-grid { grid-template-columns: 320px 1fr; gap: 3rem; }
     }
 
     .about-photo {
       border-radius: 1rem;
       overflow: hidden;
       border: 1px solid var(--border);
-      max-width: 280px;
+      max-width: 320px;
       margin: 0 auto;
+      box-shadow: 0 20px 50px -20px rgba(34, 211, 238, 0.25);
     }
 
     .about-photo img {
       width: 100%;
       aspect-ratio: 1;
       object-fit: cover;
+      display: block;
     }
 
     .about-text p {
@@ -821,6 +838,15 @@
               Focus su ROI reale
             </span>
           </div>
+          <div class="hero-visual">
+            <img
+              src="assets/gman-hero.jpg"
+              alt="G-Man Data Hero — Advertising. Data. AI. Impact."
+              width="800"
+              height="800"
+              loading="eager"
+            />
+          </div>
         </div>
 
         <div class="form-card" id="audit-form-hero">
@@ -913,17 +939,17 @@
           </div>
           <div class="service-card">
             <div class="service-icon">🛒</div>
-            <h3>Merchant Center &amp; Feed</h3>
+            <h3>Merchant Center & Feed</h3>
             <p>Feed puliti, compliance delle policy e ottimizzazione per Shopping e Performance Max.</p>
           </div>
           <div class="service-card">
             <div class="service-icon">🏷️</div>
-            <h3>Tag Manager &amp; Tracking</h3>
+            <h3>Tag Manager & Tracking</h3>
             <p>Data layer corretto e tracciamento server-side a prova di futuro. Niente conversioni fantasma.</p>
           </div>
           <div class="service-card">
             <div class="service-icon">🤖</div>
-            <h3>Consulenza strategica &amp; AI</h3>
+            <h3>Consulenza strategica & AI</h3>
             <p>Partnership continuativa con focus su ROI: analisi assistite dall'AI, test creativi, report che guidano le decisioni.</p>
           </div>
         </div>
@@ -1030,10 +1056,11 @@
         <div class="about-grid" style="margin-top:2rem;">
           <div class="about-photo">
             <img
-              src="https://datahero-ads-ai.lovable.app/__l5e/assets-v1/089ffc87-2298-4b79-982a-e65ddf506058/g-man-stefano-superina-consulente-google-ads.jpg"
+              src="assets/gman-fullbody.jpg"
               alt="Stefano Superina — G-Man, Your Data Hero"
-              width="280"
-              height="280"
+              width="600"
+              height="600"
+              loading="lazy"
             />
           </div>
           <div class="about-text">
