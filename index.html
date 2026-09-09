@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Consulente Google Ads | G-Man, Your Data Hero — Stefano Superina</title>
+  <meta name="description" content="Ex Strategist Google e Google Premier Partner. Audit gratuito, campagne Google Ads e tracciamento GA4 che trasformano il budget in crescita prevedibile per PMI e agenzie." />
+  <meta name="author" content="Stefano Superina" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #0a0e1a;
+      --bg-card: #111827;
+      --bg-input: #1a2234;
+      --border: #1e293b;
+      --text: #f1f5f9;
+      --text-muted: #94a3b8;
+      --primary: #ff4d2e;
+      --primary-hover: #ff6347;
+      --accent: #22d3ee;
+      --whatsapp: #25d366;
+      --font-display: "Bebas Neue", system-ui, sans-serif;
+      --font-body: "Barlow", system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-body);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; height: auto; display: block; }
+    .container { width: 100%; max-width: 1280px; margin: 0 auto; padding: 0 1.25rem; }
+    header {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(10, 14, 26, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .header-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      height: 64px; gap: 1rem;
+    }
+    .logo {
+      display: flex; align-items: center; gap: 0.6rem;
+      font-family: var(--font-display);
+      font-size: 1.35rem; letter-spacing: 0.04em; white-space: nowrap;
+    }
+    .logo img { width: 36px; height: 36px; border-radius: 8px; }
+    .logo span.accent { color: var(--accent); }
+    nav {
+      display: none; align-items: center; gap: 1.5rem;
+      font-size: 0.9rem; font-weight: 500; color: var(--text-muted);
+    }
+    nav a:hover { color: var(--text); }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 0.4rem;
+      font-family: var(--font-body); font-weight: 600; font-size: 0.9rem;
+      border-radius: 0.5rem; border: none; cursor: pointer;
+      transition: transform 0.15s, background 0.15s, border-color 0.15s;
+    }
+    .btn:hover { transform: translateY(-1px); }
+    .btn-primary { background: var(--primary); color: #fff; padding: 0.65rem 1.25rem; }
+    .btn-primary:hover { background: var(--primary-hover); }
+    .btn-outline {
+      background: transparent; color: var(--accent);
+      border: 1px solid var(--accent); padding: 0.6rem 1.2rem;
+    }
+    .btn-outline:hover { background: rgba(34, 211, 238, 0.1); }
+    .btn-header { padding: 0.5rem 1rem; font-size: 0.85rem; }
+    .hero {
+      position: relative; padding: 4rem 0 3rem; overflow: hidden;
+      background:
+        radial-gradient(ellipse 80% 50% at 70% 20%, rgba(255, 77, 46, 0.12), transparent),
+        radial-gradient(ellipse 60% 40% at 20% 80%, rgba(34, 211, 238, 0.08), transparent),
+        linear-gradient(180deg, #0a0e1a 0%, #0d1220 100%);
+    }
+    .hero::before {
+      content: ""; position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(34, 211, 238, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(34, 211, 238, 0.04) 1px, transparent 1px);
+      background-size: 48px 48px; pointer-events: none;
+    }
+    .hero-grid {
+      display: grid; grid-template-columns: 1fr; gap: 2.5rem;
+      position: relative; z-index: 1;
+    }
+    @media (min-width: 1024px) {
+      nav { display: flex; }
+      .hero-grid { grid-template-columns: 1.15fr 0.85fr; align-items: start; gap: 3rem; }
+    }
+    .badge {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      padding: 0.35rem 0.85rem; border-radius: 999px;
+      border: 1px solid rgba(34, 211, 238, 0.35);
+      background: rgba(34, 211, 238, 0.08);
+      color: var(--accent); font-size: 0.8rem; font-weight: 500; margin-bottom: 1.25rem;
+    }
+    .badge::before {
+      content: ""; width: 7px; height: 7px; border-radius: 50%;
+      background: var(--accent); box-shadow: 0 0 8px var(--accent);
+    }
+    h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.4rem, 5.5vw, 3.75rem);
+      line-height: 1.05; letter-spacing: 0.02em; margin-bottom: 1.25rem;
+    }
+    h1 .highlight { color: var(--primary); }
+    .hero-lead { color: var(--text-muted); font-size: 1.05rem; max-width: 34rem; margin-bottom: 1.75rem; }
+    .hero-ctas { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 1.5rem; }
+    .trust-row { display: flex; flex-wrap: wrap; gap: 1rem 1.5rem; font-size: 0.85rem; color: var(--text-muted); }
+    .trust-row span { display: inline-flex; align-items: center; gap: 0.35rem; }
+    .trust-row svg { width: 16px; height: 16px; color: var(--accent); flex-shrink: 0; }
+    .hero-visual {
+      margin-top: 2rem; border-radius: 1rem; overflow: hidden;
+      border: 1px solid var(--border); max-width: 420px;
+      box-shadow: 0 20px 50px -20px rgba(0, 0, 0, 0.6);
+    }
+    .hero-visual img { width: 100%; height: auto; display: block; }
+    .form-card {
+      background: rgba(17, 24, 39, 0.85); border: 1px solid var(--border);
+      border-radius: 1rem; padding: 1.5rem; backdrop-filter: blur(8px);
+    }
+    .form-card h2 { font-family: var(--font-display); font-size: 1.5rem; letter-spacing: 0.04em; margin-bottom: 0.35rem; }
+    .form-card > p { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.25rem; }
+    .form-group { margin-bottom: 1rem; }
+    .form-group label {
+      display: block; font-size: 0.7rem; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 0.08em;
+      color: var(--text-muted); margin-bottom: 0.4rem;
+    }
+    .form-group input, .form-group select, .form-group textarea {
+      width: 100%; background: var(--bg-input); border: 1px solid var(--border);
+      border-radius: 0.5rem; padding: 0.7rem 0.85rem; color: var(--text);
+      font-family: var(--font-body); font-size: 0.9rem; outline: none;
+      transition: border-color 0.15s;
+    }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--accent); }
+    .form-group input::placeholder, .form-group textarea::placeholder { color: #64748b; }
+    .form-group select {
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%2394a3b8' viewBox='0 0 16 16'%3E%3Cpath d='M4.5 6l3.5 3.5L11.5 6'/%3E%3C/svg%3E");
+      background-repeat: no-repeat; background-position: right 0.75rem center; padding-right: 2rem;
+    }
+    .checkbox-row { display: flex; align-items: flex-start; gap: 0.5rem; margin-bottom: 1rem; font-size: 0.8rem; color: var(--text-muted); }
+    .checkbox-row input { margin-top: 0.2rem; accent-color: var(--accent); width: 16px; height: 16px; }
+    .form-note { font-size: 0.75rem; color: var(--text-muted); margin-top: 0.75rem; text-align: center; }
+    section { padding: 4.5rem 0; }
+    .section-label { font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent); margin-bottom: 0.5rem; }
+    .section-title { font-family: var(--font-display); font-size: clamp(1.8rem, 3.5vw, 2.5rem); letter-spacing: 0.03em; line-height: 1.15; margin-bottom: 0.75rem; }
+    .section-lead { color: var(--text-muted); max-width: 40rem; margin-bottom: 2.5rem; }
+    .why-grid { display: grid; grid-template-columns: 1fr; gap: 1.25rem; }
+    @media (min-width: 768px) { .why-grid { grid-template-columns: 1fr 1fr; } }
+    .why-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 0.85rem; padding: 1.5rem; }
+    .why-card h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem; }
+    .why-card p { color: var(--text-muted); font-size: 0.95rem; }
+    .services-grid { display: grid; grid-template-columns: 1fr; gap: 1.25rem; }
+    @media (min-width: 640px) { .services-grid { grid-template-columns: 1fr 1fr; } }
+    @media (min-width: 1024px) { .services-grid { grid-template-columns: repeat(3, 1fr); } }
+    .service-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 0.85rem; padding: 1.5rem; transition: border-color 0.2s; }
+    .service-card:hover { border-color: rgba(34, 211, 238, 0.4); }
+    .service-icon { width: 40px; height: 40px; border-radius: 0.5rem; background: rgba(34, 211, 238, 0.12); color: var(--accent); display: grid; place-items: center; margin-bottom: 1rem; font-size: 1.2rem; }
+    .service-card h3 { font-size: 1.05rem; font-weight: 600; margin-bottom: 0.4rem; }
+    .service-card p { color: var(--text-muted); font-size: 0.9rem; }
+    .cases-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
+    @media (min-width: 768px) { .cases-grid { grid-template-columns: 1fr 1fr; } }
+    @media (min-width: 1100px) { .cases-grid { grid-template-columns: repeat(3, 1fr); } }
+    .case-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 0.85rem; padding: 1.5rem; display: flex; flex-direction: column; }
+    .case-tag { font-size: 0.75rem; font-weight: 600; color: var(--accent); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.5rem; }
+    .case-card h3 { font-size: 1.15rem; font-weight: 600; margin-bottom: 0.35rem; line-height: 1.3; }
+    .case-period { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 1rem; }
+    .case-metrics { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin: 1rem 0; }
+    .metric { background: rgba(10, 14, 26, 0.6); border-radius: 0.5rem; padding: 0.75rem; }
+    .metric-value { font-family: var(--font-display); font-size: 1.5rem; color: var(--primary); line-height: 1; }
+    .metric-label { font-size: 0.7rem; color: var(--text-muted); margin-top: 0.2rem; }
+    .case-link { margin-top: auto; padding-top: 1rem; font-size: 0.9rem; font-weight: 600; color: var(--accent); }
+    .case-link:hover { text-decoration: underline; }
+    .about-grid { display: grid; grid-template-columns: 1fr; gap: 2.5rem; align-items: center; }
+    @media (min-width: 900px) { .about-grid { grid-template-columns: 320px 1fr; gap: 3rem; } }
+    .about-photo {
+      border-radius: 1rem; overflow: hidden; border: 1px solid var(--border);
+      max-width: 320px; margin: 0 auto;
+      box-shadow: 0 20px 50px -20px rgba(34, 211, 238, 0.25);
+    }
+    .about-photo img { width: 100%; aspect-ratio: 1; object-fit: cover; display: block; }
+    .about-text p { color: var(--text-muted); margin-bottom: 1rem; }
+    .about-text strong { color: var(--text); }
+    .process-steps { display: grid; grid-template-columns: 1fr; gap: 1.25rem; }
+    @media (min-width: 768px) { .process-steps { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1100px) { .process-steps { grid-template-columns: repeat(4, 1fr); } }
+    .step { background: var(--bg-card); border: 1px solid var(--border); border-radius: 0.85rem; padding: 1.5rem; position: relative; }
+    .step-num { font-family: var(--font-display); font-size: 2rem; color: var(--primary); opacity: 0.9; line-height: 1; margin-bottom: 0.75rem; }
+    .step h3 { font-size: 1.05rem; font-weight: 600; margin-bottom: 0.4rem; }
+    .step p { color: var(--text-muted); font-size: 0.9rem; }
+    .faq-list { max-width: 48rem; display: flex; flex-direction: column; gap: 0.75rem; }
+    details { background: var(--bg-card); border: 1px solid var(--border); border-radius: 0.75rem; padding: 1rem 1.25rem; }
+    details summary {
+      font-weight: 600; cursor: pointer; list-style: none;
+      display: flex; justify-content: space-between; align-items: center; gap: 1rem;
+    }
+    details summary::-webkit-details-marker { display: none; }
+    details summary::after { content: "+"; font-size: 1.25rem; color: var(--accent); flex-shrink: 0; }
+    details[open] summary::after { content: "−"; }
+    details p { color: var(--text-muted); font-size: 0.95rem; margin-top: 0.85rem; padding-top: 0.85rem; border-top: 1px solid var(--border); }
+    .contact-section {
+      background: radial-gradient(ellipse 70% 60% at 50% 100%, rgba(255, 77, 46, 0.1), transparent), var(--bg);
+    }
+    .contact-box { max-width: 36rem; margin: 0 auto; text-align: center; }
+    .contact-box .form-card { text-align: left; margin-top: 2rem; }
+    footer { border-top: 1px solid var(--border); padding: 2.5rem 0; text-align: center; }
+    footer .logo-text { font-family: var(--font-display); font-size: 1.5rem; letter-spacing: 0.04em; margin-bottom: 0.5rem; }
+    footer .logo-text span { color: var(--accent); }
+    footer p { color: var(--text-muted); font-size: 0.85rem; }
+    footer .copy { font-size: 0.75rem; margin-top: 0.75rem; }
+    .wa-fab {
+      position: fixed; bottom: 1.25rem; right: 1.25rem; z-index: 90;
+      width: 56px; height: 56px; border-radius: 50%;
+      background: var(--whatsapp); color: #fff; display: grid; place-items: center;
+      box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4); transition: transform 0.15s;
+    }
+    .wa-fab:hover { transform: scale(1.08); }
+    .wa-fab svg { width: 28px; height: 28px; }
+    .menu-toggle {
+      display: flex; background: none; border: 1px solid var(--border);
+      color: var(--text); padding: 0.4rem 0.7rem; border-radius: 0.4rem;
+      font-size: 0.85rem; cursor: pointer;
+    }
+    @media (min-width: 1024px) { .menu-toggle { display: none; } }
+    .mobile-nav {
+      display: none; flex-direction: column; gap: 0.75rem;
+      padding: 1rem 1.25rem 1.25rem; border-top: 1px solid var(--border); background: var(--bg);
+    }
+    .mobile-nav.open { display: flex; }
+    .mobile-nav a { color: var(--text-muted); font-size: 0.95rem; font-weight: 500; }
+    .mobile-nav a:hover { color: var(--text); }
+    .cta-mid { text-align: center; padding: 2rem 0 0; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container header-inner">
+      <a href="https://stefanosupernet-sudo.github.io/g-man-data-hero/" class="logo" title="G-Man Data Hero — Home">
+        <img src="https://datahero-ads-ai.lovable.app/assets/gman-logo-rY9CogyC.png" alt="G-Man Data Hero" width="36" height="36" />
+        G-MAN <span class="accent">DATA HERO</span>
+      </a>
+      <nav>
+        <a href="#perche">Perché G-Man</a>
+        <a href="#servizi">Servizi</a>
+        <a href="#casi">Casi studio</a>
+        <a href="#chi-sono">Chi sono</a>
+        <a href="#come-lavoro">Come lavoro</a>
+        <a href="#faq">FAQ</a>
+        <a href="https://datahero-ads-ai.lovable.app/blog" title="Blog (sito Lovable)" target="_blank" rel="noopener">Blog</a>
+      </nav>
+      <div style="display:flex;align-items:center;gap:0.75rem;">
+        <a href="#contatti" class="btn btn-primary btn-header">Audit gratuito</a>
+        <button class="menu-toggle" id="menuBtn" aria-label="Menu">Menu</button>
+      </div>
+    </div>
+    <div class="mobile-nav" id="mobileNav">
+      <a href="#perche">Perché G-Man</a>
+      <a href="#servizi">Servizi</a>
+      <a href="#casi">Casi studio</a>
+      <a href="#chi-sono">Chi sono</a>
+      <a href="#come-lavoro">Come lavoro</a>
+      <a href="#faq">FAQ</a>
+      <a href="https://datahero-ads-ai.lovable.app/blog" target="_blank" rel="noopener">Blog</a>
+      <a href="#contatti">Contatti</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="badge">Google Premier Partner 2023–2024 · Top 3% Italia</div>
+          <h1>IL <span class="highlight">DATA HERO</span> CHE TRASFORMA<br />GOOGLE ADS IN CRESCITA<br />PREVEDIBILE</h1>
+          <p class="hero-lead">Sono Stefano Superina, ex Strategist Google a Cracovia (2016–2022). Audit chirurgici, misurazione affidabile e campagne che non bruciano budget: per imprenditori e agenzie che investono sul serio.</p>
+          <div class="hero-ctas">
+            <a href="#contatti" class="btn btn-primary">Richiedi l'audit gratuito
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+            <a href="https://wa.me/393471988894" target="_blank" rel="noopener" class="btn btn-outline">Parla su WhatsApp</a>
+          </div>
+          <div class="trust-row">
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Google Partner dal 2020</span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Ex Strategist Google</span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Focus su ROI reale</span>
+          </div>
+          <div class="hero-visual">
+            <img src="assets/gman-hero.jpg" alt="G-Man Data Hero — Advertising. Data. AI. Impact." width="800" height="800" loading="eager" />
+          </div>
+        </div>
+        <div class="form-card" id="audit-form-hero">
+          <h2>AUDIT GRATUITO</h2>
+          <p>Analisi del tuo account Google Ads. Risposta entro 24 ore.</p>
+          <form onsubmit="event.preventDefault(); alert('Clone statico: il form non invia dati. Contatta Stefano sul sito originale o via WhatsApp.');">
+            <div class="form-group"><label for="nome">Nome *</label><input type="text" id="nome" name="nome" placeholder="Il tuo nome" required /></div>
+            <div class="form-group"><label for="email">Email *</label><input type="email" id="email" name="email" placeholder="nome@azienda.it" required /></div>
+            <div class="form-group"><label for="azienda">Azienda</label><input type="text" id="azienda" name="azienda" placeholder="Nome azienda" /></div>
+            <div class="form-group"><label for="budget">Budget mensile Google Ads</label>
+              <select id="budget" name="budget">
+                <option value="">Seleziona (opzionale)</option>
+                <option>Meno di 1.000 €</option>
+                <option>1.000 – 3.000 €</option>
+                <option>3.000 – 10.000 €</option>
+                <option>Oltre 10.000 €</option>
+              </select>
+            </div>
+            <div class="form-group"><label for="messaggio">Messaggio</label><textarea id="messaggio" name="messaggio" rows="3" placeholder="Raccontami brevemente la tua situazione: obiettivi, canali attivi, criticità."></textarea></div>
+            <div class="checkbox-row"><input type="checkbox" id="privacy" name="privacy" required /><label for="privacy">Acconsento al trattamento dei dati per essere ricontattato. *</label></div>
+            <button type="submit" class="btn btn-primary" style="width:100%;">Invia richiesta</button>
+            <p class="form-note">Nessuno spam. Rispondo personalmente, in genere entro 24 ore.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section id="perche">
+      <div class="container">
+        <p class="section-label">Perché G-Man</p>
+        <h2 class="section-title">PERCHÉ LE AZIENDE SI AFFIDANO A UN DATA HERO</h2>
+        <p class="section-lead">Non un'agenzia: un partner diretto, con esperienza reale maturata dentro Google.</p>
+        <div class="why-grid">
+          <div class="why-card"><h3>Esperienza dentro Google</h3><p>Strategist a Cracovia dal 2016 al 2022: aste, Quality Score e architetture di account viste dall'interno, su centinaia di aziende.</p></div>
+          <div class="why-card"><h3>AI con controllo umano</h3><p>So quando lasciare lavorare Smart Bidding e Performance Max e quando intervenire. L'automazione senza strategia brucia budget.</p></div>
+          <div class="why-card"><h3>Audit chirurgici</h3><p>Non report generici: individuo emorragie di budget, tracciamenti rotti e opportunità nascoste nel funnel.</p></div>
+          <div class="why-card"><h3>Risultati prevedibili</h3><p>Standard enterprise anche per le PMI. Rapporto diretto, nessun account manager junior: solo dati e decisioni.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="servizi" style="background: rgba(17,24,39,0.35);">
+      <div class="container">
+        <p class="section-label">Servizi</p>
+        <h2 class="section-title">I SUPERPOTERI AL SERVIZIO DELLA TUA AZIENDA</h2>
+        <p class="section-lead">Tutto ciò che serve per far funzionare Google Ads e la misurazione in modo serio.</p>
+        <div class="services-grid">
+          <div class="service-card"><div class="service-icon">🎯</div><h3>Google Ads</h3><p>Search, Performance Max, Shopping e YouTube. Strutture pulite, segmentazione corretta, obiettivi economici chiari.</p></div>
+          <div class="service-card"><div class="service-icon">📊</div><h3>Google Analytics 4</h3><p>Misurazione affidabile: eventi, conversioni e insight azionabili. Dati puliti su cui prendere decisioni.</p></div>
+          <div class="service-card"><div class="service-icon">🛒</div><h3>Merchant Center & Feed</h3><p>Feed puliti, compliance delle policy e ottimizzazione per Shopping e Performance Max.</p></div>
+          <div class="service-card"><div class="service-icon">🏷️</div><h3>Tag Manager & Tracking</h3><p>Data layer corretto e tracciamento server-side a prova di futuro. Niente conversioni fantasma.</p></div>
+          <div class="service-card"><div class="service-icon">🤖</div><h3>Consulenza strategica & AI</h3><p>Partnership continuativa con focus su ROI: analisi assistite dall'AI, test creativi, report che guidano le decisioni.</p></div>
+        </div>
+        <div class="cta-mid"><p style="color:var(--text-muted);margin-bottom:1rem;">Non sai da dove partire?</p><a href="#contatti" class="btn btn-primary">Parti dall'audit gratuito</a></div>
+      </div>
+    </section>
+
+    <section id="casi">
+      <div class="container">
+        <p class="section-label">Casi studio</p>
+        <h2 class="section-title">RISULTATI MISURABILI, NON PROMESSE A VUOTO</h2>
+        <p class="section-lead">Esempi concreti di come audit, strategia e ottimizzazione continua si traducono in numeri.</p>
+        <div class="cases-grid">
+          <article class="case-card">
+            <p class="case-tag">E-commerce</p>
+            <h3>ROAS 6,66 e 81,1K vendite con feed e strategia AI</h3>
+            <p class="case-period">Apr — Ott 2025</p>
+            <div class="case-metrics">
+              <div class="metric"><div class="metric-value">6,66</div><div class="metric-label">ROAS</div></div>
+              <div class="metric"><div class="metric-value">81,1K</div><div class="metric-label">Vendite</div></div>
+            </div>
+            <a href="https://datahero-ads-ai.lovable.app/casi-studio/ecommerce-roas-feed-ai" class="case-link" target="_blank" rel="noopener">Leggi il caso studio completo →</a>
+          </article>
+          <article class="case-card">
+            <p class="case-tag">B2B Salute e Benessere</p>
+            <h3>+83% vendite ricorrenti tracciando le registrazioni B2B</h3>
+            <p class="case-period">5 mesi</p>
+            <div class="case-metrics">
+              <div class="metric"><div class="metric-value">+83%</div><div class="metric-label">Vendite ricorrenti</div></div>
+              <div class="metric"><div class="metric-value">-40%</div><div class="metric-label">CPC medio</div></div>
+            </div>
+            <a href="https://datahero-ads-ai.lovable.app/casi-studio/b2b-salute-benessere" class="case-link" target="_blank" rel="noopener">Leggi il caso studio completo →</a>
+          </article>
+          <article class="case-card">
+            <p class="case-tag">Lead generation</p>
+            <h3>Da €2.000 a €20.000 al mese: 19.200 lead a €7,64</h3>
+            <p class="case-period">Budget scalato ×10 in 3 mesi</p>
+            <div class="case-metrics">
+              <div class="metric"><div class="metric-value">19.200</div><div class="metric-label">Lead</div></div>
+              <div class="metric"><div class="metric-value">€7,64</div><div class="metric-label">Costo per lead</div></div>
+            </div>
+            <a href="https://datahero-ads-ai.lovable.app/casi-studio/lead-generation-appuntamenti" class="case-link" target="_blank" rel="noopener">Leggi il caso studio completo →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="chi-sono" style="background: rgba(17,24,39,0.35);">
+      <div class="container">
+        <p class="section-label">Chi sono</p>
+        <h2 class="section-title">DA STEFANO DENTRO GOOGLE A G-MAN, YOUR DATA HERO</h2>
+        <div class="about-grid" style="margin-top:2rem;">
+          <div class="about-photo">
+            <img src="assets/gman-fullbody.jpg" alt="Stefano Superina — G-Man, Your Data Hero" width="600" height="600" loading="lazy" />
+          </div>
+          <div class="about-text">
+            <p>Mi chiamo <strong>Stefano Superina</strong>. Ho lavorato come Strategist dentro Google (Cracovia) dal 2016 al 2022.</p>
+            <p>Oggi lavoro da libero professionista. Google Partner dal 2020, Google Premier Partner 2023–2024 (top 3% in Italia).</p>
+            <p>Il personaggio di <strong>G-Man, Your Data Hero</strong> racconta un mestiere serio: trasformare i dati in crescita prevedibile.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="come-lavoro">
+      <div class="container">
+        <p class="section-label">Come lavoro</p>
+        <h2 class="section-title">UN PROCESSO CHIARO, SENZA SORPRESE</h2>
+        <div class="process-steps">
+          <div class="step"><div class="step-num">01</div><h3>Audit gratuito</h3><p>Analizzo account, tracciamento e funnel.</p></div>
+          <div class="step"><div class="step-num">02</div><h3>Diagnosi chiara</h3><p>Report prioritizzato su sprechi e opportunità.</p></div>
+          <div class="step"><div class="step-num">03</div><h3>Strategia e setup</h3><p>Architettura pulita e campagne per convertire.</p></div>
+          <div class="step"><div class="step-num">04</div><h3>Ottimizzazione continua</h3><p>Focus costante sul ritorno.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" style="background: rgba(17,24,39,0.35);">
+      <div class="container">
+        <p class="section-label">FAQ</p>
+        <h2 class="section-title">DOMANDE FREQUENTI</h2>
+        <div class="faq-list">
+          <details><summary>Lavori solo con grandi aziende?</summary><p>No. Lavoro soprattutto con PMI, e-commerce e agenzie. Il rapporto è diretto.</p></details>
+          <details><summary>Quanto costa un audit Google Ads?</summary><p>L'audit iniziale è gratuito e senza impegno.</p></details>
+          <details><summary>Come posso contattarti?</summary><p>Compila il modulo oppure scrivimi su WhatsApp. Rispondo entro 24 ore.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section id="contatti" class="contact-section">
+      <div class="container">
+        <div class="contact-box">
+          <p class="section-label">Contatti</p>
+          <h2 class="section-title">RICHIEDI IL TUO AUDIT GRATUITO</h2>
+          <div class="form-card">
+            <form onsubmit="event.preventDefault(); alert('Clone statico: contatta Stefano su WhatsApp o sul sito originale.');">
+              <div class="form-group"><label for="nome2">Nome *</label><input type="text" id="nome2" required /></div>
+              <div class="form-group"><label for="email2">Email *</label><input type="email" id="email2" required /></div>
+              <div class="checkbox-row"><input type="checkbox" id="privacy2" required /><label for="privacy2">Acconsento al trattamento dei dati. *</label></div>
+              <button type="submit" class="btn btn-primary" style="width:100%;">Invia richiesta</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="logo-text">G-MAN <span>DATA HERO</span></div>
+      <p>Ex Google Strategist · Google Premier Partner · Crescita prevedibile con i dati</p>
+      <p class="copy">© 2026 Stefano Superina — G-Man, Your Data Hero</p>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/393471988894" class="wa-fab" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileNav = document.getElementById('mobileNav');
+    menuBtn.addEventListener('click', () => mobileNav.classList.toggle('open'));
+    mobileNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileNav.classList.remove('open')));
+  </script>
+</body>
+</html>
