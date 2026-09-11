@@ -3,10 +3,29 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0a0e1a" />
   <title>Consulente Google Ads | G-Man, Your Data Hero — Stefano Superina</title>
   <meta name="description" content="Ex Strategist Google e Google Premier Partner. Audit gratuito, campagne Google Ads e tracciamento GA4 che trasformano il budget in crescita prevedibile per PMI e agenzie." />
   <meta name="author" content="Stefano Superina" />
-  <link rel="canonical" href="https://stefanosupernet-sudo.github.io/g-man-data-hero/" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <link rel="canonical" href="https://stefanodagogle.com/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="it_IT" />
+  <meta property="og:site_name" content="G-Man Data Hero" />
+  <meta property="og:title" content="Consulente Google Ads | G-Man, Your Data Hero — Stefano Superina" />
+  <meta property="og:description" content="Ex Strategist Google e Google Premier Partner. Audit gratuito, campagne Google Ads e GA4 per PMI e agenzie." />
+  <meta property="og:url" content="https://stefanodagogle.com/" />
+  <meta property="og:image" content="https://stefanodagogle.com/assets/gman-hero.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Consulente Google Ads | G-Man Data Hero — Stefano Superina" />
+  <meta name="twitter:description" content="Ex Strategist Google e Google Premier Partner. Audit gratuito e campagne Google Ads orientate al ROI." />
+  <meta name="twitter:image" content="https://stefanodagogle.com/assets/gman-hero.jpg" />
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"ProfessionalService","name":"G-Man Data Hero — Stefano Superina","alternateName":"G-Man, Your Data Hero","url":"https://stefanodagogle.com/","logo":"https://stefanodagogle.com/assets/gman-hero.jpg","image":"https://stefanodagogle.com/assets/gman-hero.jpg","description":"Consulente Google Ads e data analysis. Ex Strategist Google, Google Premier Partner.","founder":{"@type":"Person","name":"Stefano Superina","jobTitle":"Consulente Google Ads"},"areaServed":"IT"}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebSite","name":"G-Man Data Hero","url":"https://stefanodagogle.com/","inLanguage":"it-IT","publisher":{"@type":"Person","name":"Stefano Superina"}}
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -57,10 +76,10 @@
   <header>
     <div class="container header-inner">
       <a href="/" class="logo" title="G-Man Data Hero — Home">
-        <img src="assets/gman-hero.jpg" alt="G-Man" width="36" height="36" style="object-fit:cover" />
+        <img src="assets/gman-hero.jpg" alt="Logo G-Man Data Hero - consulente Google Ads Stefano Superina" width="36" height="36" style="object-fit:cover" />
         G-MAN <span class="accent">DATA HERO</span>
       </a>
-      <nav>
+      <nav aria-label="Principale">
         <a href="#perche">Perché G-Man</a>
         <a href="#servizi">Servizi</a>
         <a href="#casi">Casi studio</a>
@@ -71,7 +90,7 @@
       </nav>
       <div style="display:flex;align-items:center;gap:.75rem">
         <a href="#contatti" class="btn btn-primary btn-header">Audit gratuito</a>
-        <button class="menu-toggle" id="menuBtn">Menu</button>
+        <button class="menu-toggle" id="menuBtn" aria-label="Apri menu">Menu</button>
       </div>
     </div>
     <div class="mobile-nav" id="mobileNav">
@@ -91,14 +110,14 @@
           <a href="https://wa.me/393471988894" target="_blank" rel="noopener" class="btn btn-outline">Parla su WhatsApp</a>
         </div>
         <div class="trust-row"><span>✓ Google Partner dal 2020</span><span>✓ Ex Strategist Google</span><span>✓ Focus su ROI reale</span></div>
-        <div class="hero-visual"><img src="assets/gman-hero.jpg" alt="G-Man Data Hero" width="800" height="800" loading="eager" /></div>
+        <div class="hero-visual"><img src="assets/gman-hero.jpg" alt="Stefano Superina come G-Man Data Hero — Advertising, Data, AI, Impact" width="800" height="800" loading="eager" width="800" /></div>
       </div>
       <div class="form-card" id="audit-form-hero">
         <h2>AUDIT GRATUITO</h2>
         <p style="color:var(--text-muted);font-size:.9rem;margin-bottom:1rem">Analisi del tuo account Google Ads. Risposta entro 24 ore.</p>
         <form onsubmit="event.preventDefault();alert('Contatta Stefano su WhatsApp per l\'audit gratuito.');">
-          <div class="form-group"><label>Nome *</label><input required placeholder="Il tuo nome" /></div>
-          <div class="form-group"><label>Email *</label><input type="email" required placeholder="nome@azienda.it" /></div>
+          <div class="form-group"><label>Nome *</label><input required placeholder="Il tuo nome" name="nome" autocomplete="name" /></div>
+          <div class="form-group"><label>Email *</label><input type="email" required placeholder="nome@azienda.it" name="email" autocomplete="email" /></div>
           <button type="submit" class="btn btn-primary" style="width:100%">Invia richiesta</button>
         </form>
       </div>
@@ -150,7 +169,7 @@
       <p class="section-label">Chi sono</p>
       <h2 class="section-title">DA STEFANO DENTRO GOOGLE A G-MAN</h2>
       <div class="about-grid" style="margin-top:2rem">
-        <div class="about-photo"><img src="assets/gman-fullbody.jpg" alt="Stefano Superina — G-Man" width="600" height="600" loading="lazy" /></div>
+        <div class="about-photo"><img src="assets/gman-fullbody.jpg" alt="Stefano Superina, consulente Google Ads — G-Man Data Hero" width="600" height="600" loading="lazy" /></div>
         <div>
           <p style="color:var(--text-muted);margin-bottom:1rem">Mi chiamo <strong style="color:var(--text)">Stefano Superina</strong>. Strategist dentro Google (Cracovia) dal 2016 al 2022.</p>
           <p style="color:var(--text-muted)">Google Partner dal 2020, Google Premier Partner 2023–2024 (top 3% Italia). G-Man è il modo con cui racconto un mestiere serio: trasformare i dati in crescita prevedibile.</p>
@@ -185,10 +204,10 @@
   </main>
   <footer><div class="container">
     <div class="logo-text">G-MAN <span>DATA HERO</span></div>
-    <p>Ex Google Strategist · Google Premier Partner</p>
-    <p style="font-size:.75rem;margin-top:.75rem">© 2026 Stefano Superina</p>
+    <p>Ex Google Strategist · Google Premier Partner · <a href="/blog/" style="color:var(--accent)">Blog</a></p>
+    <p style="font-size:.75rem;margin-top:.75rem">© 2026 Stefano Superina — <a href="https://stefanodagogle.com/" style="color:inherit">stefanodagogle.com</a></p>
   </div></footer>
-  <a href="https://wa.me/393471988894" class="wa-fab" target="_blank" rel="noopener" aria-label="WhatsApp">WA</a>
+  <a href="https://wa.me/393471988894" class="wa-fab" target="_blank" rel="noopener" aria-label="Contatta su WhatsApp">WA</a>
   <script>
     document.getElementById('menuBtn').onclick=()=>document.getElementById('mobileNav').classList.toggle('open');
     document.querySelectorAll('#mobileNav a').forEach(a=>a.onclick=()=>document.getElementById('mobileNav').classList.remove('open'));
