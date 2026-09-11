@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Etichette personalizzate Google Shopping: filtrare i prodotti fuori mercato | G-Man</title>
+  <meta name="description" content="Benchmark prezzi, custom_label e feed supplementare per isolare i prodotti non competitivi e alzare il ROAS." />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #0a0e1a; --bg-card: #111827; --border: #1e293b;
+      --text: #f1f5f9; --text-muted: #94a3b8;
+      --primary: #ff4d2e; --accent: #22d3ee;
+      --font-display: "Bebas Neue", system-ui, sans-serif;
+      --font-body: "Barlow", system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--font-body); background: var(--bg); color: var(--text); line-height: 1.7; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .container { max-width: 720px; margin: 0 auto; padding: 0 1.25rem; }
+    header {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(10,14,26,.92); backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .header-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      height: 56px; max-width: 960px; margin: 0 auto; padding: 0 1.25rem;
+    }
+    .logo { font-family: var(--font-display); font-size: 1.2rem; letter-spacing: .04em; color: var(--text); text-decoration: none; }
+    .logo span { color: var(--accent); }
+    .back { font-size: .85rem; color: var(--text-muted); text-decoration: none; }
+    article { padding: 2.5rem 0 4rem; }
+    .tag { font-size: .75rem; font-weight: 600; color: var(--accent); text-transform: uppercase; letter-spacing: .08em; margin-bottom: .75rem; }
+    h1 { font-family: var(--font-display); font-size: clamp(1.75rem, 4vw, 2.4rem); line-height: 1.15; letter-spacing: .02em; margin-bottom: 1rem; }
+    .dek { color: var(--text-muted); font-size: 1.05rem; margin-bottom: 1.5rem; }
+    .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: .75rem; margin: 1.5rem 0 2rem; }
+    .stat { background: var(--bg-card); border: 1px solid var(--border); border-radius: .75rem; padding: 1rem; text-align: center; }
+    .stat strong { display: block; font-family: var(--font-display); font-size: 1.5rem; color: var(--primary); line-height: 1; }
+    .stat span { font-size: .7rem; color: var(--text-muted); }
+    h2 { font-size: 1.25rem; margin: 2rem 0 .75rem; }
+    h3 { font-size: 1.05rem; margin: 1.25rem 0 .5rem; color: var(--accent); }
+    p, li { color: var(--text-muted); margin-bottom: .85rem; }
+    ul { padding-left: 1.25rem; margin-bottom: 1rem; }
+    .panel { background: var(--bg-card); border: 1px solid var(--border); border-radius: .75rem; padding: 1.25rem; margin: 1.25rem 0; }
+    .label-grid { display: grid; gap: .75rem; margin: 1rem 0; }
+    .label-item { background: rgba(10,14,26,.5); border-radius: .5rem; padding: .85rem 1rem; border-left: 3px solid var(--accent); }
+    .label-item strong { color: var(--text); }
+    table { width: 100%; border-collapse: collapse; margin: 1.25rem 0; font-size: .85rem; }
+    th, td { border: 1px solid var(--border); padding: .55rem .7rem; text-align: left; }
+    th { background: var(--bg-card); color: var(--text); }
+    td { color: var(--text-muted); }
+    code, pre {
+      background: rgba(10,14,26,.8); border: 1px solid var(--border);
+      border-radius: .4rem; font-size: .8rem; color: var(--accent);
+    }
+    code { padding: .15rem .35rem; }
+    pre { padding: 1rem; overflow-x: auto; margin: 1rem 0; white-space: pre-wrap; }
+    details { background: var(--bg-card); border: 1px solid var(--border); border-radius: .75rem; padding: 1rem 1.25rem; margin-bottom: .75rem; }
+    details summary { font-weight: 600; cursor: pointer; list-style: none; }
+    details summary::-webkit-details-marker { display: none; }
+    details p { margin-top: .75rem; margin-bottom: 0; }
+    .cta {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: .85rem; padding: 1.5rem; margin-top: 2.5rem; text-align: center;
+    }
+    .cta a.btn {
+      display: inline-block; margin-top: .75rem;
+      background: var(--primary); color: #fff; font-weight: 600;
+      padding: .65rem 1.25rem; border-radius: .5rem; text-decoration: none;
+    }
+    footer { border-top: 1px solid var(--border); padding: 1.5rem 0; text-align: center; font-size: .8rem; color: var(--text-muted); }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <a class="logo" href="https://stefanosupernet-sudo.github.io/g-man-data-hero/">G-MAN <span>DATA HERO</span></a>
+      <a class="back" href="./">← Blog</a>
+    </div>
+  </header>
+
+  <article class="container">
+    <p class="tag">Merchant Center · Custom label · 6 capitoli</p>
+    <h1>ETICHETTE PERSONALIZZATE: FILTRARE I PRODOTTI IN BASE ALLA CONCORRENZA</h1>
+    <p class="dek">Un e-commerce con 4.000 SKU vedeva i best seller soffocati dai prodotti fuori mercato. Nessuna bacchetta magica: benchmark prezzi, custom_label e feed supplementare per isolare chirurgicamente ciò che non può vincere l’asta.</p>
+
+    <div class="stats">
+      <div class="stat"><strong>847</strong><span>SKU fuori mercato isolati</span></div>
+      <div class="stat"><strong>80%</strong><span>del costo bruciato prima</span></div>
+      <div class="stat"><strong>+44%</strong><span>prezzo sopra benchmark</span></div>
+    </div>
+
+    <h2>In breve</h2>
+    <p>Quando il budget sembra sempre troppo corto, spesso non è piccolo: è disperso. Il report Prezzi e Benchmark di Merchant Center mostra quali prodotti sono fuori mercato; una regola su <code>custom_label_0</code> li classifica in competitive, borderline e non_competitive; un feed supplementare aggiorna le etichette ogni sei ore e le campagne Shopping e Performance Max escludono i non competitivi. Si filtra invece di svendere: il ROAS sale perché si spende solo dove si vince.</p>
+
+    <div class="panel">
+      <h3>Cap 1 — Il problema non è quanto spendi</h3>
+      <p>«Hai migliaia di prodotti, ma un budget che sembra sempre troppo corto? Il budget non è piccolo. È disperso.»</p>
+    </div>
+
+    <div class="panel">
+      <h3>Cap 2 — Prezzi e Benchmark</h3>
+      <p>In Merchant Center, sezione Prezzi e Benchmark: catalogo fuori mercato, pulsante rosso ovunque. Nessun clic vale se il prezzo non regge il confronto con la concorrenza.</p>
+    </div>
+
+    <div class="panel">
+      <h3>Cap 3 — Attivazione Data Hero</h3>
+      <p>Non serve una bacchetta magica: serve equilibrio. Stessa faccia, nuova pipeline: dai tagli a caso a una regola misurabile. Metafora: non puoi irrigare piante morte. Isola le specie non competitive, nutri quelle forti.</p>
+    </div>
+
+    <h2>Cap 4 — Filtro chirurgico: tre categorie</h2>
+    <div class="label-grid">
+      <div class="label-item">
+        <strong>competitive</strong> — price_diff ≤ 5% rispetto al benchmark<br />
+        <span style="font-size:.85rem;color:var(--text-muted)">Spinta piena in Performance Max e Shopping</span>
+      </div>
+      <div class="label-item">
+        <strong>borderline</strong> — scarto prezzo tra 5% e 15%<br />
+        <span style="font-size:.85rem;color:var(--text-muted)">Offerta ridotta e osservazione settimanale</span>
+      </div>
+      <div class="label-item">
+        <strong>non_competitive</strong> — price_benchmark = OUT_OF_MARKET<br />
+        <span style="font-size:.85rem;color:var(--text-muted)">Escluso dalle campagne, resta solo in organico</span>
+      </div>
+    </div>
+
+    <h3>Esempio feed supplementare</h3>
+    <table>
+      <thead>
+        <tr><th>Prodotto</th><th>price_benchmark</th><th>custom_label_0</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>SKU-8841 · Cuffie Gaming RGB</td><td>OUT_OF_MARKET</td><td>non_competitive</td></tr>
+        <tr><td>SKU-2190 · Sedia Ergonomica X</td><td>BORDERLINE</td><td>borderline</td></tr>
+        <tr><td>SKU-5502 · Monitor 27" 144Hz</td><td>IN_MARKET</td><td>competitive</td></tr>
+        <tr><td>SKU-1029 · Tastiera Meccanica</td><td>OUT_OF_MARKET</td><td>non_competitive</td></tr>
+      </tbody>
+    </table>
+
+    <pre>IF price_benchmark = IN_STOCK & price_diff ≤ 5%  => competitive
+IF price_benchmark = BORDERLINE (5–15%)          => borderline
+IF price_benchmark = OUT_OF_MARKET               => non_competitive
+IF clicks > 50 & conversions = 0                 => low_roi</pre>
+
+    <div class="panel">
+      <h3>Cap 5 — Equilibrio, non scorciatoie</h3>
+      <p><strong>Vantaggio:</strong> margini intatti. Niente sconti continui: filtriamo, non svendiamo.</p>
+      <p><strong>Attenzione:</strong> i prezzi della concorrenza cambiano ogni giorno. Serve una regola automatica sul feed supplementare e un alert quando un prodotto torna competitivo.</p>
+    </div>
+
+    <p><strong>G-Man tip:</strong> collega il feed supplementare via SFTP o Google Sheet, aggiorna <code>custom_label_0</code> ogni 6 ore e, in Performance Max, escludi <code>non_competitive</code> a livello di gruppo di asset.</p>
+
+    <h2>Domande frequenti</h2>
+    <details>
+      <summary>Cosa sono le etichette personalizzate (custom_label)?</summary>
+      <p>Sono cinque campi liberi del feed prodotto (custom_label_0…4) per raggruppare gli articoli secondo logiche tue: competitività, margine, stagionalità o rendimento.</p>
+    </details>
+    <details>
+      <summary>Come filtro i prodotti non competitivi?</summary>
+      <p>Dal report Prezzi e Benchmark di Merchant Center: i prodotti fuori mercato vengono marcati come non_competitive tramite feed supplementare ed esclusi dalle campagne a pagamento.</p>
+    </details>
+    <details>
+      <summary>Escludere prodotti riduce il fatturato?</summary>
+      <p>In genere no: il budget disperso su articoli che ricevono clic senza convertire si concentra dove il prezzo regge. ROAS più alto a parità di spesa.</p>
+    </details>
+
+    <div class="cta">
+      <p><strong>Vuoi strutturare le tue etichette?</strong></p>
+      <p style="color:var(--text-muted);font-size:.9rem;">Ti mostro come classificare il catalogo in base al benchmark prezzi. Risposta entro 24 ore.</p>
+      <a class="btn" href="https://stefanosupernet-sudo.github.io/g-man-data-hero/#contatti">Richiedi l’audit gratuito</a>
+    </div>
+  </article>
+
+  <footer>
+    <div class="container">
+      <a href="./">← Tutti gli articoli</a> ·
+      <a href="https://stefanosupernet-sudo.github.io/g-man-data-hero/">Home G-Man</a>
+    </div>
+  </footer>
+</body>
+</html>
