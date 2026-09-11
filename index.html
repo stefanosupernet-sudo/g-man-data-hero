@@ -123,7 +123,7 @@
       <div class="form-card" id="audit-form-hero">
         <h2>AUDIT GRATUITO</h2>
         <p style="color:var(--text-muted);font-size:.9rem;margin-bottom:1rem">Analisi del tuo account Google Ads. Risposta entro 24 ore.</p>
-        <form onsubmit="event.preventDefault();alert('Contatta Stefano su WhatsApp per l\'audit gratuito.');">
+        <form id="audit-form" action="#" method="post">
           <div class="form-group"><label>Nome *</label><input required placeholder="Il tuo nome" name="nome" autocomplete="name" /></div>
           <div class="form-group"><label>Email *</label><input type="email" required placeholder="nome@azienda.it" name="email" autocomplete="email" /></div>
           <button type="submit" class="btn btn-primary" style="width:100%">Invia richiesta</button>
@@ -217,8 +217,80 @@
   </div></footer>
   <a href="https://wa.me/393471988894" class="wa-fab" target="_blank" rel="noopener" aria-label="Contatta su WhatsApp">WA</a>
   <script>
-    document.getElementById('menuBtn').onclick=()=>document.getElementById('mobileNav').classList.toggle('open');
-    document.querySelectorAll('#mobileNav a').forEach(a=>a.onclick=()=>document.getElementById('mobileNav').classList.remove('open'));
+    document.getElementById('menuBtn').onclick=function(){document.getElementById('mobileNav').classList.toggle('open');};
+    document.querySelectorAll('#mobileNav a').forEach(function(a){a.onclick=function(){document.getElementById('mobileNav').classList.remove('open');};});
+
+    function track(name, params){
+      params = params || {};
+      if (typeof gtag === 'function') gtag('event', name, params);
+    }
+
+    document.querySelectorAll('a[href*="wa.me"]').forEach(function(el){
+      el.addEventListener('click', function(){
+        var loc = el.classList.contains('wa-fab') ? 'fab' :
+                  (el.closest('#contatti') ? 'contatti' :
+                  (el.closest('.hero') ? 'hero' : 'other'));
+        track('click_whatsapp', { event_category: 'engagement', location: loc, link_url: el.href });
+      });
+    });
+
+    document.querySelectorAll('a[href="#contatti"]').forEach(function(el){
+      el.addEventListener('click', function(){
+        track('click_audit_cta', { event_category: 'engagement', location: el.classList.contains('btn-header') ? 'header' : (el.closest('.hero') ? 'hero' : 'other') });
+      });
+    });
+
+    document.querySelectorAll('a[href^="/blog"]').forEach(function(el){
+      el.addEventListener('click', function(){
+        track('click_blog', { event_category: 'engagement', link_url: el.getAttribute('href'), link_text: (el.textContent||'').trim().slice(0,80) });
+      });
+    });
+
+    var form = document.getElementById('audit-form');
+    if (form) {
+      form.addEventListener('submit', function(e){
+        e.preventDefault();
+        track('generate_lead', {
+          event_category: 'conversion',
+          method: 'audit_form',
+          form_id: 'audit-form-hero'
+        });
+        track('audit_form_submit', { event_category: 'conversion' });
+        alert('Grazie! Contatta Stefano su WhatsApp per completare l\'audit gratuito.');
+        window.open('https://wa.me/393471988894?text=' + encodeURIComponent('Ciao Stefano, ho richiesto l\'audit gratuito dal sito.'), '_blank');
+      });
+    }
+
+    var depths = {50:false, 90:false};
+    window.addEventListener('scroll', function(){
+      var h = document.documentElement.scrollHeight - window.innerHeight;
+      if (h <= 0) return;
+      var p = Math.round((window.scrollY / h) * 100);
+      [50, 90].forEach(function(d){
+        if (!depths[d] && p >= d) {
+          depths[d] = true;
+          track('scroll', { event_category: 'engagement', percent_scrolled: d });
+        }
+      });
+    }, {passive:true});
+
+    if ('IntersectionObserver' in window) {
+      var seen = {};
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(en){
+          if (!en.isIntersecting) return;
+          var id = en.target.id;
+          if (!id || seen[id]) return;
+          seen[id] = true;
+          track('view_section', { event_category: 'engagement', section_id: id });
+          io.unobserve(en.target);
+        });
+      }, {threshold: 0.4});
+      ['perche','servizi','casi','chi-sono','come-lavoro','faq','contatti'].forEach(function(id){
+        var el = document.getElementById(id);
+        if (el) io.observe(el);
+      });
+    }
   </script>
 </body>
 </html>
