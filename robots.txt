@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://stefanosupernet-sudo.github.io/g-man-data-hero/sitemap.xml
+Sitemap: https://stefanodagogle.com/sitemap.xml
