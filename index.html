@@ -123,10 +123,17 @@
       <div class="form-card" id="audit-form-hero">
         <h2>AUDIT GRATUITO</h2>
         <p style="color:var(--text-muted);font-size:.9rem;margin-bottom:1rem">Analisi del tuo account Google Ads. Risposta entro 24 ore.</p>
-        <form id="audit-form" action="#" method="post">
+        <form id="audit-form" action="https://formsubmit.co/stefano.superina@gmail.com" method="POST">
+          <input type="hidden" name="_subject" value="Nuova richiesta audit — stefanodagogle.com" />
+          <input type="hidden" name="_template" value="table" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
           <div class="form-group"><label>Nome *</label><input required placeholder="Il tuo nome" name="nome" autocomplete="name" /></div>
           <div class="form-group"><label>Email *</label><input type="email" required placeholder="nome@azienda.it" name="email" autocomplete="email" /></div>
-          <button type="submit" class="btn btn-primary" style="width:100%">Invia richiesta</button>
+          <div class="form-group"><label>Azienda / sito</label><input placeholder="es. miosito.it" name="azienda" autocomplete="organization" /></div>
+          <div class="form-group"><label>Messaggio</label><textarea name="messaggio" rows="3" placeholder="Breve contesto (opzionale)"></textarea></div>
+          <button type="submit" class="btn btn-primary" style="width:100%" id="audit-submit">Invia richiesta</button>
+          <p id="form-status" style="display:none;margin-top:.75rem;font-size:.85rem;color:var(--accent)"></p>
         </form>
       </div>
     </div></section>
@@ -146,9 +153,9 @@
       <div class="services-grid">
         <div class="service-card"><h3>Google Ads</h3><p style="color:var(--text-muted)">Search, Performance Max, Shopping e YouTube.</p></div>
         <div class="service-card"><h3>Google Analytics 4</h3><p style="color:var(--text-muted)">Eventi, conversioni e insight azionabili.</p></div>
-        <div class="service-card"><h3>Merchant Center &amp; Feed</h3><p style="color:var(--text-muted)">Feed puliti e ottimizzazione Shopping / PMax.</p></div>
-        <div class="service-card"><h3>Tag Manager &amp; Tracking</h3><p style="color:var(--text-muted)">Data layer e server-side a prova di futuro.</p></div>
-        <div class="service-card"><h3>Consulenza strategica &amp; AI</h3><p style="color:var(--text-muted)">Partnership continuativa con focus su ROI.</p></div>
+        <div class="service-card"><h3>Merchant Center & Feed</h3><p style="color:var(--text-muted)">Feed puliti e ottimizzazione Shopping / PMax.</p></div>
+        <div class="service-card"><h3>Tag Manager & Tracking</h3><p style="color:var(--text-muted)">Data layer e server-side a prova di futuro.</p></div>
+        <div class="service-card"><h3>Consulenza strategica & AI</h3><p style="color:var(--text-muted)">Partnership continuativa con focus su ROI.</p></div>
       </div>
     </div></section>
     <section id="casi"><div class="container">
@@ -200,7 +207,7 @@
       <div class="faq-list">
         <details><summary>Lavori solo con grandi aziende?</summary><p style="color:var(--text-muted);margin-top:.75rem">No. PMI, e-commerce e agenzie. Rapporto diretto.</p></details>
         <details><summary>Quanto costa un audit?</summary><p style="color:var(--text-muted);margin-top:.75rem">L'audit iniziale è gratuito e senza impegno.</p></details>
-        <details><summary>Come ti contatto?</summary><p style="color:var(--text-muted);margin-top:.75rem">Modulo in pagina o WhatsApp. Risposta entro 24 ore.</p></details>
+        <details><summary>Come ti contatto?</summary><p style="color:var(--text-muted);margin-top:.75rem">Modulo in pagina, email o WhatsApp. Risposta entro 24 ore.</p></details>
       </div>
     </div></section>
     <section id="contatti"><div class="container" style="text-align:center;max-width:36rem;margin:0 auto">
@@ -208,6 +215,7 @@
       <h2 class="section-title">RICHIEDI IL TUO AUDIT GRATUITO</h2>
       <p class="section-lead" style="margin-left:auto;margin-right:auto">Senza impegno. Risposta entro 24 ore.</p>
       <a href="https://wa.me/393471988894" class="btn btn-primary" target="_blank" rel="noopener">Parla su WhatsApp</a>
+      <p style="margin-top:1rem;font-size:.85rem;color:var(--text-muted)">oppure <a href="mailto:stefano.superina@gmail.com" style="color:var(--accent)">stefano.superina@gmail.com</a></p>
     </div></section>
   </main>
   <footer><div class="container">
@@ -250,14 +258,31 @@
     if (form) {
       form.addEventListener('submit', function(e){
         e.preventDefault();
-        track('generate_lead', {
-          event_category: 'conversion',
-          method: 'audit_form',
-          form_id: 'audit-form-hero'
+        var btn = document.getElementById('audit-submit');
+        var status = document.getElementById('form-status');
+        var data = new FormData(form);
+        btn.disabled = true;
+        btn.textContent = 'Invio in corso…';
+        fetch('https://formsubmit.co/ajax/stefano.superina@gmail.com', {
+          method: 'POST',
+          body: data,
+          headers: { 'Accept': 'application/json' }
+        }).then(function(r){ return r.json().then(function(j){ return {ok:r.ok, j:j}; }); })
+        .then(function(res){
+          track('generate_lead', { event_category: 'conversion', method: 'audit_form', form_id: 'audit-form-hero' });
+          track('audit_form_submit', { event_category: 'conversion' });
+          status.style.display = 'block';
+          status.style.color = 'var(--accent)';
+          status.textContent = 'Richiesta inviata. Ti rispondo entro 24 ore su email.';
+          form.reset();
+          btn.textContent = 'Inviato ✓';
+        }).catch(function(){
+          status.style.display = 'block';
+          status.style.color = 'var(--primary)';
+          status.textContent = 'Invio non riuscito. Scrivimi su WhatsApp o a stefano.superina@gmail.com';
+          btn.disabled = false;
+          btn.textContent = 'Invia richiesta';
         });
-        track('audit_form_submit', { event_category: 'conversion' });
-        alert('Grazie! Contatta Stefano su WhatsApp per completare l\'audit gratuito.');
-        window.open('https://wa.me/393471988894?text=' + encodeURIComponent('Ciao Stefano, ho richiesto l\'audit gratuito dal sito.'), '_blank');
       });
     }
 
