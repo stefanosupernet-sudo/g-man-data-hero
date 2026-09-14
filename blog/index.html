@@ -66,19 +66,30 @@
       <p class="lead">Dati di account, strutture di campagne e lezioni da ottimizzazioni vere.</p>
     </div>
     <div class="grid">
+      <article class="card" style="border-color:rgba(251,188,4,.35)">
+        <p class="tag">Fumetto interattivo · Nuovo</p>
+        <h2><a href="/blog/google-ads-esperimento-77600/">Google Ads: l’esperimento da 77.600€ in meno</a></h2>
+        <p class="meta"><time datetime="2026-09-14">14 settembre 2026</time></p>
+        <p>Sette vignette, dati reali: 1.880€ “risparmiati”, 77.600€ di vendite perse. Le campagne sono il motore, non un costo da amputare.</p>
+        <div class="metrics">
+          <div class="m"><strong>−77.600€</strong><span>Valore conversioni</span></div>
+          <div class="m"><strong>−63%</strong><span>ROAS</span></div>
+          <div class="m"><strong>Fumetto</strong><span>7 vignette</span></div>
+        </div>
+        <a class="more" href="/blog/google-ads-esperimento-77600/">Leggi il fumetto →</a>
+      </article>
       <article class="card">
         <p class="tag">Caso studio · Agosto 2026</p>
         <h2><a href="/blog/roas-google-ads-200-agosto-2026/">ROAS +200%: costo e CPC dimezzati</a></h2>
         <p class="meta"><time datetime="2026-09-02">2 settembre 2026</time></p>
         <p>Da ROAS 4,13 a 12,32, CPC −44%, costo −22%.</p>
-        <div class="metrics"><div class="m"><strong>+200%</strong><span>ROAS</span></div><div class="m"><strong>−44%</strong><span>CPC</span></div></div>
         <a class="more" href="/blog/roas-google-ads-200-agosto-2026/">Leggi l’articolo →</a>
       </article>
       <article class="card">
         <p class="tag">Esperimento</p>
         <h2><a href="/blog/esperimento-spegnere-google-ads/">Spegnere Google Ads: −77.600€</a></h2>
         <p class="meta"><time datetime="2026-09-03">3 settembre 2026</time></p>
-        <p>1.880€ risparmiati, 77.600€ di vendite perse.</p>
+        <p>1.880€ risparmiati, 77.600€ di vendite perse. Versione in prosa.</p>
         <a class="more" href="/blog/esperimento-spegnere-google-ads/">Leggi l’articolo →</a>
       </article>
       <article class="card">
@@ -96,18 +107,9 @@
     track('view_blog', { event_category: 'engagement', page_path: location.pathname });
     document.querySelectorAll('a[href^="/blog/"]').forEach(function(el){
       el.addEventListener('click', function(){
-        track('click_blog', { event_category: 'engagement', link_url: el.getAttribute('href'), link_text: (el.textContent||'').trim().slice(0,80) });
+        track('click_blog', { event_category: 'engagement', link_url: el.getAttribute('href') });
       });
     });
-    document.querySelectorAll('a[href*="#contatti"]').forEach(function(el){
-      el.addEventListener('click', function(){ track('click_audit_cta', { event_category: 'engagement', location: 'blog' }); });
-    });
-    var depths={50:false,90:false};
-    window.addEventListener('scroll', function(){
-      var h=document.documentElement.scrollHeight-window.innerHeight; if(h<=0)return;
-      var p=Math.round(window.scrollY/h*100);
-      [50,90].forEach(function(d){ if(!depths[d]&&p>=d){ depths[d]=true; track('scroll',{event_category:'engagement',percent_scrolled:d}); }});
-    }, {passive:true});
   </script>
 </body>
 </html>
