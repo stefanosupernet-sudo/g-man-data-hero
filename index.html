@@ -78,6 +78,14 @@
     .menu-toggle{display:flex;background:none;border:1px solid var(--border);color:var(--text);padding:.4rem .7rem;border-radius:.4rem;font-size:.85rem;cursor:pointer}@media(min-width:1024px){.menu-toggle{display:none}}
     .mobile-nav{display:none;flex-direction:column;gap:.75rem;padding:1rem 1.25rem;border-top:1px solid var(--border)}.mobile-nav.open{display:flex}
     .metric-value{font-family:var(--font-display);font-size:1.5rem;color:var(--primary)}.case-link{color:var(--accent);font-weight:600}.step-num{font-family:var(--font-display);font-size:2rem;color:var(--primary)}
+    .socials{display:flex;align-items:center;gap:.55rem}
+    .socials a{display:grid;place-items:center;width:34px;height:34px;border-radius:8px;border:1px solid var(--border);color:var(--text-muted);transition:color .15s,border-color .15s,background .15s}
+    .socials a:hover{color:var(--accent);border-color:rgba(34,211,238,.45);background:rgba(34,211,238,.08)}
+    .socials a svg{width:16px;height:16px;fill:currentColor}
+    footer .socials{justify-content:center;margin:1rem 0 .75rem}
+    footer .socials a{width:40px;height:40px}
+    footer .socials a svg{width:18px;height:18px}
+    @media(max-width:1023px){.header-socials{display:none}}
   </style>
 </head>
 <body>
@@ -97,6 +105,22 @@
         <a href="/blog/">Blog</a>
       </nav>
       <div style="display:flex;align-items:center;gap:.75rem">
+        <div class="header-socials">
+      <div class="socials" aria-label="Social">
+        <a href="https://www.facebook.com/stefanogoogle" target="_blank" rel="noopener noreferrer" aria-label="Facebook" title="Facebook">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.07C24 5.41 18.63 0 12 0S0 5.41 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.04v-2.66c0-3.02 1.79-4.7 4.53-4.7 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.95.93-1.95 1.89v2.26h3.32l-.53 3.49h-2.79V24C19.62 23.1 24 18.1 24 12.07z"/></svg>
+        </a>
+        <a href="https://www.youtube.com/@G-Man-YourDataHero" target="_blank" rel="noopener noreferrer" aria-label="YouTube" title="YouTube">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5 6.2a3.02 3.02 0 0 0-2.12-2.14C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.38.56A3.02 3.02 0 0 0 .5 6.2 31.6 31.6 0 0 0 0 12a31.6 31.6 0 0 0 .5 5.8 3.02 3.02 0 0 0 2.12 2.14C4.5 20.5 12 20.5 12 20.5s7.5 0 9.38-.56a3.02 3.02 0 0 0 2.12-2.14A31.6 31.6 0 0 0 24 12a31.6 31.6 0 0 0-.5-5.8zM9.75 15.02V8.98L15.5 12l-5.75 3.02z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/g_man.your_data_hero/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 3.25.15 4.77 1.69 4.92 4.92.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.15 3.23-1.66 4.77-4.92 4.92-1.27.06-1.64.07-4.85.07s-3.58-.01-4.85-.07c-3.26-.15-4.77-1.7-4.92-4.92-.06-1.27-.07-1.64-.07-4.85s.01-3.58.07-4.85C2.38 3.92 3.9 2.38 7.15 2.23 8.42 2.17 8.8 2.16 12 2.16zm0 1.8c-3.15 0-3.52.01-4.76.07-2.25.1-3.29 1.14-3.39 3.39-.06 1.24-.07 1.61-.07 4.76s.01 3.52.07 4.76c.1 2.25 1.14 3.29 3.39 3.39 1.24.06 1.61.07 4.76.07s3.52-.01 4.76-.07c2.25-.1 3.29-1.14 3.39-3.39.06-1.24.07-1.61.07-4.76s-.01-3.52-.07-4.76c-.1-2.25-1.14-3.29-3.39-3.39-1.24-.06-1.61-.07-4.76-.07zm0 3.06a5.16 5.16 0 1 1 0 10.32 5.16 5.16 0 0 1 0-10.32zm0 1.8a3.36 3.36 0 1 0 0 6.72 3.36 3.36 0 0 0 0-6.72zm5.34-2.1a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4z"/></svg>
+        </a>
+        <a href="https://www.tiktok.com/@stefano.superina" target="_blank" rel="noopener noreferrer" aria-label="TikTok" title="TikTok">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .56.04.83.12V9.01a6.27 6.27 0 0 0-.83-.06A6.34 6.34 0 0 0 3.16 15.3a6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.34-6.34V8.72a8.2 8.2 0 0 0 4.79 1.53V6.8a4.85 4.85 0 0 1-1.04-.11z"/></svg>
+        </a>
+      </div>
+        </div>
         <a href="#contatti" class="btn btn-primary btn-header">Audit gratuito</a>
         <button class="menu-toggle" id="menuBtn" aria-label="Apri menu">Menu</button>
       </div>
@@ -153,9 +177,9 @@
       <div class="services-grid">
         <div class="service-card"><h3>Google Ads</h3><p style="color:var(--text-muted)">Search, Performance Max, Shopping e YouTube.</p></div>
         <div class="service-card"><h3>Google Analytics 4</h3><p style="color:var(--text-muted)">Eventi, conversioni e insight azionabili.</p></div>
-        <div class="service-card"><h3>Merchant Center & Feed</h3><p style="color:var(--text-muted)">Feed puliti e ottimizzazione Shopping / PMax.</p></div>
-        <div class="service-card"><h3>Tag Manager & Tracking</h3><p style="color:var(--text-muted)">Data layer e server-side a prova di futuro.</p></div>
-        <div class="service-card"><h3>Consulenza strategica & AI</h3><p style="color:var(--text-muted)">Partnership continuativa con focus su ROI.</p></div>
+        <div class="service-card"><h3>Merchant Center &amp; Feed</h3><p style="color:var(--text-muted)">Feed puliti e ottimizzazione Shopping / PMax.</p></div>
+        <div class="service-card"><h3>Tag Manager &amp; Tracking</h3><p style="color:var(--text-muted)">Data layer e server-side a prova di futuro.</p></div>
+        <div class="service-card"><h3>Consulenza strategica &amp; AI</h3><p style="color:var(--text-muted)">Partnership continuativa con focus su ROI.</p></div>
       </div>
     </div></section>
     <section id="casi"><div class="container">
@@ -221,6 +245,20 @@
   <footer><div class="container">
     <div class="logo-text">G-MAN <span>DATA HERO</span></div>
     <p>Ex Google Strategist · Google Premier Partner · <a href="/blog/" style="color:var(--accent)">Blog</a></p>
+      <div class="socials" aria-label="Social">
+        <a href="https://www.facebook.com/stefanogoogle" target="_blank" rel="noopener noreferrer" aria-label="Facebook" title="Facebook">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.07C24 5.41 18.63 0 12 0S0 5.41 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.04v-2.66c0-3.02 1.79-4.7 4.53-4.7 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.95.93-1.95 1.89v2.26h3.32l-.53 3.49h-2.79V24C19.62 23.1 24 18.1 24 12.07z"/></svg>
+        </a>
+        <a href="https://www.youtube.com/@G-Man-YourDataHero" target="_blank" rel="noopener noreferrer" aria-label="YouTube" title="YouTube">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5 6.2a3.02 3.02 0 0 0-2.12-2.14C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.38.56A3.02 3.02 0 0 0 .5 6.2 31.6 31.6 0 0 0 0 12a31.6 31.6 0 0 0 .5 5.8 3.02 3.02 0 0 0 2.12 2.14C4.5 20.5 12 20.5 12 20.5s7.5 0 9.38-.56a3.02 3.02 0 0 0 2.12-2.14A31.6 31.6 0 0 0 24 12a31.6 31.6 0 0 0-.5-5.8zM9.75 15.02V8.98L15.5 12l-5.75 3.02z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/g_man.your_data_hero/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 3.25.15 4.77 1.69 4.92 4.92.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.15 3.23-1.66 4.77-4.92 4.92-1.27.06-1.64.07-4.85.07s-3.58-.01-4.85-.07c-3.26-.15-4.77-1.7-4.92-4.92-.06-1.27-.07-1.64-.07-4.85s.01-3.58.07-4.85C2.38 3.92 3.9 2.38 7.15 2.23 8.42 2.17 8.8 2.16 12 2.16zm0 1.8c-3.15 0-3.52.01-4.76.07-2.25.1-3.29 1.14-3.39 3.39-.06 1.24-.07 1.61-.07 4.76s.01 3.52.07 4.76c.1 2.25 1.14 3.29 3.39 3.39 1.24.06 1.61.07 4.76.07s3.52-.01 4.76-.07c2.25-.1 3.29-1.14 3.39-3.39.06-1.24.07-1.61.07-4.76s-.01-3.52-.07-4.76c-.1-2.25-1.14-3.29-3.39-3.39-1.24-.06-1.61-.07-4.76-.07zm0 3.06a5.16 5.16 0 1 1 0 10.32 5.16 5.16 0 0 1 0-10.32zm0 1.8a3.36 3.36 0 1 0 0 6.72 3.36 3.36 0 0 0 0-6.72zm5.34-2.1a1.2 1.2 0 0 1 0 2.4 1.2 1.2 0 0 1 0-2.4z"/></svg>
+        </a>
+        <a href="https://www.tiktok.com/@stefano.superina" target="_blank" rel="noopener noreferrer" aria-label="TikTok" title="TikTok">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .56.04.83.12V9.01a6.27 6.27 0 0 0-.83-.06A6.34 6.34 0 0 0 3.16 15.3a6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.34-6.34V8.72a8.2 8.2 0 0 0 4.79 1.53V6.8a4.85 4.85 0 0 1-1.04-.11z"/></svg>
+        </a>
+      </div>
     <p style="font-size:.75rem;margin-top:.75rem">© 2026 Stefano Superina — <a href="https://stefanodagogle.com/" style="color:inherit">stefanodagogle.com</a></p>
   </div></footer>
   <a href="https://wa.me/393471988894" class="wa-fab" target="_blank" rel="noopener" aria-label="Contatta su WhatsApp">WA</a>
@@ -232,6 +270,12 @@
       params = params || {};
       if (typeof gtag === 'function') gtag('event', name, params);
     }
+
+    document.querySelectorAll('.socials a').forEach(function(el){
+      el.addEventListener('click', function(){
+        track('click_social', { event_category: 'engagement', network: el.getAttribute('aria-label')||'', link_url: el.href });
+      });
+    });
 
     document.querySelectorAll('a[href*="wa.me"]').forEach(function(el){
       el.addEventListener('click', function(){
