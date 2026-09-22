@@ -60,5 +60,6 @@
     document.querySelectorAll('a[href*="#contatti"]').forEach(function(el){el.addEventListener('click',function(){track('click_audit_cta',{event_category:'engagement',location:'article'});});});
     var d={50:0,90:0};window.addEventListener('scroll',function(){var h=document.documentElement.scrollHeight-innerHeight;if(h<=0)return;var p=Math.round(scrollY/h*100);[50,90].forEach(function(x){if(!d[x]&&p>=x){d[x]=1;track('scroll',{percent_scrolled:x});}});},{passive:true});
   </script>
+<script src="/assets/contact-wa.js" defer></script>
 </body>
 </html>
