@@ -18,7 +18,199 @@
   <meta name="robots" content="index, follow, max-image-preview:large" />
   <meta name="keywords" content="etichette personalizzate Google Shopping, custom_label, feed supplementare, Merchant Center benchmark, prodotti fuori mercato, Performance Max filtro, Google Shopping concorrenza" />
   <link rel="canonical" href="https://stefanodagogle.com/blog/etichette-personalizzate-filtri-concorrenza/" />
-  <!-- truncated for tool limit - full content follows in next call if needed -->
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="it_IT" />
+  <meta property="og:site_name" content="G-Man Data Hero" />
+  <meta property="og:title" content="Etichette personalizzate Google Shopping: filtrare i prodotti fuori mercato" />
+  <meta property="og:description" content="Caso studio a fumetti: custom_label e feed supplementare per isolare 847 SKU fuori mercato e far salire il ROAS senza svendere." />
+  <meta property="og:url" content="https://stefanodagogle.com/blog/etichette-personalizzate-filtri-concorrenza/" />
+  <meta property="og:image" content="https://stefanodagogle.com/assets/etichette/gman-google-shopping-etichette.jpg" />
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Article","headline":"Etichette personalizzate Google Shopping: filtrare i prodotti fuori mercato","description":"Caso studio a fumetti: come usare custom_label e feed supplementare basato sul benchmark prezzi di Merchant Center per escludere i prodotti non competitivi.","author":{"@type":"Person","name":"Stefano Superina"},"publisher":{"@type":"Organization","name":"G-Man Data Hero"},"datePublished":"2026-09-07","dateModified":"2026-09-22"}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Cosa sono le etichette personalizzate (custom_label) in Google Shopping?","acceptedAnswer":{"@type":"Answer","text":"Sono cinque campi liberi del feed prodotto (custom_label_0…4) che permettono di raggruppare gli articoli secondo logiche tue: competitività di prezzo, margine, stagionalità o rendimento."}},{"@type":"Question","name":"Come filtro i prodotti non competitivi rispetto alla concorrenza?","acceptedAnswer":{"@type":"Answer","text":"Si parte dal report Prezzi e Benchmark di Merchant Center: i prodotti fuori mercato vengono marcati come non_competitive tramite feed supplementare ed esclusi dalle campagne a pagamento."}},{"@type":"Question","name":"Che cos'è un feed supplementare e perché serve?","acceptedAnswer":{"@type":"Answer","text":"È un file aggiuntivo (Google Sheet o SFTP) che si aggancia al feed principale tramite l'ID prodotto e aggiorna attributi come custom_label_0 senza rigenerare tutto il catalogo."}},{"@type":"Question","name":"Escludere prodotti dalle campagne riduce il fatturato?","acceptedAnswer":{"@type":"Answer","text":"In genere no: il budget si concentra sui prodotti dove il prezzo regge il confronto. ROAS più alto a parità di spesa."}},{"@type":"Question","name":"Ogni quanto vanno aggiornate le etichette competitive?","acceptedAnswer":{"@type":"Answer","text":"Aggiornamento automatico del feed supplementare ogni sei ore, con alert quando un prodotto torna competitivo."}},{"@type":"Question","name":"Come si usano le custom_label in Performance Max?","acceptedAnswer":{"@type":"Answer","text":"Si creano gruppi di asset per etichetta, escludendo non_competitive a livello di gruppo di asset."}}]}
+  </script>
+  <style>
+    :root{--bg:#0a0e1a;--card:#12182a;--text:#e8ecf4;--muted:#8b95a8;--primary:#ff4d2e;--accent:#4db8ff;--border:#1e2740;--font-d:'Bebas Neue',Impact,sans-serif;--font-b:'Barlow',system-ui,sans-serif}
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:var(--font-b);background:var(--bg);color:var(--text);line-height:1.65;font-size:1.05rem}
+    a{color:var(--accent);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{max-width:760px;margin:0 auto;padding:0 1.25rem}
+    header{padding:1rem 0;border-bottom:1px solid var(--border)}
+    header .inner{display:flex;align-items:center;justify-content:space-between;max-width:1100px;margin:0 auto;padding:0 1.25rem}
+    .logo{font-family:var(--font-d);font-size:1.5rem;letter-spacing:.04em;color:var(--text)}
+    .logo span{color:var(--primary)}
+    nav a{margin-left:1.25rem;color:var(--muted);font-size:.9rem}
+    nav a:hover{color:var(--text)}
+    .hero{padding:2.5rem 0 1.5rem}
+    .label{font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:.5rem}
+    h1{font-family:var(--font-d);font-size:clamp(1.8rem,4vw,2.6rem);line-height:1.15;margin-bottom:1rem;letter-spacing:.02em}
+    .meta{color:var(--muted);font-size:.9rem;margin-bottom:1.5rem}
+    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin:1.5rem 0}
+    .stat{background:var(--card);border:1px solid var(--border);border-radius:.75rem;padding:1rem;text-align:center}
+    .stat strong{display:block;font-family:var(--font-d);font-size:1.6rem;color:var(--primary)}
+    .stat span{font-size:.8rem;color:var(--muted)}
+    h2{font-family:var(--font-d);font-size:1.45rem;margin:2.5rem 0 1rem;border-left:3px solid var(--primary);padding-left:.75rem}
+    h3{font-size:1.1rem;margin:1.5rem 0 .5rem;color:var(--accent)}
+    .chapter{margin:2.5rem 0;padding-bottom:2rem;border-bottom:1px solid var(--border)}
+    .chapter:last-of-type{border-bottom:none}
+    .chapter-label{font-size:.75rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:.35rem}
+    .chapter-quote{font-style:italic;color:var(--muted);border-left:3px solid rgba(255,77,46,.5);padding-left:1rem;margin:1rem 0}
+    .chapter img{width:100%;border-radius:.85rem;margin:1.25rem 0;border:1px solid var(--border);display:block}
+    p{margin-bottom:1rem}
+    ul,ol{margin:0 0 1rem 1.25rem}
+    li{margin-bottom:.4rem}
+    .cta-box{background:linear-gradient(135deg,#1a2238,#12182a);border:1px solid var(--border);border-radius:1rem;padding:1.75rem;margin:2.5rem 0;text-align:center}
+    .cta-box h2{border:none;padding:0;margin:0 0 .75rem}
+    .btn{display:inline-block;background:var(--primary);color:#fff;padding:.7rem 1.4rem;border-radius:.5rem;font-weight:600;margin-top:.5rem}
+    .btn:hover{background:#e04428;text-decoration:none}
+    footer{margin-top:3rem;padding:2rem 0;border-top:1px solid var(--border);text-align:center;color:var(--muted);font-size:.85rem}
+    .brand{font-family:var(--font-d);font-size:1.2rem;margin-bottom:.5rem}
+    .brand span{color:var(--primary)}
+    .socials{display:flex;justify-content:center;gap:1rem;margin:1rem 0}
+    .socials a{display:inline-flex;width:36px;height:36px;align-items:center;justify-content:center;background:var(--card);border-radius:50%;border:1px solid var(--border)}
+    .socials svg{width:18px;height:18px;fill:var(--muted)}
+    .socials a:hover svg{fill:var(--accent)}
+    .faq-item{margin-bottom:1.25rem}
+    .faq-item h3{margin:0 0 .4rem;color:var(--text);font-size:1.05rem}
+    table{width:100%;border-collapse:collapse;margin:1rem 0;font-size:.95rem}
+    th,td{border:1px solid var(--border);padding:.6rem .75rem;text-align:left}
+    th{background:var(--card);color:var(--accent)}
+    code{background:var(--card);padding:.15rem .4rem;border-radius:.3rem;font-size:.9em}
+    pre{background:var(--card);padding:1rem;border-radius:.75rem;overflow-x:auto;margin:1rem 0;border:1px solid var(--border);font-size:.9rem}
+  </style>
+  <link rel="stylesheet" href="/assets/contact-wa.css" />
 </head>
-<body>FULL CONTENT TO BE COMPLETED</body>
+<body>
+  <header>
+    <div class="inner">
+      <a href="/" class="logo">G-MAN <span>DATA HERO</span></a>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/blog/">Blog</a>
+        <a href="/#contatti">Contatti</a>
+      </nav>
+    </div>
+  </header>
+  <main class="container">
+    <article class="hero">
+      <p class="label">G-Man Saga — Caso studio a fumetti • 6 capitoli</p>
+      <h1>ETICHETTE PERSONALIZZATE: FILTRARE I PRODOTTI IN BASE ALLA CONCORRENZA</h1>
+      <p class="meta">Stefano Superina · 7 settembre 2026 · ~12 min di lettura</p>
+      <p>Un e-commerce con 4.000 SKU vedeva i best seller soffocati dai prodotti fuori mercato. Nessuna bacchetta magica: benchmark prezzi, custom_label e feed supplementare per isolare chirurgicamente ciò che non può vincere l'asta.</p>
+      <div class="stats">
+        <div class="stat"><strong>847</strong><span>SKU fuori mercato isolati</span></div>
+        <div class="stat"><strong>80%</strong><span>del costo bruciato prima del filtro</span></div>
+        <div class="stat"><strong>+44%</strong><span>prezzo medio sopra il benchmark</span></div>
+      </div>
+      <div style="background:var(--card);border:1px solid var(--border);border-radius:.85rem;padding:1.25rem;margin:1.5rem 0">
+        <h2 style="border:none;padding:0;margin:0 0 .75rem;font-size:1.2rem">In breve</h2>
+        <ul>
+          <li>Report Prezzi e Benchmark di Merchant Center → etichette competitive / borderline / non_competitive</li>
+          <li>Feed supplementare aggiornato ogni 6 ore con custom_label_0</li>
+          <li>Esclusione dei non_competitive da Shopping e Performance Max</li>
+          <li>Budget concentrato dove il prezzo regge il confronto</li>
+        </ul>
+      </div>
+
+      <div class="chapter">
+        <p class="chapter-label">Cap 1 · Il gancio</p>
+        <h2>Quando il catalogo lavora contro di te</h2>
+        <p class="chapter-quote">Capitolo 1 — Il problema non è quanto spendi, ma <strong>su quali prodotti</strong> lo stai spendendo.</p>
+        <img src="/assets/etichette/cap1-gancio.jpg" alt="Capitolo 1 - Il gancio: catalogo che brucia budget" loading="lazy" width="760" height="420" />
+        <p>Quattromila SKU. Best seller sepolti sotto una valanga di articoli che non potevano competere sul prezzo. Il budget andava a finire dove l'asta era persa in partenza.</p>
+      </div>
+
+      <div class="chapter">
+        <p class="chapter-label">Cap 2 · Il problema</p>
+        <h2>Il costo nascosto dei prodotti fuori mercato</h2>
+        <p class="chapter-quote">Capitolo 2 — Nessun clic vale, se il prezzo non regge il confronto con la concorrenza.</p>
+        <img src="/assets/etichette/cap2-problema.jpg" alt="Capitolo 2 - Il problema dei prodotti fuori mercato" loading="lazy" width="760" height="420" />
+        <p>Il report Prezzi e Benchmark di Merchant Center mostrava chiaramente: centinaia di SKU con price_benchmark = OUT_OF_MARKET. Ogni impressione su quei prodotti era budget sprecato.</p>
+      </div>
+
+      <div class="chapter">
+        <p class="chapter-label">Cap 3 · La svolta</p>
+        <h2>Dai tagli a caso a una regola misurabile</h2>
+        <p class="chapter-quote">Capitolo 3 — Stessa faccia, nuova pipeline: dai tagli a caso a una regola misurabile.</p>
+        <img src="/assets/etichette/cap3-svolta.jpg" alt="Capitolo 3 - La svolta con le etichette" loading="lazy" width="760" height="420" />
+        <p>Invece di spegnere campagne o alzare le offerte alla cieca, abbiamo costruito un sistema basato sul benchmark prezzi. Tre categorie, una sola etichetta, aggiornamento automatico.</p>
+      </div>
+
+      <div class="chapter">
+        <p class="chapter-label">Cap 4 · Soluzione tecnica</p>
+        <h2>custom_label + feed supplementare</h2>
+        <p class="chapter-quote">Capitolo 4 — Tre categorie, una sola regola, aggiornata in automatico.</p>
+        <img src="/assets/etichette/cap4-soluzione.jpg" alt="Capitolo 4 - Soluzione tecnica custom_label" loading="lazy" width="760" height="420" />
+        <p>La regola:</p>
+        <pre>IF price_benchmark = IN_STOCK &amp; price_diff &lt;= 5%  =&gt; competitive
+IF price_benchmark = BORDERLINE (5-15%)           =&gt; borderline
+IF price_benchmark = OUT_OF_MARKET                =&gt; non_competitive
+IF clicks &gt; 50 &amp; conversions = 0                  =&gt; low_roi</pre>
+        <p>Il feed supplementare (Google Sheet) si aggancia all'ID prodotto e scrive su <code>custom_label_0</code>. Aggiornamento ogni 6 ore. Nelle campagne Shopping e Performance Max si escludono i gruppi con etichetta non_competitive.</p>
+        <table>
+          <thead><tr><th>Etichetta</th><th>Condizione</th><th>Azione</th></tr></thead>
+          <tbody>
+            <tr><td>competitive</td><td>price_diff ≤ 5%</td><td>Spinta piena in PMax e Shopping</td></tr>
+            <tr><td>borderline</td><td>scarto 5–15%</td><td>Offerta ridotta, osservazione</td></tr>
+            <tr><td>non_competitive</td><td>OUT_OF_MARKET</td><td>Escluso dalle campagne a pagamento</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="chapter">
+        <p class="chapter-label">Cap 5 · Pro e contro</p>
+        <h2>Filtrare conviene (se tieni la regola viva)</h2>
+        <p class="chapter-quote">Capitolo 5 — Filtrare conviene, a patto di tenere la regola viva nel tempo.</p>
+        <img src="/assets/etichette/cap5-procontro.jpg" alt="Capitolo 5 - Pro e contro del filtro" loading="lazy" width="760" height="420" />
+        <p><strong>Pro:</strong> budget concentrato, ROAS più alto, meno spreco su aste impossibili da vincere.</p>
+        <p><strong>Contro:</strong> se non aggiorni le etichette, un prodotto che torna competitivo resta escluso. Per questo l'automazione ogni 6 ore è obbligatoria.</p>
+      </div>
+
+      <div class="chapter">
+        <p class="chapter-label">Cap 6 · Call to action</p>
+        <h2>Il filtro è una decisione di business</h2>
+        <p class="chapter-quote">Capitolo 6 — Il filtro è una decisione di business, non un dettaglio tecnico.</p>
+        <img src="/assets/etichette/cap6-cta.jpg" alt="Capitolo 6 - Call to action" loading="lazy" width="760" height="420" />
+        <p>847 SKU isolati. Il 80% del costo che prima andava in prodotti fuori mercato è stato riallocato. Il prezzo medio degli articoli ancora in asta è salito del 44% rispetto al benchmark. Nessuna svendita: solo chiarezza su dove ha senso competere.</p>
+      </div>
+
+      <h2>Domande frequenti</h2>
+      <div class="faq-item"><h3>Cosa sono le etichette personalizzate (custom_label) in Google Shopping?</h3><p>Sono cinque campi liberi del feed prodotto (custom_label_0…4) che permettono di raggruppare gli articoli secondo logiche tue: competitività di prezzo, margine, stagionalità o rendimento.</p></div>
+      <div class="faq-item"><h3>Come filtro i prodotti non competitivi rispetto alla concorrenza?</h3><p>Si parte dal report Prezzi e Benchmark di Merchant Center: i prodotti fuori mercato vengono marcati come non_competitive tramite feed supplementare ed esclusi dalle campagne a pagamento.</p></div>
+      <div class="faq-item"><h3>Che cos'è un feed supplementare e perché serve?</h3><p>È un file aggiuntivo (Google Sheet o SFTP) che si aggancia al feed principale tramite l'ID prodotto e aggiorna attributi come custom_label_0 senza rigenerare tutto il catalogo.</p></div>
+      <div class="faq-item"><h3>Escludere prodotti dalle campagne riduce il fatturato?</h3><p>In genere no: il budget si concentra sui prodotti dove il prezzo regge il confronto. ROAS più alto a parità di spesa.</p></div>
+      <div class="faq-item"><h3>Ogni quanto vanno aggiornate le etichette competitive?</h3><p>Aggiornamento automatico del feed supplementare ogni sei ore, con alert quando un prodotto torna competitivo.</p></div>
+      <div class="faq-item"><h3>Come si usano le custom_label in Performance Max?</h3><p>Si creano gruppi di asset per etichetta, escludendo non_competitive a livello di gruppo di asset.</p></div>
+
+      <div class="cta-box">
+        <h2>Vuoi strutturare le tue etichette?</h2>
+        <p>Ti mostro come classificare il tuo catalogo in base al benchmark prezzi. Risposta entro 24 ore.</p>
+        <a class="btn" href="/#contatti" onclick="gtag('event','click_audit_cta',{event_category:'CTA',event_label:'etichette_cta'})">Invia richiesta</a>
+        <p style="margin-top:1rem;font-size:.85rem;color:var(--muted)">Nessuno spam. Rispondo personalmente, in genere entro 24 ore.</p>
+      </div>
+
+      <p style="margin-top:2rem"><a href="/blog/" style="color:var(--accent)">← Torna al Blog</a></p>
+    </article>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="brand">G-MAN <span>DATA HERO</span></div>
+      <div class="socials" aria-label="Social">
+        <a href="https://www.facebook.com/stefanogoogle" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M24 12.07C24 5.41 18.63 0 12 0S0 5.41 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.04v-2.66c0-3.02 1.79-4.7 4.53-4.7 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.95.93-1.95 1.89v2.26h3.32l-.53 3.49h-2.79V24C19.62 23.1 24 18.1 24 12.07z"/></svg></a>
+        <a href="https://www.youtube.com/@G-Man-YourDataHero" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M23.5 6.2a3.02 3.02 0 0 0-2.12-2.14C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.38.56A3.02 3.02 0 0 0 .5 6.2 31.6 31.6 0 0 0 0 12a31.6 31.6 0 0 0 .5 5.8 3.02 3.02 0 0 0 2.12 2.14C4.5 20.5 12 20.5 12 20.5s7.5 0 9.38-.56a3.02 3.02 0 0 0 2.12-2.14A31.6 31.6 0 0 0 24 12a31.6 31.6 0 0 0-.5-5.8zM9.75 15.5v-7l6.5 3.5-6.5 3.5z"/></svg></a>
+        <a href="https://www.instagram.com/g_man.your_data_hero/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 3.25.15 4.77 1.69 4.92 4.92.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.15 3.23-1.66 4.77-4.92 4.92-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-3.26-.15-4.77-1.7-4.92-4.92-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85C2.38 3.92 3.9 2.38 7.15 2.23 8.42 2.17 8.8 2.16 12 2.16M12 0C8.74 0 8.33.01 7.05.07 2.7.27.27 2.69.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.2 4.36 2.62 6.78 6.98 6.98C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c4.35-.2 6.78-2.62 6.98-6.98.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95C23.73 2.69 21.31.27 16.95.07 15.67.01 15.26 0 12 0zm0 5.84a6.16 6.16 0 1 0 0 12.32 6.16 6.16 0 0 0 0-12.32zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.41-11.85a1.44 1.44 0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88z"/></svg></a>
+        <a href="https://www.tiktok.com/@stefano.superina" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 0 0-.79-.05A6.34 6.34 0 0 0 3.16 15.3a6.34 6.34 0 0 0 10.86 4.48V13a8.2 8.2 0 0 0 4.78 1.52V11a4.84 4.84 0 0 1-1.21-.31z"/></svg></a>
+      </div>
+      <p>© 2026 G-Man Data Hero · Stefano Superina · Google Partner</p>
+    </div>
+  </footer>
+  <script>
+    gtag('event','view_article',{event_category:'Blog',event_label:'etichette-personalizzate-filtri-concorrenza',article_slug:'etichette-personalizzate-filtri-concorrenza'});
+  </script>
+<script src="/assets/contact-wa.js" defer></script>
+</body>
 </html>

@@ -1,1 +1,144 @@
-PLACEHOLDER_WILL_REPLACE
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PJ43MG4PXR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-PJ43MG4PXR');
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0a0e1a" />
+  <title>Metriche Google Ads: Guida a CTR, CPC, Conversioni e ROAS</title>
+  <meta name="description" content="Scopri le metriche chiave di Google Ads con esempi pratici. Impara a calcolare e interpretare CTR, CPC medio, valore conversioni e ROAS per il tuo business." />
+  <meta name="author" content="Stefano Superina" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta name="keywords" content="Metriche Google Ads, Glossario Google Ads, Cosa è il CTR Google Ads, Significato CTR e CPC, Cpc medio Google Ads, Cosa sono le conversioni Google Ads, Costo per conversione CPA, Valore conversione Google Ads, Cos'è il ROAS, Come si calcola il ROAS, Return on Ad Spend cos'è" />
+  <link rel="canonical" href="https://stefanodagogle.com/blog/glossario-metriche-google-ads/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="it_IT" />
+  <meta property="og:site_name" content="G-Man Data Hero" />
+  <meta property="og:title" content="Metriche Google Ads: Guida a CTR, CPC, Conversioni e ROAS" />
+  <meta property="og:description" content="Scopri le metriche chiave di Google Ads con esempi pratici. Impara a calcolare e interpretare CTR, CPC medio, valore conversioni e ROAS." />
+  <meta property="og:url" content="https://stefanodagogle.com/blog/glossario-metriche-google-ads/" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Glossario Google Ads: Le Metriche Chiave (CTR, CPC, Conversioni e ROAS)","description":"Guida pratica alle metriche fondamentali di Google Ads.","author":{"@type":"Person","name":"Stefano Superina","url":"https://stefanodagogle.com/"},"publisher":{"@type":"Organization","name":"G-Man Data Hero"},"datePublished":"2026-09-21","dateModified":"2026-09-22","mainEntityOfPage":{"@type":"WebPage","@id":"https://stefanodagogle.com/blog/glossario-metriche-google-ads/"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Cos'è un'Impressione in Google Ads?","acceptedAnswer":{"@type":"Answer","text":"L'impressione viene conteggiata ogni volta che il tuo annuncio appare nei risultati di ricerca di Google."}},{"@type":"Question","name":"Cos'è il CTR e come si interpreta?","acceptedAnswer":{"@type":"Answer","text":"Il CTR è la percentuale di click rispetto alle impressioni. Misura l'attrattiva dell'annuncio rispetto alle parole chiave."}},{"@type":"Question","name":"Cos'è il CPC Medio?","acceptedAnswer":{"@type":"Answer","text":"Il CPC medio è la media del costo pagato per ogni click. Deriva da un'asta dinamica e dipende da concorrenza e qualità."}},{"@type":"Question","name":"Cosa sono le Conversioni?","acceptedAnswer":{"@type":"Answer","text":"Una conversione è un'azione specifica: form, telefonata, chat o acquisto. È la metrica centrale di ogni campagna."}},{"@type":"Question","name":"Cos'è il CPA?","acceptedAnswer":{"@type":"Answer","text":"Il CPA è la spesa pubblicitaria totale divisa per il numero di conversioni."}},{"@type":"Question","name":"Cos'è il ROAS e come si calcola?","acceptedAnswer":{"@type":"Answer","text":"Il ROAS misura quanti euro di ricavi generi per ogni euro speso. Formula: Valore Conversioni ÷ Costo Pubblicitario."}}]}</script>
+  <style>
+    :root{--bg:#0a0e1a;--card:#12182a;--text:#e8ecf4;--muted:#8b95a8;--primary:#ff4d2e;--accent:#4db8ff;--border:#1e2740;--font-d:'Bebas Neue',Impact,sans-serif;--font-b:'Barlow',system-ui,sans-serif}
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:var(--font-b);background:var(--bg);color:var(--text);line-height:1.65;font-size:1.05rem}
+    a{color:var(--accent);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{max-width:760px;margin:0 auto;padding:0 1.25rem}
+    header{padding:1rem 0;border-bottom:1px solid var(--border)}
+    header .inner{display:flex;align-items:center;justify-content:space-between;max-width:1100px;margin:0 auto;padding:0 1.25rem}
+    .logo{font-family:var(--font-d);font-size:1.5rem;letter-spacing:.04em;color:var(--text)}
+    .logo span{color:var(--primary)}
+    nav a{margin-left:1.25rem;color:var(--muted);font-size:.9rem}
+    nav a:hover{color:var(--text)}
+    .hero{padding:2.5rem 0 1.5rem}
+    .label{font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:.5rem}
+    h1{font-family:var(--font-d);font-size:clamp(1.8rem,4vw,2.6rem);line-height:1.15;margin-bottom:1rem}
+    .meta{color:var(--muted);font-size:.9rem;margin-bottom:1.5rem}
+    h2{font-family:var(--font-d);font-size:1.45rem;margin:2.5rem 0 1rem;border-left:3px solid var(--primary);padding-left:.75rem}
+    h3{font-size:1.1rem;margin:1.5rem 0 .5rem;color:var(--accent)}
+    p{margin-bottom:1rem}
+    ul{margin:0 0 1rem 1.25rem}
+    .cta-box{background:linear-gradient(135deg,#1a2238,#12182a);border:1px solid var(--border);border-radius:1rem;padding:1.75rem;margin:2.5rem 0;text-align:center}
+    .btn{display:inline-block;background:var(--primary);color:#fff;padding:.7rem 1.4rem;border-radius:.5rem;font-weight:600}
+    footer{margin-top:3rem;padding:2rem 0;border-top:1px solid var(--border);text-align:center;color:var(--muted);font-size:.85rem}
+    .brand{font-family:var(--font-d);font-size:1.2rem;margin-bottom:.5rem}
+    .brand span{color:var(--primary)}
+    .socials{display:flex;justify-content:center;gap:1rem;margin:1rem 0}
+    .socials a{display:inline-flex;width:36px;height:36px;align-items:center;justify-content:center;background:var(--card);border-radius:50%;border:1px solid var(--border)}
+    .socials svg{width:18px;height:18px;fill:var(--muted)}
+  </style>
+  <link rel="stylesheet" href="/assets/contact-wa.css" />
+</head>
+<body>
+  <header>
+    <div class="inner">
+      <a href="/" class="logo">G-MAN <span>DATA HERO</span></a>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/blog/">Blog</a>
+        <a href="/#contatti">Contatti</a>
+      </nav>
+    </div>
+  </header>
+  <main class="container">
+    <article class="hero">
+      <p class="label">Guida pilastro · Glossario</p>
+      <h1>Glossario Google Ads: Le Metriche Chiave (CTR, CPC, Conversioni e ROAS)</h1>
+      <p class="meta">Stefano Superina · 21 settembre 2026 · Guida pratica</p>
+      <p>Se gestisci un’attività online, probabilmente hai sentito parlare di <strong>Google Ads</strong>. Quando si accede alla dashboard, sigle come <strong>CTR</strong>, <strong>CPC</strong>, <strong>CPA</strong> o <strong>ROAS</strong> possono sembrare un alfabeto incomprensibile.</p>
+      <p>Questa guida spiega in modo chiaro e con esempi concreti le metriche fondamentali, così puoi capire se le tue campagne stanno guadagnando o sprecando budget.</p>
+
+      <nav style="background:var(--card);border:1px solid var(--border);border-radius:.75rem;padding:1rem 1.25rem;margin:1.5rem 0">
+        <strong>Indice</strong>
+        <ul style="margin:.5rem 0 0 1rem">
+          <li><a href="#impressioni">Impressioni</a></li>
+          <li><a href="#ctr">Il CTR</a></li>
+          <li><a href="#cpc-medio">Il CPC Medio</a></li>
+          <li><a href="#conversioni">Le Conversioni</a></li>
+          <li><a href="#cpa">Il CPA</a></li>
+          <li><a href="#valore-roas">Valore della Conversione e ROAS</a></li>
+        </ul>
+      </nav>
+
+      <h2 id="impressioni">Impressioni</h2>
+      <h3>Cos’è un’Impressione?</h3>
+      <p>L’impressione viene conteggiata ogni volta che il tuo annuncio appare nei risultati di ricerca di Google (o sulla Rete Display / YouTube). Non significa che l’utente l’abbia letto o cliccato: significa solo che è stato mostrato.</p>
+
+      <h2 id="ctr">Il CTR (Click-Through Rate)</h2>
+      <h3>Cos’è il CTR e come si interpreta?</h3>
+      <p>Il <strong>CTR</strong> è la percentuale di click rispetto alle impressioni. Formula: (Click ÷ Impressioni) × 100. Misura quanto l’annuncio e la parola chiave attraggono l’utente. Un CTR basso può indicare testo debole, keyword poco rilevanti o landing page non allineata.</p>
+
+      <h2 id="cpc-medio">Il CPC Medio</h2>
+      <h3>Cos’è il CPC Medio e da cosa dipende?</h3>
+      <p>Il <strong>CPC medio</strong> è la media del costo pagato per ogni click. Deriva da un’asta dinamica: concorrenza, Quality Score, offerta massima e formato dell’annuncio influenzano il prezzo reale.</p>
+
+      <h2 id="conversioni">Le Conversioni</h2>
+      <h3>Cosa sono le Conversioni?</h3>
+      <p>Una <strong>conversione</strong> è un’azione specifica che definisci tu: invio form, telefonata, chat, acquisto, download. È la metrica centrale di ogni campagna orientata ai risultati.</p>
+
+      <h2 id="cpa">Il CPA (Costo per Acquisizione)</h2>
+      <h3>Cos’è il CPA?</h3>
+      <p>Il <strong>CPA</strong> è la spesa pubblicitaria totale divisa per il numero di conversioni. Ti dice quanto stai pagando mediamente per acquisire un lead o un cliente.</p>
+
+      <h2 id="valore-roas">Valore della Conversione e ROAS</h2>
+      <h3>Cos’è il ROAS e come si calcola?</h3>
+      <p>Il <strong>ROAS</strong> (Return on Ad Spend) misura quanti euro di ricavi generi per ogni euro speso in pubblicità. Formula: <strong>Valore Conversioni ÷ Costo Pubblicitario</strong>. Un ROAS di 4 (o 400%) significa 4 € di ritorno per ogni 1 € investito.</p>
+      <p>Per usarlo bene serve tracciare correttamente il valore delle conversioni (valore ordine, valore lead stimato, ecc.).</p>
+
+      <div class="cta-box">
+        <h2>Vuoi mettere ordine nelle tue metriche?</h2>
+        <p>Ti aiuto a impostare tracking, conversioni e letture corrette di CTR, CPC e ROAS. Risposta entro 24 ore.</p>
+        <a class="btn" href="/#contatti" onclick="gtag('event','click_audit_cta',{event_category:'CTA',event_label:'glossario_cta'})">Richiedi una verifica</a>
+      </div>
+
+      <p style="margin-top:2rem"><a href="/blog/" style="color:var(--accent)">← Torna al Blog</a></p>
+    </article>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="brand">G-MAN <span>DATA HERO</span></div>
+      <div class="socials" aria-label="Social">
+        <a href="https://www.facebook.com/stefanogoogle" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M24 12.07C24 5.41 18.63 0 12 0S0 5.41 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.04v-2.66c0-3.02 1.79-4.7 4.53-4.7 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.95.93-1.95 1.89v2.26h3.32l-.53 3.49h-2.79V24C19.62 23.1 24 18.1 24 12.07z"/></svg></a>
+        <a href="https://www.youtube.com/@G-Man-YourDataHero" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M23.5 6.2a3.02 3.02 0 0 0-2.12-2.14C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.38.56A3.02 3.02 0 0 0 .5 6.2 31.6 31.6 0 0 0 0 12a31.6 31.6 0 0 0 .5 5.8 3.02 3.02 0 0 0 2.12 2.14C4.5 20.5 12 20.5 12 20.5s7.5 0 9.38-.56a3.02 3.02 0 0 0 2.12-2.14A31.6 31.6 0 0 0 24 12a31.6 31.6 0 0 0-.5-5.8zM9.75 15.5v-7l6.5 3.5-6.5 3.5z"/></svg></a>
+        <a href="https://www.instagram.com/g_man.your_data_hero/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 3.25.15 4.77 1.69 4.92 4.92.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.15 3.23-1.66 4.77-4.92 4.92-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-3.26-.15-4.77-1.7-4.92-4.92-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85C2.38 3.92 3.9 2.38 7.15 2.23 8.42 2.17 8.8 2.16 12 2.16M12 0C8.74 0 8.33.01 7.05.07 2.7.27.27 2.69.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.2 4.36 2.62 6.78 6.98 6.98C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c4.35-.2 6.78-2.62 6.98-6.98.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95C23.73 2.69 21.31.27 16.95.07 15.67.01 15.26 0 12 0zm0 5.84a6.16 6.16 0 1 0 0 12.32 6.16 6.16 0 0 0 0-12.32zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.41-11.85a1.44 1.44 0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88z"/></svg></a>
+        <a href="https://www.tiktok.com/@stefano.superina" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 0 0-.79-.05A6.34 6.34 0 0 0 3.16 15.3a6.34 6.34 0 0 0 10.86 4.48V13a8.2 8.2 0 0 0 4.78 1.52V11a4.84 4.84 0 0 1-1.21-.31z"/></svg></a>
+      </div>
+      <p>© 2026 G-Man Data Hero · Stefano Superina · Google Partner</p>
+    </div>
+  </footer>
+  <script>
+    gtag('event','view_article',{event_category:'Blog',event_label:'glossario-metriche-google-ads',article_slug:'glossario-metriche-google-ads'});
+  </script>
+<script src="/assets/contact-wa.js" defer></script>
+</body>
+</html>
