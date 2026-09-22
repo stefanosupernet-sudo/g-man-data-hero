@@ -1,0 +1,8 @@
+.wa-fab{position:fixed;bottom:1.25rem;right:1.25rem;z-index:90;width:56px;height:56px;border-radius:50%;background:#25d366;color:#fff!important;display:grid;place-items:center;box-shadow:0 8px 24px rgba(37,211,102,.4);font-weight:700;font-size:.85rem;text-decoration:none;transition:transform .15s}
+.wa-fab:hover{transform:scale(1.06);color:#fff!important}
+#contatti-articolo{background:#111827;border:1px solid #1e293b;border-radius:.85rem;padding:1.5rem;margin:2.5rem auto;max-width:720px}
+#contatti-articolo h2{margin:0 0 .5rem;font-size:1.35rem;border:none;padding:0;color:#f1f5f9}
+#contatti-articolo .cf-lead{color:#94a3b8;margin-bottom:1rem}
+#contatti-articolo label{display:block;font-size:.75rem;color:#94a3b8;margin-bottom:.25rem}
+#contatti-articolo input,#contatti-articolo textarea{width:100%;padding:.7rem;background:#1a2234;border:1px solid #1e293b;border-radius:.5rem;color:#f1f5f9;font-family:inherit;margin-bottom:.75rem;box-sizing:border-box}
+#contatti-articolo button{background:#ff4d2e;color:#fff;padding:.65rem 1.25rem;border:none;border-radius:.5rem;font-weight:600;cursor:pointer}
