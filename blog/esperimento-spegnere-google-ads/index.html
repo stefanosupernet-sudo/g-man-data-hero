@@ -25,6 +25,7 @@
     .cta{background:var(--bg-card);border:1px solid var(--border);border-radius:.85rem;padding:1.5rem;margin-top:2.5rem;text-align:center}
     .btn{display:inline-flex;background:var(--primary);color:#fff;padding:.65rem 1.25rem;border-radius:.5rem;font-weight:600;margin-top:1rem;text-decoration:none}
     footer{border-top:1px solid var(--border);padding:1.5rem 0;text-align:center;color:var(--muted);font-size:.85rem}
+    .wa-fab{position:fixed;bottom:1.25rem;right:1.25rem;z-index:90;width:56px;height:56px;border-radius:50%;background:#25d366;color:#fff!important;display:grid;place-items:center;box-shadow:0 8px 24px rgba(37,211,102,.4);font-weight:700;font-size:.85rem;text-decoration:none}
   </style>
 </head>
 <body>
@@ -36,8 +37,23 @@
     <h2>IL VERDETTO</h2>
     <p><strong>77 mila euro di vendite in meno per risparmiarne 1.880.</strong> Si taglia lo spreco, non la fonte di fatturato.</p>
     <div class="cta"><p><strong>Non spegnere il motore. Ottimizzalo.</strong></p><a class="btn" href="/#contatti">Richiedi l’audit gratuito</a></div>
+      <div id="contatti-articolo" style="background:#111827;border:1px solid #1e293b;border-radius:.85rem;padding:1.5rem;margin:2.5rem 0">
+        <h2 style="margin:0 0 .5rem;font-size:1.35rem;border:none;padding:0">Hai una domanda su questo articolo?</h2>
+        <p style="color:#94a3b8;margin-bottom:1rem">Risposta entro 24 ore. Nessuno spam.</p>
+        <form action="https://formsubmit.co/stefano.superina@gmail.com" method="POST">
+          <input type="hidden" name="_subject" value="Contatto da articolo blog — stefanodagogle.com" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
+          <input type="hidden" name="pagina" value="https://stefanodagogle.com/blog/esperimento-spegnere-google-ads/" />
+          <p style="margin-bottom:.75rem"><label style="display:block;font-size:.75rem;color:#94a3b8;margin-bottom:.25rem">Nome *</label><input required name="nome" style="width:100%;padding:.7rem;background:#1a2234;border:1px solid #1e293b;border-radius:.5rem;color:#f1f5f9" /></p>
+          <p style="margin-bottom:.75rem"><label style="display:block;font-size:.75rem;color:#94a3b8;margin-bottom:.25rem">Email *</label><input type="email" required name="email" style="width:100%;padding:.7rem;background:#1a2234;border:1px solid #1e293b;border-radius:.5rem;color:#f1f5f9" /></p>
+          <p style="margin-bottom:.75rem"><label style="display:block;font-size:.75rem;color:#94a3b8;margin-bottom:.25rem">Messaggio</label><textarea name="messaggio" rows="3" style="width:100%;padding:.7rem;background:#1a2234;border:1px solid #1e293b;border-radius:.5rem;color:#f1f5f9"></textarea></p>
+          <button type="submit" style="background:#ff4d2e;color:#fff;padding:.65rem 1.25rem;border:none;border-radius:.5rem;font-weight:600;cursor:pointer">Invia messaggio</button>
+        </form>
+      </div>
   </article>
   <footer><p><a href="/blog/">← Blog</a> · <a href="/">Home</a></p></footer>
+  <a href="https://wa.me/393471988894?text=Ciao%20Stefano%2C%20ho%20visto%20il%20sito%20e%20vorrei%20parlare%20di%20Google%20Ads" class="wa-fab" target="_blank" rel="noopener noreferrer" aria-label="Contatta su WhatsApp" title="WhatsApp">WA</a>
   <script>
     function track(n,p){p=p||{};if(typeof gtag==='function')gtag('event',n,p);}
     track('view_article',{event_category:'engagement',page_path:location.pathname,article_slug:'esperimento-spegnere-google-ads'});
