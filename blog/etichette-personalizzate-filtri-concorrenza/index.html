@@ -24,9 +24,9 @@
   <meta property="og:title" content="Etichette personalizzate Google Shopping: filtrare i prodotti fuori mercato" />
   <meta property="og:description" content="Caso studio a fumetti: custom_label e feed supplementare per isolare 847 SKU fuori mercato e far salire il ROAS senza svendere." />
   <meta property="og:url" content="https://stefanodagogle.com/blog/etichette-personalizzate-filtri-concorrenza/" />
-  <meta property="og:image" content="https://stefanodagogle.com/assets/etichette/gman-google-shopping-etichette.jpg" />
+  <meta property="og:image" content="https://stefanodagogle.com/assets/etichette/gman-google-specialist-budget-disperso-ecommerce.webp.webp" />
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"Article","headline":"Etichette personalizzate Google Shopping: filtrare i prodotti fuori mercato","description":"Caso studio a fumetti: come usare custom_label e feed supplementare basato sul benchmark prezzi di Merchant Center per escludere i prodotti non competitivi.","author":{"@type":"Person","name":"Stefano Superina"},"publisher":{"@type":"Organization","name":"G-Man Data Hero"},"datePublished":"2026-09-07","dateModified":"2026-09-22"}
+  {"@context":"https://schema.org","@type":"Article","headline":"Etichette personalizzate Google Shopping: filtrare i prodotti fuori mercato","description":"Caso studio a fumetti: come usare custom_label e feed supplementare basato sul benchmark prezzi di Merchant Center per escludere i prodotti non competitivi.","author":{"@type":"Person","name":"Stefano Superina"},"publisher":{"@type":"Organization","name":"G-Man Data Hero"},"datePublished":"2026-09-07","dateModified":"2026-09-23"}
   </script>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Cosa sono le etichette personalizzate (custom_label) in Google Shopping?","acceptedAnswer":{"@type":"Answer","text":"Sono cinque campi liberi del feed prodotto (custom_label_0…4) che permettono di raggruppare gli articoli secondo logiche tue: competitività di prezzo, margine, stagionalità o rendimento."}},{"@type":"Question","name":"Come filtro i prodotti non competitivi rispetto alla concorrenza?","acceptedAnswer":{"@type":"Answer","text":"Si parte dal report Prezzi e Benchmark di Merchant Center: i prodotti fuori mercato vengono marcati come non_competitive tramite feed supplementare ed esclusi dalle campagne a pagamento."}},{"@type":"Question","name":"Che cos'è un feed supplementare e perché serve?","acceptedAnswer":{"@type":"Answer","text":"È un file aggiuntivo (Google Sheet o SFTP) che si aggancia al feed principale tramite l'ID prodotto e aggiorna attributi come custom_label_0 senza rigenerare tutto il catalogo."}},{"@type":"Question","name":"Escludere prodotti dalle campagne riduce il fatturato?","acceptedAnswer":{"@type":"Answer","text":"In genere no: il budget si concentra sui prodotti dove il prezzo regge il confronto. ROAS più alto a parità di spesa."}},{"@type":"Question","name":"Ogni quanto vanno aggiornate le etichette competitive?","acceptedAnswer":{"@type":"Answer","text":"Aggiornamento automatico del feed supplementare ogni sei ore, con alert quando un prodotto torna competitivo."}},{"@type":"Question","name":"Come si usano le custom_label in Performance Max?","acceptedAnswer":{"@type":"Answer","text":"Si creano gruppi di asset per etichetta, escludendo non_competitive a livello di gruppo di asset."}}]}
@@ -119,7 +119,7 @@
         <p class="chapter-label">Cap 1 · Il gancio</p>
         <h2>Quando il catalogo lavora contro di te</h2>
         <p class="chapter-quote">Capitolo 1 — Il problema non è quanto spendi, ma <strong>su quali prodotti</strong> lo stai spendendo.</p>
-        <img src="/assets/etichette/cap1-gancio.jpg" alt="Capitolo 1 - Il gancio: catalogo che brucia budget" loading="lazy" width="760" height="420" />
+        <img src="/assets/etichette/gman-google-specialist-budget-disperso-ecommerce.webp.webp" alt="Capitolo 1 - Il gancio: catalogo che brucia budget" loading="lazy" width="760" height="420" />
         <p>Quattromila SKU. Best seller sepolti sotto una valanga di articoli che non potevano competere sul prezzo. Il budget andava a finire dove l'asta era persa in partenza.</p>
       </div>
 
@@ -127,7 +127,7 @@
         <p class="chapter-label">Cap 2 · Il problema</p>
         <h2>Il costo nascosto dei prodotti fuori mercato</h2>
         <p class="chapter-quote">Capitolo 2 — Nessun clic vale, se il prezzo non regge il confronto con la concorrenza.</p>
-        <img src="/assets/etichette/cap2-problema.jpg" alt="Capitolo 2 - Il problema dei prodotti fuori mercato" loading="lazy" width="760" height="420" />
+        <img src="/assets/etichette/merchant-center-prezzi-benchmark-catalogo-fuori-mercato.webp.webp" alt="Capitolo 2 - Il problema dei prodotti fuori mercato" loading="lazy" width="760" height="420" />
         <p>Il report Prezzi e Benchmark di Merchant Center mostrava chiaramente: centinaia di SKU con price_benchmark = OUT_OF_MARKET. Ogni impressione su quei prodotti era budget sprecato.</p>
       </div>
 
@@ -135,7 +135,7 @@
         <p class="chapter-label">Cap 3 · La svolta</p>
         <h2>Dai tagli a caso a una regola misurabile</h2>
         <p class="chapter-quote">Capitolo 3 — Stessa faccia, nuova pipeline: dai tagli a caso a una regola misurabile.</p>
-        <img src="/assets/etichette/cap3-svolta.jpg" alt="Capitolo 3 - La svolta con le etichette" loading="lazy" width="760" height="420" />
+        <img src="/assets/etichette/gman-trasformazione-data-hero-etichette-personalizzate.webp.webp" alt="Capitolo 3 - La svolta con le etichette" loading="lazy" width="760" height="420" />
         <p>Invece di spegnere campagne o alzare le offerte alla cieca, abbiamo costruito un sistema basato sul benchmark prezzi. Tre categorie, una sola etichetta, aggiornamento automatico.</p>
       </div>
 
@@ -143,12 +143,12 @@
         <p class="chapter-label">Cap 4 · Soluzione tecnica</p>
         <h2>custom_label + feed supplementare</h2>
         <p class="chapter-quote">Capitolo 4 — Tre categorie, una sola regola, aggiornata in automatico.</p>
-        <img src="/assets/etichette/cap4-soluzione.jpg" alt="Capitolo 4 - Soluzione tecnica custom_label" loading="lazy" width="760" height="420" />
+        <img src="/assets/etichette/sala-controllo-feed-supplementare-custom-label.webp.webp" alt="Capitolo 4 - Soluzione tecnica custom_label" loading="lazy" width="760" height="420" />
         <p>La regola:</p>
-        <pre>IF price_benchmark = IN_STOCK &amp; price_diff &lt;= 5%  =&gt; competitive
-IF price_benchmark = BORDERLINE (5-15%)           =&gt; borderline
-IF price_benchmark = OUT_OF_MARKET                =&gt; non_competitive
-IF clicks &gt; 50 &amp; conversions = 0                  =&gt; low_roi</pre>
+        <pre>IF price_benchmark = IN_STOCK & price_diff <= 5%  => competitive
+IF price_benchmark = BORDERLINE (5-15%)           => borderline
+IF price_benchmark = OUT_OF_MARKET                => non_competitive
+IF clicks > 50 & conversions = 0                  => low_roi</pre>
         <p>Il feed supplementare (Google Sheet) si aggancia all'ID prodotto e scrive su <code>custom_label_0</code>. Aggiornamento ogni 6 ore. Nelle campagne Shopping e Performance Max si escludono i gruppi con etichetta non_competitive.</p>
         <table>
           <thead><tr><th>Etichetta</th><th>Condizione</th><th>Azione</th></tr></thead>
@@ -164,7 +164,7 @@ IF clicks &gt; 50 &amp; conversions = 0                  =&gt; low_roi</pre>
         <p class="chapter-label">Cap 5 · Pro e contro</p>
         <h2>Filtrare conviene (se tieni la regola viva)</h2>
         <p class="chapter-quote">Capitolo 5 — Filtrare conviene, a patto di tenere la regola viva nel tempo.</p>
-        <img src="/assets/etichette/cap5-procontro.jpg" alt="Capitolo 5 - Pro e contro del filtro" loading="lazy" width="760" height="420" />
+        <img src="/assets/etichette/gman-equilibrio-margini-filtri-prodotti.webp.webp" alt="Capitolo 5 - Pro e contro del filtro" loading="lazy" width="760" height="420" />
         <p><strong>Pro:</strong> budget concentrato, ROAS più alto, meno spreco su aste impossibili da vincere.</p>
         <p><strong>Contro:</strong> se non aggiorni le etichette, un prodotto che torna competitivo resta escluso. Per questo l'automazione ogni 6 ore è obbligatoria.</p>
       </div>
@@ -173,7 +173,7 @@ IF clicks &gt; 50 &amp; conversions = 0                  =&gt; low_roi</pre>
         <p class="chapter-label">Cap 6 · Call to action</p>
         <h2>Il filtro è una decisione di business</h2>
         <p class="chapter-quote">Capitolo 6 — Il filtro è una decisione di business, non un dettaglio tecnico.</p>
-        <img src="/assets/etichette/cap6-cta.jpg" alt="Capitolo 6 - Call to action" loading="lazy" width="760" height="420" />
+        <img src="/assets/etichette/gman-data-hero-call-to-action-etichette.webp.webp" alt="Capitolo 6 - Call to action" loading="lazy" width="760" height="420" />
         <p>847 SKU isolati. Il 80% del costo che prima andava in prodotti fuori mercato è stato riallocato. Il prezzo medio degli articoli ancora in asta è salito del 44% rispetto al benchmark. Nessuna svendita: solo chiarezza su dove ha senso competere.</p>
       </div>
 
