@@ -1,4 +1,10 @@
 (function(){
+  // Dynamic FAQPage JSON-LD (from .faq-item or details)
+  var faq = document.createElement('script');
+  faq.src = '/assets/faqpage.js';
+  faq.defer = true;
+  document.head.appendChild(faq);
+
   if (document.querySelector('.wa-fab')) return;
   var css = document.createElement('link');
   css.rel = 'stylesheet';
