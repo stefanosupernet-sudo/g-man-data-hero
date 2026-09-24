@@ -1,4 +1,6 @@
 (function(){
+  var lcp=document.createElement('script');lcp.src='/assets/lcp-boost.js';document.head.appendChild(lcp);
+
   // Dynamic FAQPage JSON-LD (from .faq-item or details)
   var faq = document.createElement('script');
   faq.src = '/assets/faqpage.js';
