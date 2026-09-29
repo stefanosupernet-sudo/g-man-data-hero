@@ -1,5 +1,6 @@
 (function(){
   var lcp=document.createElement('script');lcp.src='/assets/lcp-boost.js';document.head.appendChild(lcp);
+  if(!document.querySelector('script[src*="i18n-router"]')){var i18n=document.createElement('script');i18n.src='/assets/i18n-router.js';i18n.defer=true;document.head.appendChild(i18n);}
 
   // Dynamic FAQPage JSON-LD (from .faq-item or details)
   var faq = document.createElement('script');
