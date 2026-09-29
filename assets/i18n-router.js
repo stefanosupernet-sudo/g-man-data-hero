@@ -30,14 +30,21 @@
   }
 
   function toEnPath(pathname) {
-    if (pathname === '/en' || pathname.indexOf('/en/') === 0) return pathname;
+    if (pathname === '/en' || pathname.indexOf('/en/') === 0) {
+      if (pathname === '/en/chi-sono' || pathname === '/en/chi-sono/') return '/en/who-i-am/';
+      return pathname;
+    }
     if (pathname === '/' || pathname === '') return '/en/';
     if (pathname === '/index' || pathname === '/index/' || pathname === '/index.html') return '/en/';
+    var p = pathname.replace(/\/+$/, '') || '/';
+    if (p === '/chi-sono') return '/en/who-i-am/';
     return '/en' + (pathname.charAt(0) === '/' ? pathname : '/' + pathname);
   }
 
   function toItPath(pathname) {
     if (pathname === '/en' || pathname === '/en/') return '/';
+    if (pathname === '/en/who-i-am' || pathname === '/en/who-i-am/') return '/chi-sono/';
+    if (pathname === '/en/chi-sono' || pathname === '/en/chi-sono/') return '/chi-sono/';
     if (pathname.indexOf('/en/') === 0) {
       var rest = pathname.slice(3);
       return rest || '/';
