@@ -6,14 +6,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Google Ads & Data Analysis Blog | G-Man, Your Data Hero</title>
-  <meta name="description" content="Case studies and guides on Google Ads, ROAS, Merchant Center feeds, B2B lead generation and data analysis. By Stefano Superina — G-Man Data Hero." />
+  <meta name="description" content="English case studies and guides on Google Ads, ROAS, tracking, Merchant Center and B2B lead generation — by Stefano Superina, G-Man Data Hero." />
   <meta name="robots" content="index, follow, max-image-preview:large" />
   <link rel="canonical" href="https://stefanodagogle.com/en/blog/" />
   <link rel="alternate" hreflang="it" href="https://stefanodagogle.com/blog/" />
   <link rel="alternate" hreflang="en" href="https://stefanodagogle.com/en/blog/" />
   <link rel="alternate" hreflang="x-default" href="https://stefanodagogle.com/blog/" />
   <meta property="og:title" content="Google Ads & Data Analysis Blog | G-Man Data Hero" />
-  <meta property="og:description" content="Case studies, interactive comics and practical guides on Google Ads and data analysis." />
+  <meta property="og:description" content="English case studies and guides on Google Ads, ROAS, tracking and B2B lead generation." />
   <meta property="og:url" content="https://stefanodagogle.com/en/blog/" />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="https://stefanodagogle.com/assets/gman-hero.jpg" />
@@ -21,87 +21,54 @@
   <meta property="og:locale" content="en_US" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Google Ads & Data Analysis Blog | G-Man Data Hero" />
-  <meta name="twitter:description" content="Case studies and guides on Google Ads, ROAS, Merchant Center feeds, B2B lead generation and data analysis." />
-  <meta name="twitter:image" content="https://stefanodagogle.com/assets/gman-hero.jpg" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Bebas+Neue&display=swap" rel="stylesheet" />
   <style>
     :root{--bg:#0a0e1a;--bg-card:#111827;--border:#1e293b;--text:#f1f5f9;--text-muted:#94a3b8;--primary:#ff4d2e;--accent:#22d3ee;--font-display:"Bebas Neue",system-ui,sans-serif;--font-body:"Barlow",system-ui,sans-serif}
-    *{box-sizing:border-box;margin:0;padding:0}
-    body{font-family:var(--font-body);background:var(--bg);color:var(--text);line-height:1.6;min-height:100vh}
+    *{box-sizing:border-box;margin:0;padding:0}body{font-family:var(--font-body);background:var(--bg);color:var(--text);line-height:1.6;min-height:100vh}
     a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
     .container{max-width:960px;margin:0 auto;padding:0 1.25rem}
-    header{border-bottom:1px solid var(--border);padding:1rem 0}
-    header .inner{display:flex;align-items:center;justify-content:space-between}
-    .brand{font-family:var(--font-display);font-size:1.5rem;letter-spacing:.04em;color:var(--text);text-decoration:none}
-    .brand span{color:var(--primary)}
+    header{border-bottom:1px solid var(--border);padding:1rem 0}header .inner{display:flex;align-items:center;justify-content:space-between}
+    .brand{font-family:var(--font-display);font-size:1.5rem;letter-spacing:.04em;color:var(--text);text-decoration:none}.brand span{color:var(--primary)}
     nav a{color:var(--text-muted);margin-left:1rem;font-size:.9rem}
-    .hero{padding:2.5rem 0 1.5rem}
-    .label{font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:.5rem}
+    .hero{padding:2.5rem 0 1.5rem}.label{font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:.5rem}
     h1{font-family:var(--font-display);font-size:clamp(1.8rem,4vw,2.6rem);line-height:1.15;margin-bottom:1rem}
-    .lead{color:var(--text-muted);margin-bottom:1.5rem;max-width:36rem}
-    .note{background:rgba(34,211,238,.08);border:1px solid rgba(34,211,238,.25);border-radius:.5rem;padding:.85rem 1rem;font-size:.9rem;color:var(--text-muted);margin-bottom:2rem}
-    .posts{display:grid;gap:1.25rem}
+    .lead{color:var(--text-muted);margin-bottom:1.5rem;max-width:40rem}
+    .posts{display:grid;gap:1.25rem}@media(min-width:700px){.posts{grid-template-columns:1fr 1fr}}
     .post{background:var(--bg-card);border:1px solid var(--border);border-radius:.75rem;padding:1.35rem}
-    .post h2{font-size:1.15rem;margin-bottom:.4rem}
-    .post h2 a{color:var(--text)}
-    .post h2 a:hover{color:var(--accent)}
-    .post p{color:var(--text-muted);font-size:.95rem;margin-bottom:.75rem}
-    .post .meta{font-size:.8rem;color:var(--text-muted)}
+    .post h2{font-size:1.1rem;margin-bottom:.4rem}.post h2 a{color:var(--text)}.post h2 a:hover{color:var(--accent)}
+    .post p{color:var(--text-muted);font-size:.95rem;margin-bottom:.5rem}.post .meta{font-size:.8rem;color:var(--text-muted)}
     footer{padding:2rem 0;border-top:1px solid var(--border);margin-top:3rem;color:var(--text-muted);font-size:.85rem;text-align:center}
   </style>
   <script src="/assets/i18n-router.js" defer></script>
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"CollectionPage","name":"Google Ads & Data Analysis Blog","description":"Case studies and guides on Google Ads, ROAS, Merchant Center feeds, B2B lead generation and data analysis.","url":"https://stefanodagogle.com/en/blog/","inLanguage":"en-US","isPartOf":{"@type":"WebSite","name":"G-Man Data Hero","url":"https://stefanodagogle.com/en/"},"publisher":{"@type":"Person","name":"Stefano Superina"}}
-  </script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Google Ads & Data Analysis Blog","url":"https://stefanodagogle.com/en/blog/","inLanguage":"en-US","publisher":{"@type":"Person","name":"Stefano Superina"}}</script>
 </head>
 <body>
-  <header>
-    <div class="container inner">
-      <a class="brand" href="/en/">G-MAN <span>DATA HERO</span></a>
-      <nav>
-        <a href="/en/">Home</a>
-        <a href="/en/who-i-am/">About</a>
-        <a href="/en/blog/">Blog</a>
-      </nav>
-    </div>
-  </header>
+  <header><div class="container inner">
+    <a class="brand" href="/en/">G-MAN <span>DATA HERO</span></a>
+    <nav><a href="/en/">Home</a><a href="/en/who-i-am/">About</a><a href="/en/blog/">Blog</a></nav>
+  </div></header>
   <main class="container">
     <div class="hero">
       <p class="label">Blog</p>
       <h1>GOOGLE ADS & DATA ANALYSIS</h1>
-      <p class="lead">Case studies, practical guides and experiments on Google Ads, tracking, feeds and ROI.</p>
-      <div class="note">Articles are currently published in Italian. Use the language switcher (IT / EN) or open any post — content stays readable while the rest of the site is fully in English.</div>
+      <p class="lead">English case studies, practical guides and experiments on Google Ads, tracking, feeds and ROI.</p>
     </div>
     <div class="posts">
-      <article class="post">
-        <h2><a href="/blog/roas-google-ads-200-agosto-2026/">ROAS +200% with campaign structure</a></h2>
-        <p>From 4.13 to 12.32 ROAS, CPC −44%, cost −22%. How a clean structure unlocked performance.</p>
-        <p class="meta">Case study · Google Ads</p>
-      </article>
-      <article class="post">
-        <h2><a href="/blog/esperimento-spegnere-google-ads/">Experiment: turning Google Ads off</a></h2>
-        <p>−€77,600 in conversion value to “save” €1,880. Why cutting spend can cost far more.</p>
-        <p class="meta">Experiment · Attribution</p>
-      </article>
-      <article class="post">
-        <h2><a href="/blog/etichette-personalizzate-filtri-concorrenza/">Custom labels and competition filters</a></h2>
-        <p>847 out-of-market SKUs isolated with custom_label. Feed hygiene that protects budget.</p>
-        <p class="meta">Merchant Center · Shopping</p>
-      </article>
-      <article class="post">
-        <h2><a href="/blog/prestashop-tracciamenti-fantasma-data-hero/">PrestaShop ghost tracking</a></h2>
-        <p>Broken events, phantom conversions and how to make measurement reliable again.</p>
-        <p class="meta">Tracking · PrestaShop</p>
-      </article>
+      <article class="post"><h2><a href="/en/blog/prestashop-ghost-tracking/">PrestaShop ghost tracking</a></h2><p>Broken events, phantom conversions and how to make measurement reliable again.</p><p class="meta">Tracking · PrestaShop</p></article>
+      <article class="post"><h2><a href="/en/blog/google-ads-roas-200-percent/">Google Ads ROAS at 200%+</a></h2><p>Structure, Smart Bidding and clean conversion value — without simply raising budget.</p><p class="meta">Case study · ROAS</p></article>
+      <article class="post"><h2><a href="/en/blog/roas-200-cpc-halved/">ROAS +200%: cost and CPC halved</a></h2><p>From ROAS 4.13 to 12.32, CPC −44%, cost −22% at comparable spend.</p><p class="meta">Interactive case</p></article>
+      <article class="post"><h2><a href="/en/blog/turning-off-google-ads-experiment/">Turning off Google Ads: −€77,600</a></h2><p>€1,880 “saved”, €77,600 in lost sales. Why pausing can cost more than optimising.</p><p class="meta">Experiment</p></article>
+      <article class="post"><h2><a href="/en/blog/google-ads-77600-experiment-comic/">The €77,600 experiment</a></h2><p>Short entry point with the same real-world numbers.</p><p class="meta">Experiment</p></article>
+      <article class="post"><h2><a href="/en/blog/hard-reset-google-ads-campaigns/">Hard Reset for Google Ads campaigns</a></h2><p>When optimising fails: rebuild tracking, structure and clean signals.</p><p class="meta">Hard Reset</p></article>
+      <article class="post"><h2><a href="/en/blog/when-website-blocks-strategy/">When the website blocks strategy</a></h2><p>SEO and SEM cannot save a site that blocks conversions and tracking.</p><p class="meta">CRO · UX</p></article>
+      <article class="post"><h2><a href="/en/blog/custom-labels-competition-filters/">Custom labels & competition filters</a></h2><p>Isolate out-of-market SKUs with custom_label and supplemental feeds.</p><p class="meta">Merchant Center</p></article>
+      <article class="post"><h2><a href="/en/blog/google-ads-metrics-glossary/">Google Ads metrics glossary</a></h2><p>CTR, CPC, conversions, CPA and ROAS explained with practical examples.</p><p class="meta">Pillar guide</p></article>
+      <article class="post"><h2><a href="/en/blog/b2b-lead-generation-health-wellness/">B2B lead gen — health & wellness</a></h2><p>+83% sales, CPC −40%. Portal registrations as primary conversions.</p><p class="meta">B2B case</p></article>
+      <article class="post"><h2><a href="/en/blog/b2b-lead-generation-environmental-certification/">B2B lead gen — environmental certification</a></h2><p>From PDF downloads to hard contacts: forms, calls and chat.</p><p class="meta">B2B · ESG</p></article>
+      <article class="post"><h2><a href="/en/blog/instagram-carousel-dirty-tracking-gtm/">Dirty tracking carousel (GTM)</a></h2><p>Six-step story from overloaded tags to a clean measurement setup.</p><p class="meta">Tracking story</p></article>
     </div>
   </main>
-  <footer>
-    <div class="container">
-      <p>© Stefano Superina — G-Man Data Hero · <a href="/en/">Home</a> · <a href="/en/who-i-am/">About</a></p>
-    </div>
-  </footer>
+  <footer><div class="container"><p>© Stefano Superina — G-Man Data Hero · <a href="/en/">Home</a> · <a href="/en/who-i-am/">About</a></p></div></footer>
   <script src="/assets/contact-wa.js" defer></script>
 </body>
 </html>
