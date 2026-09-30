@@ -29,14 +29,14 @@ ul{margin:0 0 1rem 1.2rem}.faq details{background:var(--card);border:1px solid v
 footer{margin-top:2rem;padding-top:1.25rem;border-top:1px solid var(--border);font-size:.85rem;color:var(--muted)}
 </style>
 <script src="/assets/i18n-router.js" defer></script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"PrestaShop Ghost Tracking: Anatomy of a Data Disaster","description":"How broken PrestaShop tracking destroys Google Ads ROI and how to restore clean measurement.","datePublished":"2026-09-23","dateModified":"2026-09-30","inLanguage":"en-US","author":{"@type":"Person","name":"Stefano Superina"},"mainEntityOfPage":"https://stefanodagogle.com/en/blog/prestashop-ghost-tracking/"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://stefanodagogle.com/en/blog/prestashop-ghost-tracking/#article","headline":"PrestaShop Ghost Tracking: Anatomy of a Data Disaster","description":"How broken PrestaShop tracking destroys Google Ads ROI and how to restore clean measurement.","image":["https://stefanodagogle.com/assets/gman-hero.jpg"],"datePublished":"2026-09-23","dateModified":"2026-09-30","inLanguage":"en-US","author":{"@type":"Person","name":"Stefano Superina","url":"https://stefanodagogle.com/en/who-i-am/"},"publisher":{"@type":"Person","name":"Stefano Superina","url":"https://stefanodagogle.com/en/"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://stefanodagogle.com/en/blog/prestashop-ghost-tracking/"},"isPartOf":{"@type":"Blog","name":"G-Man Data Hero Blog","url":"https://stefanodagogle.com/en/blog/"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://stefanodagogle.com/en/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://stefanodagogle.com/en/blog/"},{"@type":"ListItem","position":3,"name":"PrestaShop Ghost Tracking: Anatomy of a Data Disaster","item":"https://stefanodagogle.com/en/blog/prestashop-ghost-tracking/"}]},{"@type":"FAQPage","@id":"https://stefanodagogle.com/en/blog/prestashop-ghost-tracking/#faq","mainEntity":[{"@type":"Question","name":"Why does PrestaShop struggle more than Shopify on tracking?","acceptedAnswer":{"@type":"Answer","text":"Heavy module ecosystems and cache layers often inject or block tags unpredictably."}},{"@type":"Question","name":"Should I trust Google Ads or Analytics numbers?","acceptedAnswer":{"@type":"Answer","text":"Neither blindly. Align both to a single clean purchase event and reconcile with the order backend."}}]}]}</script>
 </head><body><div class="wrap">
 <header><a class="logo" href="/en/">G-MAN <span>DATA HERO</span></a><a href="/en/blog/">← Blog</a></header>
 <article>
 <h1>PrestaShop Ghost Tracking: Anatomy of a Data Disaster</h1>
 <p>Missing purchases, phantom conversions and contradictory reports. When PrestaShop modules, cache and GTM collide, Google Ads optimises noise instead of real sales.</p>
 <h2>Why PrestaShop tracking breaks</h2>
-<p>Third-party modules and aggressive cache layers make tags fire twice, not at all, or only on some browsers. Consent Mode and enhanced conversions amplify mistakes if the data layer is inconsistent.</p>
+<p>Third-party modules and aggressive cache layers make tags fire twice, not at all, or only on some browsers.</p>
 <h2>Typical symptoms</h2>
 <ul>
 <li>Google Ads conversion counts ≠ Analytics e-commerce transactions</li>
@@ -44,7 +44,7 @@ footer{margin-top:2rem;padding-top:1.25rem;border-top:1px solid var(--border);fo
 <li>ROAS swings that track tag changes more than real sales</li>
 </ul>
 <h2>The fix</h2>
-<p>Map every tag and module. Strip redundant pixels. Rebuild a clean data layer for purchase and key funnel steps. Align Google Ads primary conversions with one trusted source of truth — then re-enable value-based bidding.</p>
+<p>Map every tag and module. Strip redundant pixels. Rebuild a clean data layer. Align Google Ads primary conversions with one trusted source of truth — then re-enable value-based bidding.</p>
 <section class="faq"><h2>FAQ</h2>
 <details open><summary>Why does PrestaShop struggle more than Shopify on tracking?</summary><p>Heavy module ecosystems and cache layers often inject or block tags unpredictably.</p></details>
 <details><summary>Should I trust Google Ads or Analytics numbers?</summary><p>Neither blindly. Align both to a single clean purchase event and reconcile with the order backend.</p></details>
