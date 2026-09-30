@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Incubo dati persi: da ROAS &lt;100% a 680% — case study tracking GTM | G-Man</title>
+  <meta name="description" content="Fumetto interattivo in 6 atti: come un tracking rotto su Benail.it nascondeva il fatturato. Da ROAS sotto il 100% a 680% in 15 giorni dopo il fix GTM del 15 settembre 2026."/>
+  <meta name="keywords" content="tracking Google Ads, GTM rotto, dati persi ecommerce, ROAS basso, fix tracking, case study Benail, Data Hero, conversioni fantasma, Google Tag Manager debug"/>
+  <meta name="author" content="Stefano Superina"/>
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1"/>
+  <link rel="canonical" href="https://stefanodagogle.com/blog/incubo-dati-persi/"/>
+  <link rel="alternate" hreflang="it" href="https://stefanodagogle.com/blog/incubo-dati-persi/"/>
+  <link rel="alternate" hreflang="x-default" href="https://stefanodagogle.com/blog/incubo-dati-persi/"/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:locale" content="it_IT"/>
+  <meta property="og:title" content="Incubo dati persi: da ROAS &lt;100% a 680%"/>
+  <meta property="og:description" content="Fumetto interattivo in 6 atti: tracking rotto, fix GTM e ROAS da sotto 100% a 680%."/>
+  <meta property="og:url" content="https://stefanodagogle.com/blog/incubo-dati-persi/"/>
+  <meta property="og:image" content="https://stefanodagogle.com/assets/gman-hero.jpg"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://stefanodagogle.com/blog/incubo-dati-persi/#article","headline":"Incubo dati persi: da ROAS <100% a 680% — case study tracking GTM","description":"Fumetto interattivo in 6 atti: come un tracking rotto su Benail.it nascondeva il fatturato. Da ROAS sotto il 100% a 680% in 15 giorni dopo il fix GTM del 15 settembre 2026.","image":["https://stefanodagogle.com/assets/gman-hero.jpg"],"datePublished":"2026-09-30","dateModified":"2026-09-30","inLanguage":"it-IT","author":{"@type":"Person","name":"Stefano Superina","url":"https://stefanodagogle.com/chi-sono/"},"publisher":{"@type":"Person","name":"Stefano Superina","url":"https://stefanodagogle.com/"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://stefanodagogle.com/blog/incubo-dati-persi/"},"isPartOf":{"@type":"Blog","name":"G-Man Data Hero Blog","url":"https://stefanodagogle.com/blog/"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://stefanodagogle.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://stefanodagogle.com/blog/"},{"@type":"ListItem","position":3,"name":"Incubo dati persi","item":"https://stefanodagogle.com/blog/incubo-dati-persi/"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Cosa causa un ROAS sotto il 100% con tanti click?","acceptedAnswer":{"@type":"Answer","text":"Spesso un tracking rotto: conversioni non registrate, DataLayer incompleto o tag GTM in conflitto. Il fatturato c'è, ma Google Ads non lo vede."}},{"@type":"Question","name":"Quanto può migliorare il ROAS dopo un fix GTM?","acceptedAnswer":{"@type":"Answer","text":"Nel case study Benail.it, dopo il fix del 15 settembre 2026 il ROAS è passato da valori sotto il 100% a circa 680% nei 15 giorni successivi."}}]}]}</script>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;600;700&family=Bebas+Neue&display=swap" rel="stylesheet"/>
+  <style>
+  :root{--bg:#0a0e1a;--card:#111827;--border:#1e293b;--text:#f1f5f9;--muted:#94a3b8;--primary:#ff4d2e;--accent:#22d3ee}
+  *{box-sizing:border-box;margin:0;padding:0}body{font-family:Barlow,system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.7}
+  a{color:var(--accent)}.wrap{max-width:900px;margin:0 auto;padding:1.25rem}
+  header{display:flex;justify-content:space-between;align-items:center;padding:1rem 0;border-bottom:1px solid var(--border);margin-bottom:1.5rem}
+  .logo{font-family:"Bebas Neue",system-ui,sans-serif;font-size:1.35rem;color:var(--text);text-decoration:none}.logo span{color:var(--primary)}
+  h1{font-family:"Bebas Neue",system-ui,sans-serif;font-size:clamp(1.6rem,4vw,2.4rem);line-height:1.15;margin-bottom:.75rem}
+  h2{font-family:"Bebas Neue",system-ui,sans-serif;font-size:1.35rem;margin:1.5rem 0 .5rem}
+  p,li{color:var(--muted);margin-bottom:.75rem}strong{color:var(--text)}
+  .badge{display:inline-block;font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#FBBC04;border:1px solid rgba(251,188,4,.35);padding:.3rem .75rem;border-radius:999px;margin-bottom:.75rem}
+  .btn{display:inline-block;background:var(--primary);color:#fff;padding:.75rem 1.4rem;border-radius:.5rem;font-weight:600;text-decoration:none;margin:.5rem .5rem .5rem 0}
+  .btn-sec{background:transparent;border:1px solid var(--border);color:var(--text)}
+  .frame{width:100%;height:min(85vh,900px);min-height:560px;border:1px solid var(--border);border-radius:1rem;background:#000}
+  .stats{display:flex;flex-wrap:wrap;gap:.75rem;margin:1.25rem 0}
+  .stat{background:var(--card);border:1px solid var(--border);border-radius:.5rem;padding:.75rem 1rem}.stat strong{display:block;font-family:"Bebas Neue",system-ui,sans-serif;font-size:1.5rem;color:var(--primary)}
+  footer{margin-top:2rem;padding-top:1rem;border-top:1px solid var(--border);font-size:.85rem;color:var(--muted)}
+  .faq details{background:var(--card);border:1px solid var(--border);border-radius:.6rem;padding:.8rem 1rem;margin-bottom:.5rem}
+  .faq summary{font-weight:600;cursor:pointer;color:var(--text)}
+  </style>
+  <script src="/assets/i18n-router.js" defer></script>
+</head>
+<body>
+<div class="wrap">
+  <header><a class="logo" href="/">G-MAN <span>DATA HERO</span></a><a href="/blog/">← Blog</a></header>
+  <article>
+    <p class="badge">FUMETTO INTERATTIVO · CASE STUDY</p>
+    <h1>Incubo dati persi: da ROAS &lt;100% a 680%</h1>
+    <p>La storia interattiva di come un tracking rotto su <strong>Benail.it</strong> nascondeva il fatturato. Case study reale: 11,5k click, ROAS sotto il 100%, poi il fix GTM del <strong>15 settembre 2026</strong> e ROAS fino al <strong>680%</strong> nei 15 giorni successivi.</p>
+    <div class="stats">
+      <div class="stat"><strong>&lt;100%</strong><span>ROAS prima</span></div>
+      <div class="stat"><strong>680%</strong><span>ROAS ultimi 15gg</span></div>
+      <div class="stat"><strong>3,23x</strong><span>Media 2 mesi</span></div>
+    </div>
+    <p><a class="btn" href="/blog/incubo-dati-persi/comic.html">Apri il fumetto interattivo a schermo intero</a>
+    <a class="btn btn-sec" href="#riassunto">Leggi il riassunto</a></p>
+    <iframe class="frame" src="/blog/incubo-dati-persi/comic.html" title="Incubo dati persi — fumetto interattivo" loading="lazy"></iframe>
+    <h2 id="riassunto">Cosa racconta il fumetto (6 atti)</h2>
+    <ol>
+      <li><strong>L'incubo dei dati persi</strong> — Click senza vendite visibili, pixel morti, DataLayer sospetto.</li>
+      <li><strong>La trasformazione</strong> — Da caos a metodo Data Hero: analyze, optimize, achieve.</li>
+      <li><strong>Il nemico</strong> — L'idra del tracking: tag multipli, conflitti GTM, conversioni fantasma.</li>
+      <li><strong>Il fix (15 settembre)</strong> — Intervento sul container e sui segnali di conversione.</li>
+      <li><strong>15 giorni dopo</strong> — Tabelle e ROAS che tornano a raccontare la verità.</li>
+      <li><strong>Epilogo</strong> — Fatturato non inventato: finalmente <em>visibile</em>.</li>
+    </ol>
+    <p><strong>Messaggio chiave:</strong> non serve sempre più budget. Serve tracciare bene.</p>
+    <section class="faq"><h2>FAQ</h2>
+      <details open><summary>Cosa causa un ROAS sotto il 100% con tanti click?</summary><p>Spesso un tracking rotto: conversioni non registrate, DataLayer incompleto o tag GTM in conflitto. Il fatturato c'è, ma Google Ads non lo vede.</p></details>
+      <details><summary>Quanto può migliorare il ROAS dopo un fix GTM?</summary><p>Nel case study Benail.it, dopo il fix del 15 settembre 2026 il ROAS è passato da valori sotto il 100% a circa 680% nei 15 giorni successivi (media 3,23x sui due mesi).</p></details>
+    </section>
+  </article>
+  <footer><p>© Stefano Superina — G-Man Data Hero · <a href="/blog/">Blog</a> · <a href="/chi-sono/">Chi sono</a></p></footer>
+</div>
+<script src="/assets/contact-wa.js" defer></script>
+</body>
+</html>
