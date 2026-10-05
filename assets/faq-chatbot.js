@@ -1,10 +1,12 @@
 /**
- * G-Man FAQ Chatbot — knowledge from 100 FAQ pilastro
+ * G-Man FAQ Chatbot
+ * Knowledge source: /blog/faq-google-ads-analytics-tracking/ (100 FAQ)
  */
 (function () {
   "use strict";
 
   var KB = [];
+  var FAQ_URL = "/blog/faq-google-ads-analytics-tracking/";
 
   var STOP = {
     a:1, ad:1, al:1, alla:1, allo:1, ai:1, agli:1, alle:1, con:1, da:1, dal:1, dalla:1,
@@ -67,6 +69,18 @@
     return ranked.slice(0, limit);
   }
 
+  function parseFaqHtml(html) {
+    var items = [];
+    var re = /<summary><strong>(\d+)\.\s*([\s\S]*?)<\/strong><\/summary>\s*<p>([\s\S]*?)<\/p>/gi;
+    var m;
+    while ((m = re.exec(html))) {
+      var q = m[2].replace(/<[^>]+>/g, "").replace(/\s+/g, " ").trim();
+      var a = m[3].replace(/<[^>]+>/g, "").replace(/\s+/g, " ").trim();
+      if (q && a) items.push({ id: parseInt(m[1], 10), q: q, a: a });
+    }
+    return items;
+  }
+
   function el(tag, cls, html) {
     var e = document.createElement(tag);
     if (cls) e.className = cls;
@@ -89,6 +103,12 @@
   }
 
   function answer(query) {
+    if (!KB.length) {
+      return {
+        text: "Sto ancora caricando le FAQ. Riprova tra un secondo, oppure apri la guida completa: " + FAQ_URL,
+        meta: null
+      };
+    }
     var hits = search(query, 3);
     if (!hits.length || hits[0].sc < 2) {
       return {
@@ -105,7 +125,7 @@
         text += "• " + h.item.q + "\n";
       });
     }
-    text += "\n\nFonte: FAQ #" + best.id + " — /blog/faq-google-ads-analytics-tracking/";
+    text += "\n\nFonte: FAQ #" + best.id + " — " + FAQ_URL;
     return { text: text, meta: "FAQ #" + best.id + " · " + best.q };
   }
 
@@ -152,14 +172,15 @@
         '<input id="gman-chat-input" type="text" autocomplete="off" placeholder="Es. Cos\'è il ROAS? Come tracciare le conversioni?" maxlength="300" />' +
         '<button type="submit" class="gman-chat-send">Invia</button>' +
       '</form>' +
-      '<div class="gman-chat-footer"><a href="/blog/faq-google-ads-analytics-tracking/">Apri tutte le FAQ →</a></div>';
+      '<div class="gman-chat-footer"><a href="' + FAQ_URL + '">Apri tutte le FAQ →</a></div>';
 
     root.appendChild(panel);
     root.appendChild(fab);
     document.body.appendChild(root);
 
     var msgs = document.getElementById("gman-chat-messages");
-    addMsg(msgs, "bot", "Ciao! Sono l'assistente virtuale di G-Man. Rispondo usando le 100 FAQ su Google Ads, tracking, GA4, ROAS, Consent Mode e lead generation. Cosa vuoi sapere?");
+    var ready = KB.length ? ("Pronto: " + KB.length + " FAQ caricate.") : "Caricamento FAQ in corso…";
+    addMsg(msgs, "bot", "Ciao! Sono l'assistente virtuale di G-Man. Rispondo usando le FAQ su Google Ads, tracking, GA4, ROAS, Consent Mode e lead generation. " + ready + " Cosa vuoi sapere?");
 
     panel.querySelector(".gman-chat-close").addEventListener("click", closeChat);
 
@@ -183,17 +204,18 @@
   }
 
   function mount() {
-    Promise.all([
-      fetch("/assets/faq-kb-a.json").then(function (r) { return r.json(); }),
-      fetch("/assets/faq-kb-b.json").then(function (r) { return r.json(); })
-    ])
-      .then(function (parts) {
-        KB = (parts[0] || []).concat(parts[1] || []);
-        buildUI();
+    buildUI();
+    fetch(FAQ_URL)
+      .then(function (r) { return r.text(); })
+      .then(function (html) {
+        KB = parseFaqHtml(html);
+        var msgs = document.getElementById("gman-chat-messages");
+        if (msgs && KB.length) {
+          addMsg(msgs, "bot", "Knowledge base aggiornata: " + KB.length + " risposte disponibili dalle FAQ.");
+        }
       })
       .catch(function () {
         KB = [];
-        buildUI();
       });
   }
 
