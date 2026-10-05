@@ -1,5 +1,5 @@
 /**
- * G-Man FAQ Chatbot — knowledge from 100 FAQ pilastro (/assets/faq-kb.json)
+ * G-Man FAQ Chatbot — knowledge from 100 FAQ pilastro
  */
 (function () {
   "use strict";
@@ -183,10 +183,12 @@
   }
 
   function mount() {
-    fetch("/assets/faq-kb.json")
-      .then(function (r) { return r.json(); })
-      .then(function (d) {
-        KB = d || [];
+    Promise.all([
+      fetch("/assets/faq-kb-a.json").then(function (r) { return r.json(); }),
+      fetch("/assets/faq-kb-b.json").then(function (r) { return r.json(); })
+    ])
+      .then(function (parts) {
+        KB = (parts[0] || []).concat(parts[1] || []);
         buildUI();
       })
       .catch(function () {
