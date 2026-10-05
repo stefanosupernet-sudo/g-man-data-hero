@@ -48,3 +48,33 @@
   if (footer) footer.parentNode.insertBefore(box, footer);
   else document.body.appendChild(box);
 })();
+
+/* G-Man FAQ Chatbot bootstrap */
+(function(){
+  function inject(){
+    if(!document.querySelector('link[href*="faq-chatbot.css"]')){
+      var l=document.createElement('link');l.rel='stylesheet';l.href='/assets/faq-chatbot.css';document.head.appendChild(l);
+    }
+    if(!document.querySelector('script[src*="faq-chatbot.js"]')){
+      var s=document.createElement('script');s.src='/assets/faq-chatbot.js';s.defer=true;document.body.appendChild(s);
+    }
+    var ctas=document.querySelector('.hero-ctas');
+    if(ctas && !ctas.querySelector('[data-gman-chat-open]')){
+      var b=document.createElement('button');
+      b.type='button';b.className='btn-ai-hero';b.setAttribute('data-gman-chat-open','');
+      b.textContent='✦ Chiedi alla AI';
+      ctas.appendChild(b);
+    }
+    var sec=document.getElementById('contatti');
+    if(sec && !document.getElementById('assistente-ai')){
+      var formCard=sec.querySelector('.form-card');
+      var box=document.createElement('div');
+      box.className='gman-chat-section';box.id='assistente-ai';
+      box.innerHTML='<h3>✦ Assistente AI — FAQ Google Ads & Tracking</h3><p>Risposte immediate dalle <a href="/blog/faq-google-ads-analytics-tracking/" style="color:var(--accent)">100 FAQ</a> su Google Ads, GA4, ROAS, Consent Mode e lead generation. Per un audit personalizzato usa il form sopra.</p><button type="button" class="btn-ai" data-gman-chat-open>Apri l\'assistente AI</button>';
+      if(formCard && formCard.parentNode){ formCard.parentNode.insertBefore(box, formCard.nextSibling); }
+      else if(sec.querySelector('.container')){ sec.querySelector('.container').appendChild(box); }
+    }
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded', inject);
+  else inject();
+})();
