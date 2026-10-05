@@ -1,7 +1,7 @@
 /* G-Man FAQ Chatbot */
 .gman-chat-root{position:relative;z-index:9999}
 .gman-chat-fab{
-  position:fixed;right:1.1rem;bottom:1.1rem;z-index:10000;
+  position:fixed;left:1.1rem;bottom:1.1rem;z-index:10000;
   display:inline-flex;align-items:center;gap:.45rem;
   background:#ff4d2e;color:#fff;border:0;border-radius:999px;
   padding:.75rem 1.15rem;font-weight:700;font-size:.92rem;
@@ -10,7 +10,7 @@
 }
 .gman-chat-fab:hover{filter:brightness(1.06)}
 .gman-chat-panel{
-  position:fixed;right:1.1rem;bottom:4.4rem;width:min(400px,calc(100vw - 1.5rem));
+  position:fixed;left:1.1rem;bottom:4.4rem;width:min(400px,calc(100vw - 1.5rem));
   max-height:min(560px,calc(100vh - 6rem));
   background:#12182a;border:1px solid #1e2740;border-radius:1rem;
   box-shadow:0 20px 50px rgba(0,0,0,.45);
@@ -75,6 +75,6 @@
 }
 .btn-ai-hero:hover{background:rgba(77,184,255,.1);text-decoration:none;color:#7cc9ff}
 @media (max-width:520px){
-  .gman-chat-panel{right:.6rem;left:.6rem;width:auto;bottom:4.2rem}
-  .gman-chat-fab{right:.75rem;bottom:.75rem}
+  .gman-chat-panel{left:.6rem;right:.6rem;width:auto;bottom:4.2rem}
+  .gman-chat-fab{left:.75rem;bottom:.75rem;font-size:.85rem;padding:.65rem 1rem}
 }
