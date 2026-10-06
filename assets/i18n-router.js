@@ -58,6 +58,8 @@
     if (p === '/' || p === '/index') return true;
     if (p === '/chi-sono') return true;
     if (p === '/blog') return true;
+    // Dedicated EN twins for specific blog pillars
+    if (p === '/blog/faq-google-ads-analytics-tracking') return true;
     if (p.indexOf('/blog/') === 0) return false;
     return false;
   }
@@ -172,7 +174,8 @@
 
     if (preferred === 'en' && lang === 'it') {
       var itPath = location.pathname;
-      if (itPath.indexOf('/blog/') === 0 && itPath.replace(/\/+$/, '') !== '/blog') {
+      // Individual IT blog posts without EN twin stay on IT
+      if (itPath.indexOf('/blog/') === 0 && itPath.replace(/\/+$/, '') !== '/blog' && !hasEnTwin(itPath)) {
         return;
       }
       if (
@@ -189,8 +192,16 @@
         }
       }
     } else if (preferred === 'it' && lang === 'en') {
-      var destIt = toItPath(location.pathname);
-      if (destIt !== location.pathname) {
+      var enPath = location.pathname;
+      // Keep user on dedicated EN blog articles (do not force IT)
+      if (
+        enPath.indexOf('/en/blog/') === 0 &&
+        enPath.replace(/\/+$/, '') !== '/en/blog'
+      ) {
+        return;
+      }
+      var destIt = toItPath(enPath);
+      if (destIt !== enPath) {
         location.replace(destIt + location.search + location.hash);
       }
     }
