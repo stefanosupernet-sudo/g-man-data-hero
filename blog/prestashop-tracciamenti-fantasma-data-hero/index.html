@@ -3,53 +3,57 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-PJ43MG4PXR"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-PJ43MG4PXR');</script>
 <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>PrestaShop e tracciamenti fantasma: anatomia di un disastro dati | G-Man</title>
-<meta name="description" content="Come i tracciamenti rotti su PrestaShop e GTM distruggono il ROI di Google Ads — e come ripristinare una misurazione affidabile."/>
+<title>PrestaShop e tracciamenti fantasma: quando i numeri mentono | G-Man</title>
+<meta name="description" content="Acquisti sul sito e conversioni diverse su Google Ads: perché su PrestaShop i numeri mentono e come ricostruire un unico filo pulito."/>
 <meta name="robots" content="index, follow, max-image-preview:large"/>
 <link rel="canonical" href="https://stefanodagogle.com/blog/prestashop-tracciamenti-fantasma-data-hero/"/>
-<link rel="alternate" hreflang="it" href="https://stefanodagogle.com/blog/prestashop-tracciamenti-fantasma-data-hero/"/>
-<link rel="alternate" hreflang="en" href="https://stefanodagogle.com/en/blog/prestashop-ghost-tracking/"/>
-<link rel="alternate" hreflang="x-default" href="https://stefanodagogle.com/blog/prestashop-tracciamenti-fantasma-data-hero/"/>
-<meta property="og:type" content="article"/><meta property="og:locale" content="it_IT"/>
-<meta property="og:title" content="PrestaShop e tracciamenti fantasma"/>
-<meta property="og:url" content="https://stefanodagogle.com/blog/prestashop-tracciamenti-fantasma-data-hero/"/>
-<meta property="og:image" content="https://stefanodagogle.com/assets/gman-hero.jpg"/>
 <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;600;700&family=Bebas+Neue&display=swap" rel="stylesheet"/>
 <style>
 :root{--bg:#0a0e1a;--card:#111827;--border:#1e293b;--text:#f1f5f9;--muted:#94a3b8;--primary:#ff4d2e;--accent:#22d3ee}
 *{box-sizing:border-box;margin:0;padding:0}body{font-family:Barlow,system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.7}
 a{color:var(--accent)}.wrap{max-width:720px;margin:0 auto;padding:1.25rem 1.25rem 3rem}
-header{display:flex;justify-content:space-between;align-items:center;padding:1rem 0;border-bottom:1px solid var(--border);margin-bottom:1.75rem}
+header.site{display:flex;justify-content:space-between;align-items:center;padding:1rem 0;border-bottom:1px solid var(--border);margin-bottom:1.75rem}
 .logo{font-family:"Bebas Neue",system-ui,sans-serif;font-size:1.35rem;color:var(--text);text-decoration:none}.logo span{color:var(--primary)}
-h1{font-family:"Bebas Neue",system-ui,sans-serif;font-size:clamp(1.6rem,4vw,2.4rem);line-height:1.15;margin-bottom:.85rem}
-h2{font-family:"Bebas Neue",system-ui,sans-serif;font-size:1.35rem;margin:1.75rem 0 .6rem}p,li{color:var(--muted);margin-bottom:.85rem}strong{color:var(--text)}
-ul{margin:0 0 1rem 1.2rem}.faq details{background:var(--card);border:1px solid var(--border);border-radius:.6rem;padding:.8rem 1rem;margin-bottom:.5rem}
-.faq summary{font-weight:600;cursor:pointer;color:var(--text)}.cta{background:var(--card);border:1px solid var(--border);border-radius:.85rem;padding:1.25rem;margin:2rem 0;text-align:center}
-.btn{display:inline-block;background:var(--primary);color:#fff;padding:.65rem 1.25rem;border-radius:.5rem;font-weight:600;margin-top:.4rem;text-decoration:none}
-footer{margin-top:2rem;padding-top:1.25rem;border-top:1px solid var(--border);font-size:.85rem;color:var(--muted)}
+h1{font-family:"Bebas Neue",system-ui,sans-serif;font-size:clamp(1.6rem,4vw,2.4rem);line-height:1.15;margin:.5rem 0 1rem}
+h2{font-family:"Bebas Neue",system-ui,sans-serif;font-size:1.35rem;margin:1.75rem 0 .6rem}p,li{color:var(--muted);margin-bottom:.85rem}p strong,li strong{color:var(--text)}
+ul{margin:0 0 1rem 1.25rem}.meta{color:var(--accent);font-size:.8rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase}
+.faq details{background:var(--card);border:1px solid var(--border);border-radius:.5rem;padding:.75rem 1rem;margin:.5rem 0}
+.cta{background:var(--card);border:1px solid var(--border);border-radius:.85rem;padding:1.25rem;margin-top:2rem;text-align:center}
+.btn{display:inline-block;background:var(--primary);color:#fff;padding:.6rem 1.2rem;border-radius:.45rem;font-weight:600;text-decoration:none;margin-top:.5rem}
+footer{margin-top:2rem;padding-top:1rem;border-top:1px solid var(--border);color:var(--muted);font-size:.85rem;text-align:center}
 </style>
 <script src="/assets/i18n-router.js" defer></script>
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://stefanodagogle.com/blog/prestashop-tracciamenti-fantasma-data-hero/#article","headline":"PrestaShop e tracciamenti fantasma: anatomia di un disastro dati","description":"Come i tracciamenti rotti su PrestaShop e GTM distruggono il ROI di Google Ads.","image":["https://stefanodagogle.com/assets/gman-hero.jpg"],"datePublished":"2026-09-23","dateModified":"2026-09-30","inLanguage":"it-IT","author":{"@type":"Person","name":"Stefano Superina","url":"https://stefanodagogle.com/chi-sono/"},"publisher":{"@type":"Person","name":"Stefano Superina","url":"https://stefanodagogle.com/"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://stefanodagogle.com/blog/prestashop-tracciamenti-fantasma-data-hero/"},"isPartOf":{"@type":"Blog","name":"G-Man Data Hero Blog","url":"https://stefanodagogle.com/blog/"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://stefanodagogle.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://stefanodagogle.com/blog/"},{"@type":"ListItem","position":3,"name":"PrestaShop tracciamenti fantasma","item":"https://stefanodagogle.com/blog/prestashop-tracciamenti-fantasma-data-hero/"}]},{"@type":"FAQPage","@id":"https://stefanodagogle.com/blog/prestashop-tracciamenti-fantasma-data-hero/#faq","mainEntity":[{"@type":"Question","name":"Perché PrestaShop ha più problemi di tracking di Shopify?","acceptedAnswer":{"@type":"Answer","text":"Moduli di terze parti e layer di cache aggressivi spesso iniettano o bloccano i tag in modo imprevedibile."}},{"@type":"Question","name":"Devo fidarmi dei numeri di Google Ads o di Analytics?","acceptedAnswer":{"@type":"Answer","text":"Di nessuno in modo cieco. Allinea entrambi a un unico evento acquisto pulito e riconcilia con il backend ordini."}}]}]}</script>
 </head><body><div class="wrap">
-<header><a class="logo" href="/">G-MAN <span>DATA HERO</span></a><a href="/blog/">← Blog</a></header>
+<header class="site"><a class="logo" href="/">G-MAN <span>DATA HERO</span></a><a href="/blog/">← Blog</a></header>
 <article>
-<h1>PrestaShop e tracciamenti fantasma</h1>
-<p>Acquisti mancanti, conversioni fantasma e report contraddittori. Quando moduli PrestaShop, cache e GTM collidono, Google Ads ottimizza rumore invece di vendite reali.</p>
-<h2>Perché si rompe</h2>
-<p>Moduli di terze parti e cache aggressive fanno sparare i tag due volte, mai, o solo su alcuni browser.</p>
-<h2>Sintomi tipici</h2>
+<header>
+  <p class="meta">Case study · PrestaShop · Tracking</p>
+  <h1>PrestaShop e i tracciamenti fantasma: quando i numeri mentono</h1>
+</header>
+<p>C’è un momento in cui l’imprenditore guarda due schermi e non crede ai suoi occhi. Su PrestaShop gli ordini ci sono. Su Google Ads le conversioni sono poche, o troppe, o diverse. Come se due cronometristi contassero la stessa gara e tirassero fuori tempi diversi.</p>
+<p>Non è magia nera: è un problema di <strong>tracciamento</strong>. I “sensori” che dovrebbero dire a Google “è arrivata una vendita” non funzionano bene.</p>
+<h2>Perché su PrestaShop capita spesso</h2>
+<p>PrestaShop vive di moduli: pezzi aggiunti nel tempo. Ognuno può inserire un pezzetto di codice pubblicitario. Aggiungi la cache (la “memoria veloce” del sito) e succede questo:</p>
 <ul>
-<li>Conversioni Ads ≠ transazioni Analytics</li>
-<li>Smart Bidding impara su eventi duplicati o mancanti</li>
-<li>ROAS che oscillano più con i tag che con le vendite</li>
+  <li>un tag parte due volte (doppia conversione fantasma);</li>
+  <li>un tag non parte mai (vendite invisibili);</li>
+  <li>un tag funziona solo su certi browser.</li>
 </ul>
-<h2>La soluzione</h2>
-<p>Mappa ogni tag e modulo. Elimina pixel ridondanti. Ricostruisci un data layer pulito. Allinea le conversioni primarie Ads a un'unica fonte di verità.</p>
-<section class="faq"><h2>FAQ</h2>
-<details open><summary>Perché PrestaShop ha più problemi di tracking di Shopify?</summary><p>Moduli di terze parti e layer di cache aggressivi spesso iniettano o bloccano i tag in modo imprevedibile.</p></details>
-<details><summary>Devo fidarmi dei numeri di Google Ads o di Analytics?</summary><p>Di nessuno in modo cieco. Allinea entrambi a un unico evento acquisto pulito e riconcilia con il backend ordini.</p></details>
+<p>Google Ads, intanto, ottimizza su ciò che vede. Se vede rumore, impara sul rumore.</p>
+<h2>I sintomi tipici</h2>
+<ul>
+  <li>Le conversioni di Ads non coincidono con gli ordini veri.</li>
+  <li>Il ROAS salta su e giù senza che le vendite facciano lo stesso.</li>
+  <li>L’algoritmo sembra impazzito: in realtà sta studiando dati sbagliati.</li>
+</ul>
+<h2>La via d’uscita</h2>
+<p>Si fa come in un laboratorio: si mappa ogni sensore, si spegne ciò che è ridondante, si ricostruisce un unico filo pulito dall’acquisto all’annuncio. Una sola fonte di verità, allineata agli ordini reali.</p>
+<section class="faq">
+  <h2>Domande frequenti</h2>
+  <details open><summary>Perché PrestaShop ha più problemi di Shopify?</summary><p>Perché moduli e cache di terze parti spesso inseriscono o bloccano i tag in modo imprevedibile. Non è colpa del negozio: è la somma di tanti pezzi non coordinati.</p></details>
+  <details><summary>Devo fidarmi di Google Ads o di Analytics?</summary><p>Di nessuno a occhi chiusi. Entrambi devono raccontare la stessa storia dell’ordine reale sul sito.</p></details>
 </section>
-<div class="cta"><p><strong>Vuoi un audit gratuito del tuo account Google Ads?</strong></p><a class="btn" href="/#contatti">Richiedi audit gratuito</a></div>
+<div class="cta"><p><strong>I numeri del tuo PrestaShop non tornano?</strong></p><a class="btn" href="/#contatti">Richiedi un audit gratuito</a></div>
 </article>
 <footer><p>© Stefano Superina — G-Man Data Hero · <a href="/blog/">Blog</a></p></footer>
 </div><script src="/assets/contact-wa.js" defer></script></body></html>
