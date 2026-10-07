@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PJ43MG4PXR"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-PJ43MG4PXR');</script>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Consent Mode V2: il fumetto che spiega perché i tracciamenti muoiono | G-Man Data Hero</title>
+<meta name="description" content="Banner GDPR sbagliato, conversioni sparite e ROAS a zero? Il fumetto di G-Man Data Hero spiega Consent Mode V2, Advanced Mode, ad_user_data e come verificare GTM e Tag Assistant."/>
+<meta name="keywords" content="Consent Mode V2, Google Consent Mode, Advanced Consent Mode, ad_user_data, ad_personalization, GTM consenso, Tag Assistant Consent, tracciamento GDPR, conversioni sparite, ROAS crollato, banner cookie Google Ads"/>
+<meta name="author" content="Stefano Superina"/>
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1"/>
+<link rel="canonical" href="https://stefanodagogle.com/blog/consent-mode-v2-fumetto/"/>
+<link rel="alternate" hreflang="it" href="https://stefanodagogle.com/blog/consent-mode-v2-fumetto/"/>
+<link rel="alternate" hreflang="x-default" href="https://stefanodagogle.com/blog/consent-mode-v2-fumetto/"/>
+<meta property="og:type" content="article"/>
+<meta property="og:locale" content="it_IT"/>
+<meta property="og:site_name" content="G-Man Data Hero"/>
+<meta property="og:title" content="Consent Mode V2: il fumetto che spiega perché i tracciamenti muoiono"/>
+<meta property="og:description" content="Banner GDPR sbagliato, conversioni sparite e ROAS a zero? Il fumetto di G-Man Data Hero spiega Consent Mode V2, Advanced Mode e come verificare GTM e Tag Assistant."/>
+<meta property="og:url" content="https://stefanodagogle.com/blog/consent-mode-v2-fumetto/"/>
+<meta property="og:image" content="https://stefanodagogle.com/assets/consent-mode/panel-01.webp"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://stefanodagogle.com/blog/consent-mode-v2-fumetto/#article","headline":"Consent Mode V2: il fumetto che spiega perché i tracciamenti muoiono","description":"Banner GDPR sbagliato, conversioni sparite e ROAS a zero? Il fumetto di G-Man Data Hero spiega Consent Mode V2, Advanced Mode, ad_user_data e come verificare GTM e Tag Assistant.","image":["https://stefanodagogle.com/assets/consent-mode/panel-01.webp"],"datePublished":"2026-10-07","dateModified":"2026-10-07","inLanguage":"it-IT","author":{"@type":"Person","name":"Stefano Superina","url":"https://stefanodagogle.com/chi-sono/"},"publisher":{"@type":"Person","name":"Stefano Superina","url":"https://stefanodagogle.com/"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://stefanodagogle.com/blog/consent-mode-v2-fumetto/"},"keywords":"Consent Mode V2, Google Consent Mode, Advanced Consent Mode, ad_user_data, ad_personalization, GTM consenso, Tag Assistant Consent, tracciamento GDPR, conversioni sparite, ROAS crollato","articleSection":"Consent Mode"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://stefanodagogle.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://stefanodagogle.com/blog/"},{"@type":"ListItem","position":3,"name":"Consent Mode V2: il fumetto che spiega perché i tracciamenti muoiono","item":"https://stefanodagogle.com/blog/consent-mode-v2-fumetto/"}]},{"@type":"FAQPage","@id":"https://stefanodagogle.com/blog/consent-mode-v2-fumetto/#faq","mainEntity":[{"@type":"Question","name":"Perché dopo il banner cookie le conversioni Google Ads sono sparite?","acceptedAnswer":{"@type":"Answer","text":"Spesso il banner blocca i tag di Google (GA4, Google Ads) prima del consenso senza implementare Consent Mode in Advanced. Google non riceve i ping di default e non può modellare le conversioni: ROAS e CPA diventano inaffidabili."}},{"@type":"Question","name":"Cos'è Google Consent Mode V2 e perché riguarda il mio e-commerce?","acceptedAnswer":{"@type":"Answer","text":"Consent Mode V2 è il framework con cui i tag Google adattano il comportamento al consenso dell'utente. Dal 2024 i parametri ad_user_data e ad_personalization sono essenziali per remarketing, misurazione e ottimizzazione delle campagne."}},{"@type":"Question","name":"Qual è la differenza tra Basic e Advanced Consent Mode?","acceptedAnswer":{"@type":"Answer","text":"In Basic i tag non partono senza consenso e perdi quasi tutti i segnali. In Advanced i tag partono in stato DENIED e inviano ping anonimi: Google può usare behavioural e conversion modelling per recuperare parte dei dati persi, nel rispetto del consenso."}},{"@type":"Question","name":"Il mio ROAS è crollato dopo aver messo Iubenda / Cookiebot: cosa controllo?","acceptedAnswer":{"@type":"Answer","text":"Verifica in Google Tag Assistant la tab Consent: devono esserci consent default (denied) e consent update dopo la scelta. Controlla che GTM non sia bloccato da script custom prima del consenso e che la CMP sia collegata correttamente al data layer."}},{"@type":"Question","name":"Consent Mode sostituisce il banner cookie?","acceptedAnswer":{"@type":"Answer","text":"No. Il banner (CMP) raccoglie la scelta dell'utente; Consent Mode comunica quella scelta ai tag Google. Servono entrambi, collegati in modo corretto."}},{"@type":"Question","name":"Cosa sono ad_user_data e ad_personalization?","acceptedAnswer":{"@type":"Answer","text":"Sono i segnali Consent Mode V2 legati all'uso dei dati per pubblicità e alla personalizzazione degli annunci. Senza update su questi parametri dopo il consenso, audience e remarketing possono degradare fortemente."}},{"@type":"Question","name":"Come verifico se Consent Mode è configurato bene?","acceptedAnswer":{"@type":"Answer","text":"Apri Tag Assistant (o GTM Preview), attiva Consent Overview e naviga accettando/rifiutando i cookie. Devi vedere la sequenza default denied → update granted/denied coerente con il click sul banner, non granted prima del consenso."}},{"@type":"Question","name":"Posso bloccare GA4 con JavaScript finché l'utente non accetta?","acceptedAnswer":{"@type":"Answer","text":"È l'errore tipico che uccide la modellazione. Con Advanced Mode i tag devono poter partire in denied e inviare ping anonimi; il blocco totale pre-consenso impedisce a Google di ricostruire i dati mancanti."}},{"@type":"Question","name":"Consent Mode risolve anche Meta Ads e altri pixel?","acceptedAnswer":{"@type":"Answer","text":"Consent Mode regola i tag Google. Meta e altri tool hanno i propri meccanismi di consenso. L'imprenditore deve allineare CMP, data layer e ogni piattaforma pubblicitaria, non solo Google."}},{"@type":"Question","name":"Quando serve un audit Consent Mode e tracking?","acceptedAnswer":{"@type":"Answer","text":"Quando le vendite reali (Shopify, WooCommerce, gestionale) non tornano con GA4 o Google Ads, dopo l'installazione di una CMP, o se Smart Bidding sembra impazzito senza un cambio di mercato o offerta."}}]}]}</script>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;600;700&family=Bebas+Neue&display=swap" rel="stylesheet"/>
+<style>
+:root{--bg:#0a0e1a;--card:#12182a;--text:#e8ecf4;--muted:#8b95a8;--primary:#ff4d2e;--accent:#4db8ff;--border:#1e2740;--comic:#ffcc00}
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:Barlow,system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.65}
+a{color:var(--accent)}.c{max-width:820px;margin:0 auto;padding:0 1.2rem}
+header.site{padding:.9rem 0;border-bottom:1px solid var(--border)}.in{display:flex;justify-content:space-between;align-items:center;max-width:1100px;margin:0 auto;padding:0 1.2rem}
+.logo{font-family:"Bebas Neue",system-ui,sans-serif;font-size:1.4rem;color:var(--text);text-decoration:none}.logo span{color:var(--primary)}
+nav a{margin-left:1rem;color:var(--muted);font-size:.88rem;text-decoration:none}
+h1{font-family:"Bebas Neue",system-ui,sans-serif;font-size:clamp(1.5rem,4vw,2.35rem);line-height:1.12;margin:.4rem 0 .8rem}
+.label{font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+.meta{color:var(--muted);font-size:.88rem;margin-bottom:1rem}
+.lead{background:var(--card);border:1px solid var(--border);border-left:3px solid var(--primary);border-radius:.6rem;padding:1rem 1.15rem;margin:1rem 0;color:var(--muted)}
+.lead strong{color:var(--text)}
+.panel{margin:2rem 0;padding-bottom:1.5rem;border-bottom:1px solid var(--border)}
+.panel-head{display:flex;gap:.9rem;align-items:flex-start;margin-bottom:.75rem}
+.panel-num{font-family:"Bebas Neue",system-ui,sans-serif;font-size:1.6rem;color:var(--comic);line-height:1;min-width:2.2rem}
+.panel h2{font-family:"Bebas Neue",system-ui,sans-serif;font-size:1.25rem;line-height:1.15;margin:0}
+.sub{color:var(--muted);font-size:.85rem;margin-top:.15rem}
+.panel-fig{margin:0;background:#0e1a3a;border:3px solid #fff;border-radius:.35rem;overflow:hidden;position:relative}
+.panel-fig img{width:100%;height:auto;display:block}
+.bubble{background:#fff;color:#0a0e1a;font-weight:700;font-size:.92rem;padding:.65rem .9rem;border-top:3px solid var(--comic)}
+.caption{margin-top:.7rem;color:var(--muted);font-size:.95rem}
+.caption strong{color:var(--text)}
+.note{background:var(--card);border:1px solid var(--border);border-radius:.6rem;padding:1rem 1.1rem;margin:1.5rem 0;font-size:.92rem;color:var(--muted)}
+.note code{background:#0a0e1a;color:#a3ff12;padding:.15rem .4rem;border-radius:.25rem;font-size:.8rem}
+h2.faq-title{font-family:"Bebas Neue",system-ui,sans-serif;font-size:1.4rem;margin:2rem 0 .8rem;border-left:3px solid var(--primary);padding-left:.65rem}
+details{background:var(--card);border:1px solid var(--border);border-radius:.5rem;padding:.7rem .9rem;margin-bottom:.4rem}
+summary{font-weight:600;cursor:pointer}details p{margin:.5rem 0 0;color:var(--muted)}
+.cta{background:var(--card);border:1px solid var(--border);border-radius:.9rem;padding:1.3rem;margin:1.8rem 0;text-align:center}
+.btn{display:inline-block;background:var(--primary);color:#fff;padding:.6rem 1.2rem;border-radius:.45rem;font-weight:600;text-decoration:none;margin-top:.35rem}
+footer{margin-top:1.8rem;padding:1.3rem 0;border-top:1px solid var(--border);text-align:center;color:var(--muted);font-size:.82rem}
+</style>
+<script src="/assets/i18n-router.js" defer></script>
+</head>
+<body>
+<header class="site"><div class="in"><a class="logo" href="/">G-MAN <span>DATA HERO</span></a><nav><a href="/">Home</a><a href="/blog/">Blog</a><a href="/#contact">Contatti</a></nav></div></header>
+<main class="c"><article style="padding:1.8rem 0">
+<p class="label">Fumetto · Consent Mode V2 · Tracking</p>
+<h1>Consent Mode V2: il fumetto che spiega perché i tracciamenti muoiono</h1>
+<p class="meta">Stefano Superina · 7 ottobre 2026 · Guida visuale interattiva</p>
+<div class="lead">
+<p>Se dopo il banner cookie le <strong>conversioni sono sparite</strong>, il <strong>ROAS è crollato</strong> e Smart Bidding sembra cieco, il problema spesso non è la campagna: è un <strong>Consent Mode</strong> sbagliato (o assente).</p>
+<p style="margin-top:.6rem">In <strong>9 tavole</strong>, G-Man Data Hero mostra la differenza tra Basic e <strong>Advanced Consent Mode V2</strong>, i parametri <strong>ad_user_data</strong> e <strong>ad_personalization</strong>, e come verificare tutto in GTM e Tag Assistant.</p>
+</div>
+<nav class="note" aria-label="Indice tavole"><strong>Indice tavole</strong>
+<ol style="margin:.5rem 0 0 1.1rem">
+<li><a href="#tavola-01">Tavola 01 — Il banner fantasma</a></li>
+<li><a href="#tavola-02">Tavola 02 — Che cos'è il Consent Mode?</a></li>
+<li><a href="#tavola-03">Tavola 03 — L'errore fatale</a></li>
+<li><a href="#tavola-04">Tavola 04 — Il crollo dei dati</a></li>
+<li><a href="#tavola-05">Tavola 05 — La trasformazione</a></li>
+<li><a href="#tavola-06">Tavola 06 — Consent Mode V2: il verbo</a></li>
+<li><a href="#tavola-07">Tavola 07 — Il rituale di verifica</a></li>
+<li><a href="#tavola-08">Tavola 08 — Il potere del modelling</a></li>
+<li><a href="#tavola-09">Tavola 09 — Missione compiuta</a></li>
+</ol>
+</nav>
+<section class="panel" id="tavola-01">
+  <header class="panel-head"><span class="panel-num">01</span><div><h2>Tavola 01 — Il banner fantasma</h2><p class="sub">L'era del consenso fake</p></div></header>
+  <figure class="panel-fig"><img src="/assets/consent-mode/panel-01.webp" alt="Tavola 01 — Il banner fantasma" width="1200" height="800" loading="eager" decoding="async"/><figcaption class="bubble">FATTO! Banner messo! Ora siamo a posto con GDPR, no?</figcaption></figure>
+  <p class="caption"><strong>Didascalia:</strong> Il nostro Google Ads Specialist crede che basti un vecchio banner «Accetta tutto». Ma Google lo sta già osservando… Il banner blocca tutto senza inviare segnali. È la morte del tracciamento.</p>
+</section>
+<section class="panel" id="tavola-02">
+  <header class="panel-head"><span class="panel-num">02</span><div><h2>Tavola 02 — Che cos'è il Consent Mode?</h2><p class="sub">La spiegazione sbagliata</p></div></header>
+  <figure class="panel-fig"><img src="/assets/consent-mode/panel-02.webp" alt="Tavola 02 — Che cos'è il Consent Mode?" width="1200" height="800" loading="eager" decoding="async"/><figcaption class="bubble">CONSENT MODE = Se non accettano, Google non traccia. Fine.</figcaption></figure>
+  <p class="caption"><strong>Didascalia:</strong> Il Specialist prova a spiegarlo al cliente: «È un modo per dire a Google che l'utente non vuole cookie». Sbagliato. Consent Mode non è un muro, è un traduttore. Invia segnali anonimi anche senza consenso.</p>
+</section>
+<section class="panel" id="tavola-03">
+  <header class="panel-head"><span class="panel-num">03</span><div><h2>Tavola 03 — L'errore fatale</h2><p class="sub">Come non va fatto. Mai.</p></div></header>
+  <figure class="panel-fig"><img src="/assets/consent-mode/panel-03.webp" alt="Tavola 03 — L'errore fatale" width="1200" height="800" loading="lazy" decoding="async"/><figcaption class="bubble">BLOCCO TUTTO FINO AL CLICK! COSÌ SONO SICURO!</figcaption></figure>
+  <p class="caption"><strong>Didascalia:</strong> L'errore da principiante: bloccare GA4 e Google Ads prima del consenso con JavaScript custom. Risultato? Google non riceve i ping di default = modellazione impossibile. Modalità Advanced vs Basic ignorata.</p>
+</section>
+<section class="panel" id="tavola-04">
+  <header class="panel-head"><span class="panel-num">04</span><div><h2>Tavola 04 — Il crollo dei dati</h2><p class="sub">CPA alle stelle. ROAS a zero.</p></div></header>
+  <figure class="panel-fig"><img src="/assets/consent-mode/panel-04.webp" alt="Tavola 04 — Il crollo dei dati" width="1200" height="800" loading="lazy" decoding="async"/><figcaption class="bubble">MA CHE HAI FATTO?! LE CONVERSIONI SONO SPARITE! IL CPA È +300%!</figcaption></figure>
+  <p class="caption"><strong>Didascalia:</strong> Le campagne impazziscono. Senza segnali di consenso, Smart Bidding va in tilt. Il cliente urla. Il fatturato crolla del 40%. Questa è la conseguenza di una implementazione 2021 nel 2025.</p>
+</section>
+<section class="panel" id="tavola-05">
+  <header class="panel-head"><span class="panel-num">05</span><div><h2>Tavola 05 — La trasformazione</h2><p class="sub">Nasce G-Man Data Hero</p></div></header>
+  <figure class="panel-fig"><img src="/assets/consent-mode/panel-05.webp" alt="Tavola 05 — La trasformazione" width="1200" height="800" loading="lazy" decoding="async"/><figcaption class="bubble">BASTA! SE IL DATO È MORTO… LO FARÒ RISORGERE IO!</figcaption></figure>
+  <p class="caption"><strong>Didascalia:</strong> L'umiliazione è totale. Ma dentro lo Specialist scatta qualcosa. Una luce blu. Codice che scorre nelle vene. GTM, Consent API, TCF 2.2. Non è più un marketer. È evoluzione.</p>
+</section>
+<section class="panel" id="tavola-06">
+  <header class="panel-head"><span class="panel-num">06</span><div><h2>Tavola 06 — Consent Mode V2: il verbo</h2><p class="sub">Come si fa davvero</p></div></header>
+  <figure class="panel-fig"><img src="/assets/consent-mode/panel-06.webp" alt="Tavola 06 — Consent Mode V2" width="1200" height="800" loading="lazy" decoding="async"/><figcaption class="bubble">ASCOLTAMI: defaultConsent DENIED per TUTTO. Poi UPDATE solo se accettano. MA I TAG PARTONO SEMPRE!</figcaption></figure>
+  <p class="caption"><strong>Didascalia:</strong> G-Man Data Hero rivela il segreto: due nuovi parametri — ad_user_data e ad_personalization. Default DENIED, update su consenso, implementazione Advanced sempre. Invio ping anche senza consenso.</p>
+</section>
+<section class="panel" id="tavola-07">
+  <header class="panel-head"><span class="panel-num">07</span><div><h2>Tavola 07 — Il rituale di verifica</h2><p class="sub">GTM Preview e Tag Assistant</p></div></header>
+  <figure class="panel-fig"><img src="/assets/consent-mode/panel-07.webp" alt="Tavola 07 — Il rituale di verifica" width="1200" height="800" loading="lazy" decoding="async"/><figcaption class="bubble">VEDI? Default DENIED. Poi update GRANTED. QUESTA è la sequenza sacra! Controlla in GTM!</figcaption></figure>
+  <p class="caption"><strong>Didascalia:</strong> Non fidarti mai. Verifica. G-Man apre Tag Assistant: Consent tab tutto verde. «consent default» + «consent update». Se vedi consent granted prima del consenso, hai fallito.</p>
+</section>
+<section class="panel" id="tavola-08">
+  <header class="panel-head"><span class="panel-num">08</span><div><h2>Tavola 08 — Il potere del modelling</h2><p class="sub">L'AI che ricostruisce la realtà</p></div></header>
+  <figure class="panel-fig"><img src="/assets/consent-mode/panel-08.webp" alt="Tavola 08 — Il potere del modelling" width="1200" height="800" loading="lazy" decoding="async"/><figcaption class="bubble">Stiamo recuperando il 65% delle conversioni perse. Senza cookie. Solo con i segnali. È IL FUTURO.</figcaption></figure>
+  <p class="caption"><strong>Didascalia:</strong> Con i ping anonimi, Google può modellare fino al 70% dei dati persi. Behavioral modelling + Conversion modelling. Non è magia, è matematica. Il ROAS torna a respirare.</p>
+</section>
+<section class="panel" id="tavola-09">
+  <header class="panel-head"><span class="panel-num">09</span><div><h2>Tavola 09 — Missione compiuta</h2><p class="sub">Il ritorno del Data Hero</p></div></header>
+  <figure class="panel-fig"><img src="/assets/consent-mode/panel-09.webp" alt="Tavola 09 — Missione compiuta" width="1200" height="800" loading="lazy" decoding="async"/><figcaption class="bubble">Hai capito ora? Consent Mode V2 non è un optional. È SOPRAVVIVENZA.</figcaption></figure>
+  <p class="caption"><strong>Didascalia:</strong> Il cliente è salvo. Le campagne performano. Il GDPR è rispettato. G-Man Data Hero torna nell'ombra, pronto a intervenire quando un altro Specialist bloccherà i tag prima del tempo.</p>
+</section>
+<div class="note">
+<p><strong>In sintesi operativa</strong></p>
+<ul style="margin:.5rem 0 0 1.1rem">
+<li>Default consent: <code>denied</code> (anche ad_storage, ad_user_data, ad_personalization, analytics_storage)</li>
+<li>I tag partono comunque (Advanced): inviano ping anonimi</li>
+<li>Update a <code>granted</code> solo dopo il consenso reale dell'utente</li>
+<li>Verifica in Tag Assistant → Consent: default + update, mai granted prima del click</li>
+</ul>
+</div>
+<h2 class="faq-title" id="faq">FAQ per imprenditori: tracciamento e Consent Mode</h2>
+<p style="color:var(--muted);margin-bottom:.8rem">Dieci risposte concrete se i numeri non tornano tra negozio, GA4 e Google Ads.</p>
+<details id="faq-1"><summary><strong>1. Perché dopo il banner cookie le conversioni Google Ads sono sparite?</strong></summary><p>Spesso il banner blocca i tag di Google (GA4, Google Ads) prima del consenso senza implementare Consent Mode in Advanced. Google non riceve i ping di default e non può modellare le conversioni: ROAS e CPA diventano inaffidabili.</p></details>
+<details id="faq-2"><summary><strong>2. Cos'è Google Consent Mode V2 e perché riguarda il mio e-commerce?</strong></summary><p>Consent Mode V2 è il framework con cui i tag Google adattano il comportamento al consenso dell'utente. Dal 2024 i parametri ad_user_data e ad_personalization sono essenziali per remarketing, misurazione e ottimizzazione delle campagne.</p></details>
+<details id="faq-3"><summary><strong>3. Qual è la differenza tra Basic e Advanced Consent Mode?</strong></summary><p>In Basic i tag non partono senza consenso e perdi quasi tutti i segnali. In Advanced i tag partono in stato DENIED e inviano ping anonimi: Google può usare behavioural e conversion modelling per recuperare parte dei dati persi, nel rispetto del consenso.</p></details>
+<details id="faq-4"><summary><strong>4. Il mio ROAS è crollato dopo aver messo Iubenda / Cookiebot: cosa controllo?</strong></summary><p>Verifica in Google Tag Assistant la tab Consent: devono esserci consent default (denied) e consent update dopo la scelta. Controlla che GTM non sia bloccato da script custom prima del consenso e che la CMP sia collegata correttamente al data layer.</p></details>
+<details id="faq-5"><summary><strong>5. Consent Mode sostituisce il banner cookie?</strong></summary><p>No. Il banner (CMP) raccoglie la scelta dell'utente; Consent Mode comunica quella scelta ai tag Google. Servono entrambi, collegati in modo corretto.</p></details>
+<details id="faq-6"><summary><strong>6. Cosa sono ad_user_data e ad_personalization?</strong></summary><p>Sono i segnali Consent Mode V2 legati all'uso dei dati per pubblicità e alla personalizzazione degli annunci. Senza update su questi parametri dopo il consenso, audience e remarketing possono degradare fortemente.</p></details>
+<details id="faq-7"><summary><strong>7. Come verifico se Consent Mode è configurato bene?</strong></summary><p>Apri Tag Assistant (o GTM Preview), attiva Consent Overview e naviga accettando/rifiutando i cookie. Devi vedere la sequenza default denied → update granted/denied coerente con il click sul banner, non granted prima del consenso.</p></details>
+<details id="faq-8"><summary><strong>8. Posso bloccare GA4 con JavaScript finché l'utente non accetta?</strong></summary><p>È l'errore tipico che uccide la modellazione. Con Advanced Mode i tag devono poter partire in denied e inviare ping anonimi; il blocco totale pre-consenso impedisce a Google di ricostruire i dati mancanti.</p></details>
+<details id="faq-9"><summary><strong>9. Consent Mode risolve anche Meta Ads e altri pixel?</strong></summary><p>Consent Mode regola i tag Google. Meta e altri tool hanno i propri meccanismi di consenso. L'imprenditore deve allineare CMP, data layer e ogni piattaforma pubblicitaria, non solo Google.</p></details>
+<details id="faq-10"><summary><strong>10. Quando serve un audit Consent Mode e tracking?</strong></summary><p>Quando le vendite reali (Shopify, WooCommerce, gestionale) non tornano con GA4 o Google Ads, dopo l'installazione di una CMP, o se Smart Bidding sembra impazzito senza un cambio di mercato o offerta.</p></details>
+<div class="cta">
+<p><strong>Dubbi su Consent Mode, GTM o conversioni sparite?</strong></p>
+<p style="color:var(--muted)">Audit gratuito di tracking, consenso e Google Ads.</p>
+<a class="btn" href="/#contact">Richiedi l'audit gratuito</a>
+</div>
+<p><a href="/blog/">← Torna al Blog</a></p>
+</article></main>
+<footer><p>© 2026 G-Man Data Hero · Stefano Superina · Google Partner</p></footer>
+<script src="/assets/contact-wa.js" defer></script>
+</body>
+</html>
