@@ -6,7 +6,7 @@
     <xhtml:link rel="alternate" hreflang="it" href="https://stefanodagogle.com/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://stefanodagogle.com/en/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://stefanodagogle.com/" />
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -15,7 +15,7 @@
     <xhtml:link rel="alternate" hreflang="it" href="https://stefanodagogle.com/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://stefanodagogle.com/en/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://stefanodagogle.com/" />
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
   </url>
@@ -38,183 +38,20 @@
     <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://stefanodagogle.com/blog/</loc>
-    <xhtml:link rel="alternate" hreflang="it" href="https://stefanodagogle.com/blog/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://stefanodagogle.com/en/blog/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://stefanodagogle.com/blog/" />
-    <lastmod>2026-10-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://stefanodagogle.com/en/blog/</loc>
-    <xhtml:link rel="alternate" hreflang="it" href="https://stefanodagogle.com/blog/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://stefanodagogle.com/en/blog/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://stefanodagogle.com/blog/" />
-    <lastmod>2026-10-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://stefanodagogle.com/blog/consent-mode-v2-fumetto/</loc>
-    <xhtml:link rel="alternate" hreflang="it" href="https://stefanodagogle.com/blog/consent-mode-v2-fumetto/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://stefanodagogle.com/blog/consent-mode-v2-fumetto/" />
+    <loc>https://stefanodagogle.com/servizi/</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stefanodagogle.com/servizi/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://stefanodagogle.com/en/services/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stefanodagogle.com/servizi/" />
     <lastmod>2026-10-07</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.95</priority>
-  </url>
-  <url>
-    <loc>https://stefanodagogle.com/blog/faq-google-ads-analytics-tracking/</loc>
-    <xhtml:link rel="alternate" hreflang="it" href="https://stefanodagogle.com/blog/faq-google-ads-analytics-tracking/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://stefanodagogle.com/en/blog/faq-google-ads-analytics-tracking/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://stefanodagogle.com/blog/faq-google-ads-analytics-tracking/" />
-    <lastmod>2026-10-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.95</priority>
-  </url>
-  <url>
-    <loc>https://stefanodagogle.com/en/blog/faq-google-ads-analytics-tracking/</loc>
-    <xhtml:link rel="alternate" hreflang="it" href="https://stefanodagogle.com/blog/faq-google-ads-analytics-tracking/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://stefanodagogle.com/en/blog/faq-google-ads-analytics-tracking/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://stefanodagogle.com/blog/faq-google-ads-analytics-tracking/" />
-    <lastmod>2026-10-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.95</priority>
-  </url>
-  <url>
-    <loc>https://stefanodagogle.com/blog/ecommerce-beauty-tracciamento-roas/</loc>
-    <xhtml:link rel="alternate" hreflang="it" href="https://stefanodagogle.com/blog/ecommerce-beauty-tracciamento-roas/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://stefanodagogle.com/blog/ecommerce-beauty-tracciamento-roas/" />
-    <lastmod>2026-10-01</lastmod>
-    <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://stefanodagogle.com/blog/incubo-dati-persi/</loc>
-    <xhtml:link rel="alternate" hreflang="it" href="https://stefanodagogle.com/blog/incubo-dati-persi/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://stefanodagogle.com/blog/incubo-dati-persi/" />
-    <lastmod>2026-09-30</lastmod>
+    <loc>https://stefanodagogle.com/en/services/</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stefanodagogle.com/servizi/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://stefanodagogle.com/en/services/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stefanodagogle.com/servizi/" />
+    <lastmod>2026-10-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
-  <url>
-    <loc>https://stefanodagogle.com/blog/prestashop-tracciamenti-fantasma-data-hero/</loc>
-    <lastmod>2026-09-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://stefanodagogle.com/blog/carosello-instagram-data-hero-tracking-gtm/</loc>
-    <lastmod>2026-09-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://stefanodagogle.com/blog/glossario-metriche-google-ads/</loc>
-    <lastmod>2026-09-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.95</priority>
-  </url>
-  <url>
-    <loc>https://stefanodagogle.com/blog/lead-generation-certificazione-ambientale/</loc>
-    <lastmod>2026-09-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://stefanodagogle.com/blog/lead-generation-b2b-google-ads-salute-benessere/</loc>
-    <lastmod>2026-09-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://stefanodagogle.com/blog/roas-google-ads-200-agosto-2026/</loc>
-    <lastmod>2026-09-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://stefanodagogle.com/blog/roas-200-costo-cpc-dimezzati/</loc>
-    <lastmod>2026-09-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://stefanodagogle.com/blog/hard-reset-campagne-google-ads/</loc>
-    <lastmod>2026-09-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://stefanodagogle.com/blog/quando-il-sito-blocca-la-strategia/</loc>
-    <lastmod>2026-09-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://stefanodagogle.com/blog/etichette-personalizzate-filtri-concorrenza/</loc>
-    <lastmod>2026-09-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://stefanodagogle.com/en/blog/prestashop-ghost-tracking/</loc>
-    <lastmod>2026-09-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://stefanodagogle.com/en/blog/google-ads-roas-200-percent/</loc>
-    <lastmod>2026-09-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://stefanodagogle.com/en/blog/roas-200-cpc-halved/</loc>
-    <lastmod>2026-09-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://stefanodagogle.com/en/blog/hard-reset-google-ads-campaigns/</loc>
-    <lastmod>2026-09-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://stefanodagogle.com/en/blog/when-website-blocks-strategy/</loc>
-    <lastmod>2026-09-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://stefanodagogle.com/en/blog/custom-labels-competition-filters/</loc>
-    <lastmod>2026-09-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://stefanodagogle.com/en/blog/google-ads-metrics-glossary/</loc>
-    <lastmod>2026-09-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://stefanodagogle.com/en/blog/b2b-lead-generation-health-wellness/</loc>
-    <lastmod>2026-09-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://stefanodagogle.com/en/blog/b2b-lead-generation-environmental-certification/</loc>
-    <lastmod>2026-09-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://stefanodagogle.com/en/blog/instagram-carousel-dirty-tracking-gtm/</loc>
-    <lastmod>2026-09-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-</urlset>
