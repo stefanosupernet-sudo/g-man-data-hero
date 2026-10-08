@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://stefanodagogle.com/sitemap.xml
+Sitemap: https://stefanosuperina.it/sitemap.xml
