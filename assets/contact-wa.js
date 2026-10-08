@@ -35,7 +35,7 @@
   box.innerHTML = '<h2>Hai una domanda su questo articolo?</h2>' +
     '<p class="cf-lead">Risposta entro 24 ore. Nessuno spam.</p>' +
     '<form action="https://formsubmit.co/stefano.superina@gmail.com" method="POST">' +
-    '<input type="hidden" name="_subject" value="Contatto da articolo blog — stefanodagogle.com" />' +
+    '<input type="hidden" name="_subject" value="Contatto da articolo blog — stefanosuperina.it" />' +
     '<input type="hidden" name="_captcha" value="false" />' +
     '<input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />' +
     '<input type="hidden" name="pagina" value="' + location.href + '" />' +
