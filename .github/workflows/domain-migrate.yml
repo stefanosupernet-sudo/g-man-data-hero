@@ -1,0 +1,19 @@
+name: Domain migrate
+on: workflow_dispatch
+jobs:
+  migrate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Replace domain
+        run: |
+          find . -type f \( -name '*.html' -o -name '*.xml' -o -name '*.txt' -o -name '*.js' \) -print0 | xargs -0 sed -i 's/stefanodagogle\.com/stefanosuperina.it/g' || true
+          echo "Remaining:"; grep -r 'stefanodagogle.com' --include='*.html' --include='*.xml' --include='*.txt' --include='*.js' . || echo "none"
+      - name: Commit and push
+        run: |
+          git config user.name stefanosupernet-sudo
+          git config user.email stefanosupernet@gmail.com
+          git add -A
+          git diff --staged --quiet && echo "No changes" || (git commit -m "chore: migrate domain to stefanosuperina.it" && git push)
