@@ -2,6 +2,13 @@
   var lcp=document.createElement('script');lcp.src='/assets/lcp-boost.js';document.head.appendChild(lcp);
   if(!document.querySelector('script[src*="i18n-router"]')){var i18n=document.createElement('script');i18n.src='/assets/i18n-router.js';i18n.defer=true;document.head.appendChild(i18n);}
 
+  // Consent Mode v2 + cookie popup (IT/EN)
+  if (!document.querySelector('script[src*="consent-mode.js"]')) {
+    var cm = document.createElement('script');
+    cm.src = '/assets/consent-mode.js';
+    document.head.appendChild(cm);
+  }
+
   // Dynamic FAQPage JSON-LD (from .faq-item or details)
   var faq = document.createElement('script');
   faq.src = '/assets/faqpage.js';

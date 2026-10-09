@@ -1,0 +1,53 @@
+name: Inject consent default before gtag
+on: workflow_dispatch
+jobs:
+  inject:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Inject consent default
+        run: |
+          python3 << 'PY'
+          from pathlib import Path
+          snippet = '''  <script>
+    window.dataLayer=window.dataLayer||[];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent','default',{
+      ad_storage:'denied',
+      ad_user_data:'denied',
+      ad_personalization:'denied',
+      analytics_storage:'denied',
+      functionality_storage:'granted',
+      security_storage:'granted',
+      wait_for_update:500
+    });
+  </script>
+'''
+          n = 0
+          for path in Path('.').rglob('*.html'):
+              if path.stat().st_size > 200_000:
+                  continue
+              txt = path.read_text(errors='ignore')
+              if "gtag('consent','default'" in txt:
+                  continue
+              if 'googletagmanager.com/gtag/js?id=G-PJ43MG4PXR' not in txt:
+                  continue
+              new = txt.replace(
+                  '<script async src="https://www.googletagmanager.com/gtag/js?id=G-PJ43MG4PXR"></script>',
+                  snippet + '<script async src="https://www.googletagmanager.com/gtag/js?id=G-PJ43MG4PXR"></script>',
+                  1,
+              )
+              if new != txt:
+                  path.write_text(new)
+                  n += 1
+                  print('patched', path)
+          print('total', n)
+          PY
+      - name: Commit
+        run: |
+          git config user.name stefanosupernet-sudo
+          git config user.email stefanosupernet@gmail.com
+          git add -A
+          git diff --staged --quiet && echo "No changes" || (git commit -m "chore: consent default before gtag on all pages" && git push)
