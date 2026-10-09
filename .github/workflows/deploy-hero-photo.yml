@@ -10,9 +10,9 @@ jobs:
       - uses: actions/checkout@v4
       - name: Assemble and write hero
         run: |
-          cat assets/_hero.p0 assets/_hero.p1 assets/_hero.p2 | base64 -d > assets/gman-hero.webp
+          cat assets/_hero.p0 assets/_hero.p1 assets/_hero.p2 | tr -d '\n\r ' | base64 -d > assets/gman-hero.webp
           file assets/gman-hero.webp || true
-          python3 -c "from PIL import Image; im=Image.open('assets/gman-hero.webp').convert('RGB'); im.save('assets/gman-hero.jpg','JPEG',quality=85,optimize=True); print(im.size)"
+          python3 -c "from PIL import Image; im=Image.open('assets/gman-hero.webp').convert('RGB'); im.save('assets/gman-hero.jpg','JPEG',quality=85,optimize=True); print('size', im.size)"
           ls -la assets/gman-hero.webp assets/gman-hero.jpg
           rm -f assets/_hero.p0 assets/_hero.p1 assets/_hero.p2
       - name: Commit
