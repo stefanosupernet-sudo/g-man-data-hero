@@ -1,0 +1,25 @@
+name: Deploy hero photo
+on:
+  workflow_dispatch:
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Assemble and write hero
+        run: |
+          cat assets/_hero.p0 assets/_hero.p1 assets/_hero.p2 | base64 -d > assets/gman-hero.webp
+          file assets/gman-hero.webp || true
+          python3 -c "from PIL import Image; im=Image.open('assets/gman-hero.webp').convert('RGB'); im.save('assets/gman-hero.jpg','JPEG',quality=85,optimize=True); print(im.size)"
+          ls -la assets/gman-hero.webp assets/gman-hero.jpg
+          rm -f assets/_hero.p0 assets/_hero.p1 assets/_hero.p2
+      - name: Commit
+        run: |
+          git config user.name stefanosupernet-sudo
+          git config user.email stefanosupernet@gmail.com
+          git add assets/gman-hero.webp assets/gman-hero.jpg
+          git add -u assets/_hero.p* 2>/dev/null || true
+          git status
+          git diff --staged --quiet && echo No changes || (git commit -m "assets: nuova foto hero quadrata (office)" && git push)
