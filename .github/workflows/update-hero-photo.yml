@@ -1,0 +1,25 @@
+name: Update hero photo
+on:
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Decode and optimize hero
+        run: |
+          cat assets/_tmp_gman-hero.part1.b64 assets/_tmp_gman-hero.part2.b64 | base64 -d > assets/gman-hero.webp
+          file assets/gman-hero.webp
+          sudo apt-get update -qq && sudo apt-get install -y -qq imagemagick
+          convert assets/gman-hero.webp -quality 85 assets/gman-hero.jpg
+          ls -la assets/gman-hero.webp assets/gman-hero.jpg
+          rm -f assets/_tmp_gman-hero.part1.b64 assets/_tmp_gman-hero.part2.b64
+      - name: Commit
+        run: |
+          git config user.name stefanosupernet-sudo
+          git config user.email stefanosupernet@gmail.com
+          git add assets/gman-hero.webp assets/gman-hero.jpg
+          git add -u assets/_tmp_gman-hero.part*.b64 || true
+          git diff --staged --quiet && echo No changes || (git commit -m "assets: nuova foto hero quadrata WebP/JPEG" && git push)
