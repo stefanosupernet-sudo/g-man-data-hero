@@ -2,24 +2,20 @@ name: Deploy hero photo
 on:
   workflow_dispatch:
 jobs:
-  deploy:
+  assemble:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
     steps:
       - uses: actions/checkout@v4
-      - name: Assemble and write hero
+      - name: Assemble hero images
         run: |
-          cat assets/_hero.p0 assets/_hero.p1 assets/_hero.p2 | tr -d '\n\r ' | base64 -d > assets/gman-hero.webp
-          file assets/gman-hero.webp || true
-          python3 -c "from PIL import Image; im=Image.open('assets/gman-hero.webp').convert('RGB'); im.save('assets/gman-hero.jpg','JPEG',quality=85,optimize=True); print('size', im.size)"
-          ls -la assets/gman-hero.webp assets/gman-hero.jpg
-          rm -f assets/_hero.p0 assets/_hero.p1 assets/_hero.p2
-      - name: Commit
+          cat assets/_hero_webp_0.b64 assets/_hero_webp_1.b64 assets/_hero_webp_2.b64 | base64 -d > assets/gman-hero.webp
+          cat assets/_hero_jpg_0.b64 assets/_hero_jpg_1.b64 assets/_hero_jpg_2.b64 | base64 -d > assets/gman-hero.jpg
+          file assets/gman-hero.webp assets/gman-hero.jpg
+          ls -la assets/gman-hero.*
+      - name: Commit and push
         run: |
-          git config user.name stefanosupernet-sudo
-          git config user.email stefanosupernet@gmail.com
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add assets/gman-hero.webp assets/gman-hero.jpg
-          git add -u assets/_hero.p* 2>/dev/null || true
-          git status
-          git diff --staged --quiet && echo No changes || (git commit -m "assets: nuova foto hero quadrata (office)" && git push)
+          git commit -m "feat: update hero photo square WebP/JPG (mobile-friendly 800x800)" || echo "No changes"
+          git push
