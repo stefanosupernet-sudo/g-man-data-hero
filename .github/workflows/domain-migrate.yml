@@ -7,13 +7,53 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v4
-      - name: Replace domain
+      - name: Restore homepage and servizi
         run: |
-          find . -type f \( -name '*.html' -o -name '*.xml' -o -name '*.txt' -o -name '*.js' \) -print0 | xargs -0 sed -i 's/stefanodagogle\.com/stefanosuperina.it/g' || true
-          echo "Remaining:"; grep -r 'stefanodagogle.com' --include='*.html' --include='*.xml' --include='*.txt' --include='*.js' . || echo "none"
+          set -e
+          GOOD=434d23703bb5aeeb2dd68a04e11194b6681acc4b
+          curl -fsSL "https://raw.githubusercontent.com/stefanosupernet-sudo/g-man-data-hero/${GOOD}/index.html" -o index.html
+          curl -fsSL "https://raw.githubusercontent.com/stefanosupernet-sudo/g-man-data-hero/${GOOD}/servizi/index.html" -o servizi/index.html
+          curl -fsSL "https://raw.githubusercontent.com/stefanosupernet-sudo/g-man-data-hero/${GOOD}/sitemap.xml" -o sitemap.xml
+          if grep -q PLACEHOLDER index.html; then echo "placeholder still present"; exit 1; fi
+          if ! grep -q nav.css index.html; then
+            sed -i 's|href="/assets/home.css" />|href="/assets/home.css" />\n  <link rel="stylesheet" href="/assets/nav.css" />\n  <script src="/assets/nav.js" defer></script>|' index.html
+          fi
+          python3 << 'PY'
+from pathlib import Path
+html = Path("index.html").read_text()
+if "nav-sub-toggle" not in html:
+    old = '        <a href="/servizi/">Servizi</a>'
+    new = '''        <div class="nav-item has-sub">
+          <div class="nav-parent">
+            <a href="/servizi/">Servizi</a>
+            <button type="button" class="nav-sub-toggle" aria-expanded="false" aria-label="Apri sottomenu Servizi">+</button>
+          </div>
+          <div class="nav-sub" role="menu">
+            <a href="/servizi/google-ads/" role="menuitem">Google Ads</a>
+            <a href="/servizi/google-analytics-4/" role="menuitem">Google Analytics 4</a>
+            <a href="/servizi/merchant-center-feed/" role="menuitem">Merchant Center & Feed</a>
+            <a href="/servizi/tag-manager-tracking/" role="menuitem">Tag Manager & Tracking</a>
+            <a href="/servizi/consulenza-strategica-ai/" role="menuitem">Consulenza strategica & AI</a>
+          </div>
+        </div>'''
+    html = html.replace(old, new, 1)
+if "nav-toggle" not in html:
+    html = html.replace('<nav class="nav"', '<button type="button" class="nav-toggle" aria-label="Apri menu" aria-expanded="false"><span></span></button>\n      <nav class="nav"', 1)
+Path("index.html").write_text(html)
+sm = Path("sitemap.xml").read_text()
+if "servizi/google-ads" not in sm:
+    extra = """  <url><loc>https://stefanosuperina.it/servizi/google-ads/</loc><lastmod>2026-10-30</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://stefanosuperina.it/servizi/google-analytics-4/</loc><lastmod>2026-10-30</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://stefanosuperina.it/servizi/merchant-center-feed/</loc><lastmod>2026-10-30</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://stefanosuperina.it/servizi/tag-manager-tracking/</loc><lastmod>2026-10-30</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://stefanosuperina.it/servizi/consulenza-strategica-ai/</loc><lastmod>2026-10-30</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+"""
+    Path("sitemap.xml").write_text(sm.replace("</urlset>", extra + "</urlset>"))
+print("index", Path("index.html").stat().st_size)
+PY
       - name: Commit and push
         run: |
           git config user.name stefanosupernet-sudo
           git config user.email stefanosupernet@gmail.com
-          git add -A
-          git diff --staged --quiet && echo "No changes" || (git commit -m "chore: migrate domain to stefanosuperina.it" && git push)
+          git add index.html servizi/index.html sitemap.xml
+          git diff --staged --quiet && echo No changes || (git commit -m "fix: restore homepage and servizi + nav submenu + sitemap" && git push)
