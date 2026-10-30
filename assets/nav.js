@@ -5,9 +5,9 @@
   function qs(sel, root) { return (root || document).querySelector(sel); }
   function qsa(sel, root) { return Array.prototype.slice.call((root || document).querySelectorAll(sel)); }
 
-  function closeAllSubs(except) {
-    qsa(".nav-item.open").forEach(function (item) {
-      if (except && item === except) return;
+  function closeSubs(scope, except) {
+    qsa(".nav-item.open", scope || document).forEach(function (item) {
+      if (except && (item === except || (except.contains && except.contains(item)))) return;
       item.classList.remove("open");
       var btn = qs(".nav-sub-toggle", item);
       if (btn) btn.setAttribute("aria-expanded", "false");
@@ -22,7 +22,7 @@
         var open = toggle.getAttribute("aria-expanded") === "true";
         toggle.setAttribute("aria-expanded", open ? "false" : "true");
         nav.classList.toggle("nav-open", !open);
-        if (open) closeAllSubs();
+        if (open) closeSubs(nav);
       });
     }
 
@@ -33,7 +33,16 @@
         e.preventDefault();
         e.stopPropagation();
         var isOpen = item.classList.contains("open");
-        closeAllSubs(item);
+        var parent = item.parentElement;
+        if (parent) {
+          qsa(".nav-item.has-sub.open", parent).forEach(function (sib) {
+            if (sib !== item && sib.parentElement === parent) {
+              sib.classList.remove("open");
+              var b = qs(".nav-sub-toggle", sib);
+              if (b) b.setAttribute("aria-expanded", "false");
+            }
+          });
+        }
         item.classList.toggle("open", !isOpen);
         btn.setAttribute("aria-expanded", isOpen ? "false" : "true");
       });
@@ -41,13 +50,13 @@
 
     document.addEventListener("click", function (e) {
       if (!e.target.closest || !e.target.closest(".nav-item.has-sub")) {
-        closeAllSubs();
+        closeSubs(document);
       }
     });
 
     document.addEventListener("keydown", function (e) {
       if (e.key === "Escape") {
-        closeAllSubs();
+        closeSubs(document);
         if (toggle && nav) {
           toggle.setAttribute("aria-expanded", "false");
           nav.classList.remove("nav-open");
