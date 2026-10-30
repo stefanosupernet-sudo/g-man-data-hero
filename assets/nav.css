@@ -1,9 +1,15 @@
-/* Nav: desktop dropdown + mobile hamburger */
+/* Nav: desktop dropdown + mobile hamburger — fixed cascade order */
+.site-header{position:sticky;top:0;z-index:100;background:rgba(10,14,26,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+.site-header .header-inner{display:flex;align-items:center;justify-content:space-between;height:64px;gap:1rem;position:relative}
+.site-header .logo{display:flex;align-items:center;gap:.6rem;font-family:var(--font-display);font-size:1.35rem;letter-spacing:.04em;white-space:nowrap;color:var(--text);text-decoration:none}
+.site-header .logo .accent{color:var(--accent)}
+
+/* Hamburger — visible mobile only */
 .nav-toggle{
   display:flex;align-items:center;justify-content:center;
   width:42px;height:42px;margin-left:auto;
   background:transparent;border:1px solid var(--border);border-radius:.5rem;
-  color:var(--text);cursor:pointer;padding:0;
+  color:var(--text);cursor:pointer;padding:0;flex-shrink:0;
 }
 .nav-toggle span,.nav-toggle span::before,.nav-toggle span::after{
   display:block;width:18px;height:2px;background:currentColor;position:relative;transition:.2s;
@@ -13,21 +19,22 @@
 .nav-toggle[aria-expanded="true"] span{background:transparent}
 .nav-toggle[aria-expanded="true"] span::before{top:0;transform:rotate(45deg)}
 .nav-toggle[aria-expanded="true"] span::after{top:0;transform:rotate(-45deg)}
+
+/* CTA header — hidden on mobile, shown desktop */
 .btn-header{display:none}
-@media(min-width:1024px){
-  .nav-toggle{display:none}
-  .btn-header{display:inline-flex}
-  nav.nav,nav.nav.nav-open{display:flex;position:static;background:transparent;border:0;padding:0;flex-direction:row;align-items:center;gap:1.25rem;box-shadow:none}
-}
+
+/* Base nav: hidden mobile (opens with .nav-open) */
 nav.nav{
   display:none;position:absolute;left:0;right:0;top:64px;
   background:rgba(10,14,26,.98);border-bottom:1px solid var(--border);
   flex-direction:column;align-items:stretch;padding:1rem 1.25rem 1.25rem;gap:.25rem;
-  box-shadow:0 12px 32px rgba(0,0,0,.35);
+  box-shadow:0 12px 32px rgba(0,0,0,.35);z-index:110;
 }
 nav.nav.nav-open{display:flex}
-nav.nav a{color:var(--text-muted);font-size:.95rem;font-weight:500;padding:.55rem 0}
+nav.nav a{color:var(--text-muted);font-size:.95rem;font-weight:500;padding:.55rem 0;text-decoration:none}
 nav.nav a:hover{color:var(--text)}
+
+/* Submenu */
 .nav-item{position:relative}
 .nav-parent{display:flex;align-items:center;gap:.35rem}
 .nav-parent > a{flex:1}
@@ -46,7 +53,31 @@ nav.nav a:hover{color:var(--text)}
 .nav-item.open .nav-sub{display:flex}
 .nav-sub a{font-size:.88rem;padding:.4rem 0;color:var(--text-muted)}
 .nav-sub a:hover{color:var(--accent)}
+
+/* Lang switcher */
+.lang-switch{
+  display:flex;align-items:center;gap:.35rem;margin-left:.5rem;flex-shrink:0;
+  font-size:.75rem;font-weight:600;letter-spacing:.06em;color:var(--text-muted);
+}
+.lang-switch span{opacity:.7}
+.lang-switch a{
+  color:var(--text-muted);text-decoration:none;padding:.25rem .45rem;border-radius:.35rem;
+  border:1px solid transparent;
+}
+.lang-switch a:hover{color:var(--text)}
+.lang-switch a.active{
+  color:var(--text);border-color:var(--border);background:rgba(255,255,255,.06);
+}
+
+/* Desktop ≥1024px — must come AFTER base rules so cascade is correct */
 @media(min-width:1024px){
+  .nav-toggle{display:none}
+  .btn-header{display:inline-flex}
+  nav.nav,nav.nav.nav-open{
+    display:flex;position:static;background:transparent;border:0;padding:0;
+    flex-direction:row;align-items:center;gap:1.25rem;box-shadow:none;
+  }
+  nav.nav a{padding:0}
   .nav-item{position:relative}
   .nav-parent{gap:.25rem}
   .nav-parent > a{padding:0;flex:none}
@@ -60,6 +91,7 @@ nav.nav a:hover{color:var(--text)}
   .nav-item.open .nav-sub{display:flex}
   .nav-sub a{padding:.45rem .35rem;white-space:nowrap}
 }
+
 /* Pillar service pages */
 .pillar-wrap{max-width:760px;margin:0 auto;padding:1.5rem 1.25rem 3.5rem}
 .pillar-wrap .label{font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:.5rem}
@@ -84,3 +116,7 @@ nav.nav a:hover{color:var(--text)}
 .pillar-wrap .related a:hover{border-color:rgba(34,211,238,.45)}
 .pillar-wrap .related span{display:block;font-size:.75rem;color:var(--accent);margin-bottom:.2rem}
 .service-card a.more{display:inline-block;margin-top:.65rem;color:var(--accent);font-weight:600;font-size:.9rem}
+
+/* Internal links on pillars */
+a.ilink{color:var(--accent);font-weight:600;text-decoration:underline;text-underline-offset:2px}
+a.ilink:hover{opacity:.85}
