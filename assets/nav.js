@@ -14,12 +14,14 @@
     });
   }
 
-  var SERVICE_MENUS = [
+  var isEn = (location.pathname || "").indexOf("/en/") === 0 || location.pathname === "/en";
+
+  var MENUS_IT = [
     {
-      match: ["/servizi/google-ads", "/en/services/google-ads"],
+      match: ["/servizi/google-ads"],
       label: "Google Ads",
       href: "/servizi/google-ads/",
-      aria: "Tipi di campagna Google Ads",
+      aria: "Google Ads campaign types",
       items: [
         ["/servizi/google-ads/", "Panoramica"],
         ["/servizi/google-ads/search/", "Search"],
@@ -31,10 +33,10 @@
       ]
     },
     {
-      match: ["/servizi/google-analytics-4", "/en/services/google-analytics-4"],
+      match: ["/servizi/google-analytics-4"],
       label: "Google Analytics 4",
       href: "/servizi/google-analytics-4/",
-      aria: "Approfondimenti GA4",
+      aria: "GA4 topics",
       items: [
         ["/servizi/google-analytics-4/", "Panoramica"],
         ["/servizi/google-analytics-4/eventi-chiave/", "Eventi chiave"],
@@ -43,10 +45,10 @@
       ]
     },
     {
-      match: ["/servizi/merchant-center-feed", "/en/services/merchant-center"],
+      match: ["/servizi/merchant-center-feed"],
       label: "Merchant Center & Feed",
       href: "/servizi/merchant-center-feed/",
-      aria: "Approfondimenti Merchant Center",
+      aria: "Merchant Center topics",
       items: [
         ["/servizi/merchant-center-feed/", "Panoramica"],
         ["/servizi/merchant-center-feed/feed-formati/", "Feed e formati"],
@@ -55,10 +57,10 @@
       ]
     },
     {
-      match: ["/servizi/tag-manager-tracking", "/en/services/tag-manager"],
+      match: ["/servizi/tag-manager-tracking"],
       label: "Tag Manager & Tracking",
       href: "/servizi/tag-manager-tracking/",
-      aria: "Approfondimenti tracking",
+      aria: "Tracking topics",
       items: [
         ["/servizi/tag-manager-tracking/", "Panoramica"],
         ["/servizi/tag-manager-tracking/data-layer/", "Data Layer"],
@@ -68,15 +70,82 @@
       ]
     },
     {
-      match: ["/servizi/consulenza-strategica-ai", "/en/services/strategy-ai"],
+      match: ["/servizi/consulenza-strategica-ai"],
       label: "Consulenza strategica & AI",
       href: "/servizi/consulenza-strategica-ai/",
-      aria: "Approfondimenti consulenza AI",
+      aria: "Strategy topics",
       items: [
         ["/servizi/consulenza-strategica-ai/", "Panoramica"],
         ["/servizi/consulenza-strategica-ai/smart-bidding/", "Smart Bidding"],
         ["/servizi/consulenza-strategica-ai/audit-strategico/", "Audit strategico"],
         ["/servizi/consulenza-strategica-ai/ai-controllo-umano/", "AI e controllo umano"]
+      ]
+    }
+  ];
+
+  var MENUS_EN = [
+    {
+      match: ["/en/services/google-ads"],
+      label: "Google Ads",
+      href: "/en/services/google-ads/",
+      aria: "Google Ads campaign types",
+      items: [
+        ["/en/services/google-ads/", "Overview"],
+        ["/en/services/google-ads/search/", "Search"],
+        ["/en/services/google-ads/shopping/", "Shopping"],
+        ["/en/services/google-ads/performance-max/", "Performance Max"],
+        ["/en/services/google-ads/demand-gen/", "Demand Gen"],
+        ["/en/services/google-ads/youtube/", "YouTube"],
+        ["/en/services/google-ads/remarketing/", "Remarketing"]
+      ]
+    },
+    {
+      match: ["/en/services/google-analytics-4"],
+      label: "Google Analytics 4",
+      href: "/en/services/google-analytics-4/",
+      aria: "GA4 topics",
+      items: [
+        ["/en/services/google-analytics-4/", "Overview"],
+        ["/en/services/google-analytics-4/key-events/", "Key events"],
+        ["/en/services/google-analytics-4/metrics/", "Metrics"],
+        ["/en/services/google-analytics-4/remarketing-audiences/", "Remarketing audiences"]
+      ]
+    },
+    {
+      match: ["/en/services/merchant-center-feed"],
+      label: "Merchant Center & Feed",
+      href: "/en/services/merchant-center-feed/",
+      aria: "Merchant Center topics",
+      items: [
+        ["/en/services/merchant-center-feed/", "Overview"],
+        ["/en/services/merchant-center-feed/feed-formats/", "Feed formats"],
+        ["/en/services/merchant-center-feed/policies/", "Policies"],
+        ["/en/services/merchant-center-feed/rules-promotions/", "Rules & promotions"]
+      ]
+    },
+    {
+      match: ["/en/services/tag-manager-tracking"],
+      label: "Tag Manager & Tracking",
+      href: "/en/services/tag-manager-tracking/",
+      aria: "Tracking topics",
+      items: [
+        ["/en/services/tag-manager-tracking/", "Overview"],
+        ["/en/services/tag-manager-tracking/data-layer/", "Data layer"],
+        ["/en/services/tag-manager-tracking/events/", "Events"],
+        ["/en/services/tag-manager-tracking/conversion-linker/", "Conversion Linker"],
+        ["/en/services/tag-manager-tracking/multi-platform/", "Multi-platform"]
+      ]
+    },
+    {
+      match: ["/en/services/strategy-ai"],
+      label: "Strategy & AI",
+      href: "/en/services/strategy-ai/",
+      aria: "Strategy topics",
+      items: [
+        ["/en/services/strategy-ai/", "Overview"],
+        ["/en/services/strategy-ai/smart-bidding/", "Smart Bidding"],
+        ["/en/services/strategy-ai/strategic-audit/", "Strategic audit"],
+        ["/en/services/strategy-ai/ai-human-control/", "AI & human control"]
       ]
     }
   ];
@@ -91,12 +160,11 @@
 
   function injectServiceMenu(cfg) {
     var link = null;
-    qsa(".nav-sub > a[href], .nav-sub a[href]").forEach(function (a) {
+    qsa(".nav-sub a[href]").forEach(function (a) {
       if (alreadyNested(a)) return;
       var href = normalizeHref(a.getAttribute("href"));
       for (var i = 0; i < cfg.match.length; i++) {
         if (href === normalizeHref(cfg.match[i])) {
-          // only top-level items under servizi submenu (direct child of .nav-sub of servizi)
           if (a.parentElement && a.parentElement.classList.contains("nav-sub")) {
             link = a;
           }
@@ -124,7 +192,8 @@
   }
 
   function ensureServiceSubmenus() {
-    SERVICE_MENUS.forEach(injectServiceMenu);
+    var menus = isEn ? MENUS_EN : MENUS_IT;
+    menus.forEach(injectServiceMenu);
   }
 
   function bindSubToggles() {
