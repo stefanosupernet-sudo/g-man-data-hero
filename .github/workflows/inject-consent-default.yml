@@ -10,44 +10,34 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v4
-      - name: Inject consent default
+      - name: Restore homepage and servizi from good commit
         run: |
-          python3 - <<'PY'
-          from pathlib import Path
-          snippet = """  <script>
-            window.dataLayer=window.dataLayer||[];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('consent','default',{
-              ad_storage:'denied',
-              ad_user_data:'denied',
-              ad_personalization:'denied',
-              analytics_storage:'denied',
-              functionality_storage:'granted',
-              security_storage:'granted',
-              wait_for_update:500
-            });
-          </script>
-          """
-          n = 0
-          for path in Path('.').rglob('*.html'):
-              if path.stat().st_size > 200_000:
-                  continue
-              txt = path.read_text(errors='ignore')
-              if "gtag('consent','default'" in txt:
-                  continue
-              if 'googletagmanager.com/gtag/js?id=G-PJ43MG4PXR' not in txt:
-                  continue
-              needle = '<script async src="https://www.googletagmanager.com/gtag/js?id=G-PJ43MG4PXR"></script>'
-              if needle not in txt:
-                  continue
-              path.write_text(txt.replace(needle, snippet + needle, 1))
-              n += 1
-              print('patched', path)
-          print('total', n)
-          PY
+          set -e
+          GOOD=434d23703bb5aeeb2dd68a04e11194b6681acc4b
+          curl -fsSL "https://raw.githubusercontent.com/stefanosupernet-sudo/g-man-data-hero/${GOOD}/index.html" -o index.html
+          curl -fsSL "https://raw.githubusercontent.com/stefanosupernet-sudo/g-man-data-hero/${GOOD}/servizi/index.html" -o servizi/index.html
+          curl -fsSL "https://raw.githubusercontent.com/stefanosupernet-sudo/g-man-data-hero/${GOOD}/sitemap.xml" -o sitemap.xml
+          if grep -q PLACEHOLDER index.html; then echo FAIL; exit 1; fi
+          if ! grep -q nav.css index.html; then
+            sed -i 's|href="/assets/home.css" />|href="/assets/home.css" />\n  <link rel="stylesheet" href="/assets/nav.css" />\n  <script src="/assets/nav.js" defer></script>|' index.html
+          fi
+          python3 -c "
+from pathlib import Path
+html=Path('index.html').read_text()
+if 'nav-sub-toggle' not in html:
+    html=html.replace('        <a href=\"/servizi/\">Servizi</a>', '''        <div class=\"nav-item has-sub\">\n          <div class=\"nav-parent\">\n            <a href=\"/servizi/\">Servizi</a>\n            <button type=\"button\" class=\"nav-sub-toggle\" aria-expanded=\"false\" aria-label=\"Apri sottomenu Servizi\">+</button>\n          </div>\n          <div class=\"nav-sub\" role=\"menu\">\n            <a href=\"/servizi/google-ads/\" role=\"menuitem\">Google Ads</a>\n            <a href=\"/servizi/google-analytics-4/\" role=\"menuitem\">Google Analytics 4</a>\n            <a href=\"/servizi/merchant-center-feed/\" role=\"menuitem\">Merchant Center & Feed</a>\n            <a href=\"/servizi/tag-manager-tracking/\" role=\"menuitem\">Tag Manager & Tracking</a>\n            <a href=\"/servizi/consulenza-strategica-ai/\" role=\"menuitem\">Consulenza strategica & AI</a>\n          </div>\n        </div>''',1)
+if 'nav-toggle' not in html:
+    html=html.replace('<nav class=\"nav\"','<button type=\"button\" class=\"nav-toggle\" aria-label=\"Apri menu\" aria-expanded=\"false\"><span></span></button>\n      <nav class=\"nav\"',1)
+Path('index.html').write_text(html)
+sm=Path('sitemap.xml').read_text()
+if 'servizi/google-ads' not in sm:
+    extra='  <url><loc>https://stefanosuperina.it/servizi/google-ads/</loc><lastmod>2026-10-30</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>\n  <url><loc>https://stefanosuperina.it/servizi/google-analytics-4/</loc><lastmod>2026-10-30</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>\n  <url><loc>https://stefanosuperina.it/servizi/merchant-center-feed/</loc><lastmod>2026-10-30</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>\n  <url><loc>https://stefanosuperina.it/servizi/tag-manager-tracking/</loc><lastmod>2026-10-30</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>\n  <url><loc>https://stefanosuperina.it/servizi/consulenza-strategica-ai/</loc><lastmod>2026-10-30</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>\n'
+    Path('sitemap.xml').write_text(sm.replace('</urlset>',extra+'</urlset>'))
+print('ok', Path('index.html').stat().st_size)
+"
       - name: Commit and push
         run: |
           git config user.name stefanosupernet-sudo
           git config user.email stefanosupernet@gmail.com
-          git add -A
-          git diff --staged --quiet && echo No changes || (git commit -m "chore: consent default before gtag on all pages" && git push)
+          git add index.html servizi/index.html sitemap.xml
+          git diff --staged --quiet && echo No changes || (git commit -m "fix: restore homepage and servizi + nav submenu" && git push)
