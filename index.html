@@ -28,7 +28,6 @@
 <link rel="stylesheet" href="/assets/consent-mode.css"/>
 <script src="/assets/nav.js" defer></script>
 <script src="/assets/i18n-router.js" defer></script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"G-Man Data Hero — Stefano Superina","url":"https://stefanosuperina.it/","description":"Consulente Google Ads e data analysis. Ex Strategist Google, Google Partner dal 2020.","founder":{"@type":"Person","name":"Stefano Superina","jobTitle":"Consulente Google Ads"},"areaServed":"IT","image":"https://stefanosuperina.it/assets/gman-hero.jpg"}</script>
 </head>
 <body>
 <header class="site-header"><div class="container header-inner">
@@ -39,7 +38,17 @@
 <div class="nav-item has-sub"><div class="nav-parent"><a href="/servizi/">Servizi</a>
 <button type="button" class="nav-sub-toggle" aria-expanded="false" aria-label="Apri sottomenu Servizi">+</button></div>
 <div class="nav-sub" role="menu">
-<a href="/servizi/google-ads/" role="menuitem">Google Ads</a>
+<div class="nav-item has-sub nested"><div class="nav-parent"><a href="/servizi/google-ads/" role="menuitem">Google Ads</a>
+<button type="button" class="nav-sub-toggle" aria-expanded="false" aria-label="Tipi di campagna">+</button></div>
+<div class="nav-sub" role="menu">
+<a href="/servizi/google-ads/" role="menuitem">Panoramica</a>
+<a href="/servizi/google-ads/search/" role="menuitem">Search</a>
+<a href="/servizi/google-ads/shopping/" role="menuitem">Shopping</a>
+<a href="/servizi/google-ads/performance-max/" role="menuitem">Performance Max</a>
+<a href="/servizi/google-ads/demand-gen/" role="menuitem">Demand Gen</a>
+<a href="/servizi/google-ads/youtube/" role="menuitem">YouTube</a>
+<a href="/servizi/google-ads/remarketing/" role="menuitem">Remarketing</a>
+</div></div>
 <a href="/servizi/google-analytics-4/" role="menuitem">Google Analytics 4</a>
 <a href="/servizi/merchant-center-feed/" role="menuitem">Merchant Center & Feed</a>
 <a href="/servizi/tag-manager-tracking/" role="menuitem">Tag Manager & Tracking</a>
@@ -104,22 +113,22 @@
 </div>
 <div class="card">
 <h3>Google Analytics 4</h3>
-<p>Il registratore di cassa digitale. Eventi e conversioni impostati così sai <em>cosa</em> succede sul sito, non solo quanti arrivano. Senza questo ogni decisione è un’ipotesi.</p>
+<p>Il registratore di cassa digitale. Eventi e conversioni impostati così sai <em>cosa</em> succede sul sito, non solo quanti arrivano.</p>
 <a href="/servizi/google-analytics-4/" style="color:var(--accent);font-weight:600">Scopri →</a>
 </div>
 <div class="card">
 <h3>Merchant Center e Feed</h3>
-<p>Il catalogo che Google mostra in Shopping. Feed puliti, prodotti fuori mercato messi da parte, etichette intelligenti — così non paghi click su scaffali vuoti.</p>
+<p>Catalogo pulito ed etichette intelligenti — così non paghi click su scaffali vuoti.</p>
 <a href="/servizi/merchant-center-feed/" style="color:var(--accent);font-weight:600">Scopri →</a>
 </div>
 <div class="card">
 <h3>Tag Manager e Tracking</h3>
-<p>I sensori che collegano una vendita a un annuncio. Se sono rotti i report mentono e l’algoritmo impara dal rumore. Li sistemo e allineo — server-side se serve.</p>
+<p>Sensori di conversione affidabili. Li sistemo e allineo — server-side se serve.</p>
 <a href="/servizi/tag-manager-tracking/" style="color:var(--accent);font-weight:600">Scopri →</a>
 </div>
 <div class="card">
 <h3>Consulenza strategica e AI</h3>
-<p>L’AI di Google è potente, ma amplifica ciò che le dai in pasto. Ti aiuto a capire quando lasciarla correre e quando intervenire — partnership orientata al ritorno reale.</p>
+<p>Quando lasciare correre l’AI e quando intervenire — partnership orientata al ritorno reale.</p>
 <a href="/servizi/consulenza-strategica-ai/" style="color:var(--accent);font-weight:600">Scopri →</a>
 </div>
 </div>
@@ -143,12 +152,12 @@
 <div class="about-photo">
 <picture>
 <source srcset="/assets/gman-fullbody.webp" type="image/webp"/>
-<img src="/assets/gman-fullbody.jpg" alt="Stefano Superina, consulente Google Ads — G-Man Data Hero" width="600" height="600" loading="lazy"/>
+<img src="/assets/gman-fullbody.jpg" alt="Stefano Superina" width="600" height="600" loading="lazy"/>
 </picture>
 </div>
 <div>
 <p style="color:var(--text-muted);margin-bottom:1rem">Mi chiamo <strong style="color:var(--text)">Stefano Superina</strong>. Strategist dentro Google (Cracovia) dal 2016 al 2022.</p>
-<p style="color:var(--text-muted);margin-bottom:1rem"><a href="https://www.google.com/partners/agency?id=3219866425" target="_blank" rel="noopener noreferrer" style="color:var(--accent)">Google Partner</a> dal 2020. G-Man è il modo con cui racconto un mestiere serio: trasformare i dati in crescita prevedibile.</p>
+<p style="color:var(--text-muted);margin-bottom:1rem"><a href="https://www.google.com/partners/agency?id=3219866425" target="_blank" rel="noopener noreferrer" style="color:var(--accent)">Google Partner</a> dal 2020.</p>
 <a class="btn btn-outline" href="/chi-sono/">Bio completa</a>
 </div>
 </div>
@@ -158,20 +167,20 @@
 <p class="section-label">Come lavoro</p>
 <h2>UN PROCESSO CHIARO</h2>
 <div class="process-steps">
-<div class="step"><div class="step-num" style="color:var(--accent);font-weight:700;font-size:1.25rem;margin-bottom:.35rem">01</div><h3>Audit gratuito</h3><p>Analizzo account e funnel. Nessun impegno.</p></div>
-<div class="step"><div class="step-num" style="color:var(--accent);font-weight:700;font-size:1.25rem;margin-bottom:.35rem">02</div><h3>Diagnosi</h3><p>Report prioritizzato: cosa sistemare prima e perché.</p></div>
-<div class="step"><div class="step-num" style="color:var(--accent);font-weight:700;font-size:1.25rem;margin-bottom:.35rem">03</div><h3>Strategia</h3><p>Architettura, tracking e campagne allineati agli obiettivi.</p></div>
-<div class="step"><div class="step-num" style="color:var(--accent);font-weight:700;font-size:1.25rem;margin-bottom:.35rem">04</div><h3>Ottimizzazione</h3><p>Focus sul ritorno, non sul volume di click a vuoto.</p></div>
+<div class="step"><div class="step-num" style="color:var(--accent);font-weight:700;font-size:1.25rem;margin-bottom:.35rem">01</div><h3>Audit gratuito</h3><p>Analizzo account e funnel.</p></div>
+<div class="step"><div class="step-num" style="color:var(--accent);font-weight:700;font-size:1.25rem;margin-bottom:.35rem">02</div><h3>Diagnosi</h3><p>Report prioritizzato.</p></div>
+<div class="step"><div class="step-num" style="color:var(--accent);font-weight:700;font-size:1.25rem;margin-bottom:.35rem">03</div><h3>Strategia</h3><p>Architettura, tracking e campagne.</p></div>
+<div class="step"><div class="step-num" style="color:var(--accent);font-weight:700;font-size:1.25rem;margin-bottom:.35rem">04</div><h3>Ottimizzazione</h3><p>Focus sul ritorno, non sui click a vuoto.</p></div>
 </div>
 </div></section>
 
 <section id="faq"><div class="container">
 <p class="section-label">FAQ</p>
 <h2>DOMANDE FREQUENTI</h2>
-<details class="faq-item"><summary>Lavori solo con grandi aziende?</summary><p style="color:var(--text-muted);margin-top:.5rem">No. PMI, e-commerce e agenzie. Rapporto diretto, senza intermediari inutili.</p></details>
+<details class="faq-item"><summary>Lavori solo con grandi aziende?</summary><p style="color:var(--text-muted);margin-top:.5rem">No. PMI, e-commerce e agenzie.</p></details>
 <details class="faq-item"><summary>Quanto costa un audit?</summary><p style="color:var(--text-muted);margin-top:.5rem">L’audit iniziale è gratuito e senza impegno.</p></details>
-<details class="faq-item"><summary>Lavori anche in remoto / fuori Italia?</summary><p style="color:var(--text-muted);margin-top:.5rem">Sì. Il lavoro è standard da remoto; supporto anche in inglese.</p></details>
-<details class="faq-item"><summary>Come ti contatto?</summary><p style="color:var(--text-muted);margin-top:.5rem">Form qui sotto, email o WhatsApp. Risposta entro 24 ore.</p></details>
+<details class="faq-item"><summary>Lavori anche in remoto?</summary><p style="color:var(--text-muted);margin-top:.5rem">Sì. Supporto anche in inglese.</p></details>
+<details class="faq-item"><summary>Come ti contatto?</summary><p style="color:var(--text-muted);margin-top:.5rem">Form, email o WhatsApp. Risposta entro 24 ore.</p></details>
 </div></section>
 
 <section id="contatti"><div class="container">
@@ -199,8 +208,8 @@
 <footer>
 <div class="container">
 <p>© Stefano Superina — G-Man Data Hero · <a href="/servizi/">Servizi</a> · <a href="/chi-sono/">Chi sono</a> · <a href="/blog/">Blog</a></p>
-<a class="partner-badge" href="https://www.google.com/partners/agency?id=3219866425" target="_blank" rel="noopener noreferrer" title="Verifica Google Partner" aria-label="Google Partner verificato">
-<img src="/assets/google-partner.webp" alt="Google Partner" width="56" height="54" loading="lazy" decoding="async"/>
+<a class="partner-badge" href="https://www.google.com/partners/agency?id=3219866425" target="_blank" rel="noopener noreferrer">
+<img src="/assets/google-partner.webp" alt="Google Partner" width="56" height="54" loading="lazy"/>
 </a>
 <span class="partner-label">Google Partner dal 2020 · Profilo verificato</span>
 </div>
