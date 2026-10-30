@@ -1,0 +1,35 @@
+name: Publish pillars
+on:
+  workflow_dispatch:
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build pages from parts
+        run: |
+          set -e
+          mkdir -p servizi/google-ads servizi/google-analytics-4 servizi/merchant-center-feed servizi/tag-manager-tracking servizi/consulenza-strategica-ai
+          for i in 0 1 2 3 4; do
+            case $i in
+              0) dir=google-ads ;;
+              1) dir=google-analytics-4 ;;
+              2) dir=merchant-center-feed ;;
+              3) dir=tag-manager-tracking ;;
+              4) dir=consulenza-strategica-ai ;;
+            esac
+            cat assets/_h${i}_0.txt assets/_h${i}_1.txt assets/_h${i}_2.txt assets/_h${i}_3.txt > servizi/${dir}/index.html
+            echo built $dir $(wc -c < servizi/${dir}/index.html)
+          done
+          rm -f assets/_h*_*.txt
+          head -c 60 servizi/google-ads/index.html; echo
+      - name: Commit
+        run: |
+          git config user.name stefanosupernet-sudo
+          git config user.email stefanosupernet@gmail.com
+          git add servizi/
+          git add -u assets/_h*_*.txt || true
+          git status
+          git diff --staged --quiet || (git commit -m "feat: publish 5 service pillar pages" && git push)
