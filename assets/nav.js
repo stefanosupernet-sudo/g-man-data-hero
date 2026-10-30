@@ -14,21 +14,47 @@
     });
   }
 
-  function init() {
-    var toggle = qs(".nav-toggle");
-    var nav = qs("nav.nav");
-    if (toggle && nav) {
-      toggle.addEventListener("click", function () {
-        var open = toggle.getAttribute("aria-expanded") === "true";
-        toggle.setAttribute("aria-expanded", open ? "false" : "true");
-        nav.classList.toggle("nav-open", !open);
-        if (open) closeSubs(nav);
-      });
-    }
+  /** Ensure Servizi > Google Ads has nested campaign submenu on every page */
+  function ensureAdsSubmenu() {
+    if (qs(".nav-item.has-sub.nested")) return;
+    var adsLink = null;
+    qsa(".nav-sub a[href]").forEach(function (a) {
+      var href = (a.getAttribute("href") || "").replace(/\/$/, "");
+      if (href === "/servizi/google-ads" || href === "/en/services/google-ads") {
+        if (!a.closest(".nav-item.nested")) adsLink = a;
+      }
+    });
+    if (!adsLink) return;
 
+    var parentSub = adsLink.parentElement;
+    if (!parentSub || !parentSub.classList.contains("nav-sub")) return;
+
+    var wrap = document.createElement("div");
+    wrap.className = "nav-item has-sub nested";
+    wrap.innerHTML =
+      '<div class="nav-parent">' +
+      '<a href="/servizi/google-ads/" role="menuitem">Google Ads</a>' +
+      '<button type="button" class="nav-sub-toggle" aria-expanded="false" aria-label="Tipi di campagna">+</button>' +
+      "</div>" +
+      '<div class="nav-sub" role="menu">' +
+      '<a href="/servizi/google-ads/" role="menuitem">Panoramica</a>' +
+      '<a href="/servizi/google-ads/search/" role="menuitem">Search</a>' +
+      '<a href="/servizi/google-ads/shopping/" role="menuitem">Shopping</a>' +
+      '<a href="/servizi/google-ads/performance-max/" role="menuitem">Performance Max</a>' +
+      '<a href="/servizi/google-ads/demand-gen/" role="menuitem">Demand Gen</a>' +
+      '<a href="/servizi/google-ads/youtube/" role="menuitem">YouTube</a>' +
+      '<a href="/servizi/google-ads/remarketing/" role="menuitem">Remarketing</a>' +
+      "</div>";
+
+    parentSub.insertBefore(wrap, adsLink);
+    adsLink.parentNode.removeChild(adsLink);
+  }
+
+  function bindSubToggles() {
     qsa(".nav-item.has-sub").forEach(function (item) {
       var btn = qs(".nav-sub-toggle", item);
-      if (!btn) return;
+      if (!btn || btn.__gmanBound) return;
+      btn.__gmanBound = true;
       btn.addEventListener("click", function (e) {
         e.preventDefault();
         e.stopPropagation();
@@ -47,6 +73,23 @@
         btn.setAttribute("aria-expanded", isOpen ? "false" : "true");
       });
     });
+  }
+
+  function init() {
+    ensureAdsSubmenu();
+
+    var toggle = qs(".nav-toggle");
+    var nav = qs("nav.nav");
+    if (toggle && nav) {
+      toggle.addEventListener("click", function () {
+        var open = toggle.getAttribute("aria-expanded") === "true";
+        toggle.setAttribute("aria-expanded", open ? "false" : "true");
+        nav.classList.toggle("nav-open", !open);
+        if (open) closeSubs(nav);
+      });
+    }
+
+    bindSubToggles();
 
     document.addEventListener("click", function (e) {
       if (!e.target.closest || !e.target.closest(".nav-item.has-sub")) {
