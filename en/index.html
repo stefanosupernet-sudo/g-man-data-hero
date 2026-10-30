@@ -34,19 +34,40 @@
   <meta property="og:locale" content="en_US" />
   <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Bebas+Neue&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/assets/home.css" />
+  <link rel="stylesheet" href="/assets/nav.css" />
+  <link rel="stylesheet" href="/assets/consent-mode.css" />
+  <script src="/assets/nav.js" defer></script>
   <script src="/assets/i18n-router.js" defer></script>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"ProfessionalService","name":"G-Man Data Hero — Stefano Superina","url":"https://stefanosuperina.it/en/","description":"English-speaking Google Ads consultant. Former Google Strategist, Google Partner since 2020."}
   </script>
 </head>
 <body>
-  <header><div class="container header-inner">
+  <header class="site-header"><div class="container header-inner">
     <a class="logo" href="/en/">G-MAN <span class="accent">DATA HERO</span></a>
+    <button type="button" class="nav-toggle" aria-label="Open menu" aria-expanded="false"><span></span></button>
     <nav class="nav" aria-label="Main">
-      <a href="#why">Why G-Man</a><a href="/en/services/">Services</a><a href="#cases">Cases</a>
-      <a href="#about">About</a><a href="#faq">FAQ</a><a href="/en/blog/">Blog</a>
+      <a href="#why">Why G-Man</a>
+      <div class="nav-item has-sub">
+        <div class="nav-parent">
+          <a href="/en/services/">Services</a>
+          <button type="button" class="nav-sub-toggle" aria-expanded="false" aria-label="Open services menu">+</button>
+        </div>
+        <div class="nav-sub" role="menu">
+          <a href="/en/services/google-ads/" role="menuitem">Google Ads</a>
+          <a href="/en/services/google-analytics-4/" role="menuitem">Google Analytics 4</a>
+          <a href="/en/services/merchant-center-feed/" role="menuitem">Merchant Center & Feed</a>
+          <a href="/en/services/tag-manager-tracking/" role="menuitem">Tag Manager & Tracking</a>
+          <a href="/en/services/strategy-ai/" role="menuitem">Strategy & AI</a>
+        </div>
+      </div>
+      <a href="#cases">Cases</a>
+      <a href="#about">About</a>
+      <a href="#faq">FAQ</a>
+      <a href="/en/blog/">Blog</a>
     </nav>
     <a class="btn btn-primary btn-header" href="#contact">Free audit</a>
+    <div class="lang-switch" aria-label="Language"><span>LANG</span><a href="/">IT</a><a href="/en/" class="active">EN</a></div>
   </div></header>
   <main>
     <section class="hero"><div class="container hero-grid">
@@ -89,24 +110,29 @@
       <p style="color:var(--text-muted);max-width:40rem;margin-bottom:2rem">I don’t sell “campaign packages”. I fix the dashboard, tidy the digital store and make ads run on real numbers. Here’s how, in plain English. <a href="/en/services/" style="color:var(--accent)">Full services page →</a></p>
       <div class="grid-3">
         <div class="card">
-          <h3>Google Ads</h3>
+          <h3><a href="/en/services/google-ads/" style="color:inherit;text-decoration:none">Google Ads</a></h3>
           <p>The paid shop window. Search, Shopping, Performance Max and YouTube — built so the right people walk in, not just expensive browsers who never buy.</p>
+          <a href="/en/services/google-ads/" style="color:var(--accent);font-weight:600;font-size:.9rem">Explore →</a>
         </div>
         <div class="card">
-          <h3>Google Analytics 4</h3>
+          <h3><a href="/en/services/google-analytics-4/" style="color:inherit;text-decoration:none">Google Analytics 4</a></h3>
           <p>The digital cash register. Events and conversions set up so you know <em>what</em> happens on the site, not only how many people arrived. Without this, every decision is a guess.</p>
+          <a href="/en/services/google-analytics-4/" style="color:var(--accent);font-weight:600;font-size:.9rem">Explore →</a>
         </div>
         <div class="card">
-          <h3>Merchant Center & Feed</h3>
+          <h3><a href="/en/services/merchant-center-feed/" style="color:inherit;text-decoration:none">Merchant Center & Feed</a></h3>
           <p>The catalogue Google shows in Shopping. Clean feeds, out-of-market products set aside, smart labels — so you don’t pay for clicks on empty shelves.</p>
+          <a href="/en/services/merchant-center-feed/" style="color:var(--accent);font-weight:600;font-size:.9rem">Explore →</a>
         </div>
         <div class="card">
-          <h3>Tag Manager & Tracking</h3>
+          <h3><a href="/en/services/tag-manager-tracking/" style="color:inherit;text-decoration:none">Tag Manager & Tracking</a></h3>
           <p>The sensors that link a sale to an ad. If they’re broken, reports lie and the algorithm learns from noise. I repair and align them — server-side when needed.</p>
+          <a href="/en/services/tag-manager-tracking/" style="color:var(--accent);font-weight:600;font-size:.9rem">Explore →</a>
         </div>
         <div class="card">
-          <h3>Strategy & AI</h3>
+          <h3><a href="/en/services/strategy-ai/" style="color:inherit;text-decoration:none">Strategy & AI</a></h3>
           <p>Google’s AI is powerful, but it amplifies what you feed it. I help you know when to let it run and when to step in — ongoing partnership aimed at real return, not vanity traffic.</p>
+          <a href="/en/services/strategy-ai/" style="color:var(--accent);font-weight:600;font-size:.9rem">Explore →</a>
         </div>
       </div>
     </div></section>
