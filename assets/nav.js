@@ -5,12 +5,25 @@
   function qs(sel, root) { return (root || document).querySelector(sel); }
   function qsa(sel, root) { return Array.prototype.slice.call((root || document).querySelectorAll(sel)); }
 
+  function setOpen(item, open) {
+    if (!item) return;
+    item.classList.toggle("open", !!open);
+    var btn = qs(":scope > .nav-parent > .nav-sub-toggle", item) || qs(".nav-sub-toggle", item);
+    if (btn) btn.setAttribute("aria-expanded", open ? "true" : "false");
+    if (!open) {
+      // closing parent also closes nested children
+      qsa(".nav-item.open", item).forEach(function (child) {
+        child.classList.remove("open");
+        var b = qs(".nav-sub-toggle", child);
+        if (b) b.setAttribute("aria-expanded", "false");
+      });
+    }
+  }
+
   function closeSubs(scope, except) {
     qsa(".nav-item.open", scope || document).forEach(function (item) {
       if (except && (item === except || (except.contains && except.contains(item)))) return;
-      item.classList.remove("open");
-      var btn = qs(".nav-sub-toggle", item);
-      if (btn) btn.setAttribute("aria-expanded", "false");
+      setOpen(item, false);
     });
   }
 
@@ -21,7 +34,7 @@
       match: ["/servizi/google-ads"],
       label: "Google Ads",
       href: "/servizi/google-ads/",
-      aria: "Google Ads campaign types",
+      aria: "Tipi di campagna Google Ads",
       items: [
         ["/servizi/google-ads/", "Panoramica"],
         ["/servizi/google-ads/search/", "Search"],
@@ -36,7 +49,7 @@
       match: ["/servizi/google-analytics-4"],
       label: "Google Analytics 4",
       href: "/servizi/google-analytics-4/",
-      aria: "GA4 topics",
+      aria: "Approfondimenti GA4",
       items: [
         ["/servizi/google-analytics-4/", "Panoramica"],
         ["/servizi/google-analytics-4/eventi-chiave/", "Eventi chiave"],
@@ -48,7 +61,7 @@
       match: ["/servizi/merchant-center-feed"],
       label: "Merchant Center & Feed",
       href: "/servizi/merchant-center-feed/",
-      aria: "Merchant Center topics",
+      aria: "Approfondimenti Merchant Center",
       items: [
         ["/servizi/merchant-center-feed/", "Panoramica"],
         ["/servizi/merchant-center-feed/feed-formati/", "Feed e formati"],
@@ -60,7 +73,7 @@
       match: ["/servizi/tag-manager-tracking"],
       label: "Tag Manager & Tracking",
       href: "/servizi/tag-manager-tracking/",
-      aria: "Tracking topics",
+      aria: "Approfondimenti tracking",
       items: [
         ["/servizi/tag-manager-tracking/", "Panoramica"],
         ["/servizi/tag-manager-tracking/data-layer/", "Data Layer"],
@@ -73,7 +86,7 @@
       match: ["/servizi/consulenza-strategica-ai"],
       label: "Consulenza strategica & AI",
       href: "/servizi/consulenza-strategica-ai/",
-      aria: "Strategy topics",
+      aria: "Approfondimenti consulenza",
       items: [
         ["/servizi/consulenza-strategica-ai/", "Panoramica"],
         ["/servizi/consulenza-strategica-ai/smart-bidding/", "Smart Bidding"],
@@ -160,7 +173,7 @@
 
   function injectServiceMenu(cfg) {
     var link = null;
-    qsa(".nav-sub a[href]").forEach(function (a) {
+    qsa(".nav-sub > a[href]").forEach(function (a) {
       if (alreadyNested(a)) return;
       var href = normalizeHref(a.getAttribute("href"));
       for (var i = 0; i < cfg.match.length; i++) {
@@ -198,25 +211,32 @@
 
   function bindSubToggles() {
     qsa(".nav-item.has-sub").forEach(function (item) {
-      var btn = qs(".nav-sub-toggle", item);
+      var btn = qs(":scope > .nav-parent > .nav-sub-toggle", item);
+      if (!btn) btn = qs(".nav-sub-toggle", item);
       if (!btn || btn.__gmanBound) return;
       btn.__gmanBound = true;
+
       btn.addEventListener("click", function (e) {
         e.preventDefault();
         e.stopPropagation();
-        var isOpen = item.classList.contains("open");
+
+        var willOpen = !item.classList.contains("open");
+
+        // Accordion: close siblings at the same level
         var parent = item.parentElement;
         if (parent) {
+          qsa(":scope > .nav-item.has-sub.open", parent).forEach(function (sib) {
+            if (sib !== item) setOpen(sib, false);
+          });
+          // fallback if :scope not supported for query
           qsa(".nav-item.has-sub.open", parent).forEach(function (sib) {
-            if (sib !== item && sib.parentElement === parent) {
-              sib.classList.remove("open");
-              var b = qs(".nav-sub-toggle", sib);
-              if (b) b.setAttribute("aria-expanded", "false");
-            }
+            if (sib !== item && sib.parentElement === parent) setOpen(sib, false);
           });
         }
-        item.classList.toggle("open", !isOpen);
-        btn.setAttribute("aria-expanded", isOpen ? "false" : "true");
+
+        // If opening a top-level item, nested are already closed via setOpen on siblings
+        // If closing this item, setOpen closes children
+        setOpen(item, willOpen);
       });
     });
   }
