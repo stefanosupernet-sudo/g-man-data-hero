@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="it"><head>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied',functionality_storage:'granted',security_storage:'granted',wait_for_update:500});</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PJ43MG4PXR"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-PJ43MG4PXR');</script>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Bebas+Neue&display=swap" rel="stylesheet"/>
+<title>Data Layer GTM: esempi pratici | G-Man Data Hero</title>
+<meta name="description" content="Cos’è il data layer, perché è centrale e esempi di push eventi."/>
+<link rel="canonical" href="https://stefanosuperina.it/servizi/tag-manager-tracking/data-layer/"/>
+<link rel="stylesheet" href="/assets/home.css"/><link rel="stylesheet" href="/assets/nav.css"/><link rel="stylesheet" href="/assets/consent-mode.css"/>
+<script src="/assets/nav.js" defer></script>
+</head><body>
+<header class="site-header"><div class="container header-inner">
+<a href="/" class="logo">G-MAN <span class="accent">DATA HERO</span></a>
+<button type="button" class="nav-toggle" aria-label="Menu" aria-expanded="false"><span></span></button>
+<nav class="nav" aria-label="Principale">
+<a href="/">Home</a>
+<div class="nav-item has-sub"><div class="nav-parent"><a href="/servizi/">Servizi</a><button type="button" class="nav-sub-toggle" aria-expanded="false">+</button></div>
+<div class="nav-sub" role="menu">
+<a href="/servizi/google-ads/">Google Ads</a><a href="/servizi/google-analytics-4/">GA4</a>
+<a href="/servizi/merchant-center-feed/">Merchant Center</a><a href="/servizi/tag-manager-tracking/">Tag Manager</a>
+<a href="/servizi/consulenza-strategica-ai/">Consulenza & AI</a>
+</div></div>
+<a href="/blog/">Blog</a><a href="/chi-sono/">Chi sono</a>
+</nav>
+<a class="btn btn-primary btn-header" href="/#contatti">Audit gratuito</a>
+</div></header>
+<main class="container pillar-wrap">
+<p class="breadcrumbs"><a href="/">Home</a> · <a href="/servizi/tag-manager-tracking/">Tag Manager</a> · Data Layer</p>
+<p class="label">Tag Manager · Approfondimento</p>
+<h1>DATA LAYER: IL LINGUAGGIO COMUNE TRA SITO E TAG</h1>
+<p class="lead">Il taccuino strutturato dove il sito scrive ciò che è successo. GTM e analytics leggono da lì.</p>
+<p>Senza data layer i tag indovinano dal DOM. Con data layer, page_view, add_to_cart e purchase diventano oggetti chiari. È il cuore di un <a class="ilink" href="/servizi/tag-manager-tracking/">Tag Manager</a> professionale.</p>
+<h2>📘 Perché è importante</h2>
+<ul class="check"><li>Disaccoppia sviluppo e marketing tags</li><li>Riduce rotture quando cambia il design</li><li>Eventi con parametri (value, items, form_id)</li><li>Facilita debug e consenso</li></ul>
+<h2>💡 Esempi pratici</h2>
+<p><code>dataLayer.push({event:'purchase', value:120, currency:'EUR', transaction_id:'A1'})</code></p>
+<p><code>dataLayer.push({event:'generate_lead', form_name:'contact'})</code></p>
+<p>Alimentano <a class="ilink" href="/servizi/google-analytics-4/eventi-chiave/">eventi GA4</a> e conversioni Ads. Se il push avviene al momento sbagliato, i numeri si gonfiano.</p>
+<div class="cta-box"><a class="btn" href="/#contatti">Richiedi audit gratuito</a></div>
+<section class="faq" style="margin-top:2.5rem"><p class="label">FAQ</p><h2>Domande frequenti</h2>
+<details class="faq-item"><summary>Chi implementa il data layer?</summary><p>Dev/CMS + definizione eventi con marketing.</p></details>
+<details class="faq-item"><summary>Senza data layer?</summary><p>Si può, in modo più fragile; sconsigliato su e-commerce seri.</p></details>
+<details class="faq-item"><summary>Solo GTM?</summary><p>Nato con GTM; il concetto vale anche altrove.</p></details>
+<details class="faq-item"><summary>Ordine del push?</summary><p>Prima i dati, poi l’event name secondo convenzioni.</p></details>
+<details class="faq-item"><summary>SPA?</summary><p>Serve push su cambio route virtuale, non solo al load.</p></details>
+</section>
+<div class="related" style="margin-top:2rem">
+<a href="/servizi/tag-manager-tracking/eventi/"><span>GTM</span>Eventi</a>
+<a href="/servizi/tag-manager-tracking/conversion-linker/"><span>GTM</span>Conversion Linker</a>
+</div>
+</main>
+<footer><div class="container"><p>© Stefano Superina</p></div></footer>
+<script src="/assets/contact-wa.js" defer></script>
+</body></html>
