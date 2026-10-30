@@ -14,40 +14,117 @@
     });
   }
 
-  /** Ensure Servizi > Google Ads has nested campaign submenu on every page */
-  function ensureAdsSubmenu() {
-    if (qs(".nav-item.has-sub.nested")) return;
-    var adsLink = null;
-    qsa(".nav-sub a[href]").forEach(function (a) {
-      var href = (a.getAttribute("href") || "").replace(/\/$/, "");
-      if (href === "/servizi/google-ads" || href === "/en/services/google-ads") {
-        if (!a.closest(".nav-item.nested")) adsLink = a;
+  var SERVICE_MENUS = [
+    {
+      match: ["/servizi/google-ads", "/en/services/google-ads"],
+      label: "Google Ads",
+      href: "/servizi/google-ads/",
+      aria: "Tipi di campagna Google Ads",
+      items: [
+        ["/servizi/google-ads/", "Panoramica"],
+        ["/servizi/google-ads/search/", "Search"],
+        ["/servizi/google-ads/shopping/", "Shopping"],
+        ["/servizi/google-ads/performance-max/", "Performance Max"],
+        ["/servizi/google-ads/demand-gen/", "Demand Gen"],
+        ["/servizi/google-ads/youtube/", "YouTube"],
+        ["/servizi/google-ads/remarketing/", "Remarketing"]
+      ]
+    },
+    {
+      match: ["/servizi/google-analytics-4", "/en/services/google-analytics-4"],
+      label: "Google Analytics 4",
+      href: "/servizi/google-analytics-4/",
+      aria: "Approfondimenti GA4",
+      items: [
+        ["/servizi/google-analytics-4/", "Panoramica"],
+        ["/servizi/google-analytics-4/eventi-chiave/", "Eventi chiave"],
+        ["/servizi/google-analytics-4/metriche/", "Metriche"],
+        ["/servizi/google-analytics-4/remarketing-audience/", "Remarketing e audience"]
+      ]
+    },
+    {
+      match: ["/servizi/merchant-center-feed", "/en/services/merchant-center"],
+      label: "Merchant Center & Feed",
+      href: "/servizi/merchant-center-feed/",
+      aria: "Approfondimenti Merchant Center",
+      items: [
+        ["/servizi/merchant-center-feed/", "Panoramica"],
+        ["/servizi/merchant-center-feed/feed-formati/", "Feed e formati"],
+        ["/servizi/merchant-center-feed/policy/", "Policy"],
+        ["/servizi/merchant-center-feed/regole-promozioni/", "Regole e promozioni"]
+      ]
+    },
+    {
+      match: ["/servizi/tag-manager-tracking", "/en/services/tag-manager"],
+      label: "Tag Manager & Tracking",
+      href: "/servizi/tag-manager-tracking/",
+      aria: "Approfondimenti tracking",
+      items: [
+        ["/servizi/tag-manager-tracking/", "Panoramica"],
+        ["/servizi/tag-manager-tracking/data-layer/", "Data Layer"],
+        ["/servizi/tag-manager-tracking/eventi/", "Eventi"],
+        ["/servizi/tag-manager-tracking/conversion-linker/", "Conversion Linker"],
+        ["/servizi/tag-manager-tracking/multi-piattaforma/", "Multi-piattaforma"]
+      ]
+    },
+    {
+      match: ["/servizi/consulenza-strategica-ai", "/en/services/strategy-ai"],
+      label: "Consulenza strategica & AI",
+      href: "/servizi/consulenza-strategica-ai/",
+      aria: "Approfondimenti consulenza AI",
+      items: [
+        ["/servizi/consulenza-strategica-ai/", "Panoramica"],
+        ["/servizi/consulenza-strategica-ai/smart-bidding/", "Smart Bidding"],
+        ["/servizi/consulenza-strategica-ai/audit-strategico/", "Audit strategico"],
+        ["/servizi/consulenza-strategica-ai/ai-controllo-umano/", "AI e controllo umano"]
+      ]
+    }
+  ];
+
+  function normalizeHref(href) {
+    return (href || "").replace(/\/$/, "");
+  }
+
+  function alreadyNested(a) {
+    return !!(a && a.closest && a.closest(".nav-item.has-sub.nested"));
+  }
+
+  function injectServiceMenu(cfg) {
+    var link = null;
+    qsa(".nav-sub > a[href], .nav-sub a[href]").forEach(function (a) {
+      if (alreadyNested(a)) return;
+      var href = normalizeHref(a.getAttribute("href"));
+      for (var i = 0; i < cfg.match.length; i++) {
+        if (href === normalizeHref(cfg.match[i])) {
+          // only top-level items under servizi submenu (direct child of .nav-sub of servizi)
+          if (a.parentElement && a.parentElement.classList.contains("nav-sub")) {
+            link = a;
+          }
+        }
       }
     });
-    if (!adsLink) return;
+    if (!link) return;
 
-    var parentSub = adsLink.parentElement;
-    if (!parentSub || !parentSub.classList.contains("nav-sub")) return;
+    var parentSub = link.parentElement;
+    var itemsHtml = cfg.items.map(function (it) {
+      return '<a href="' + it[0] + '" role="menuitem">' + it[1] + "</a>";
+    }).join("");
 
     var wrap = document.createElement("div");
     wrap.className = "nav-item has-sub nested";
     wrap.innerHTML =
       '<div class="nav-parent">' +
-      '<a href="/servizi/google-ads/" role="menuitem">Google Ads</a>' +
-      '<button type="button" class="nav-sub-toggle" aria-expanded="false" aria-label="Tipi di campagna">+</button>' +
+      '<a href="' + cfg.href + '" role="menuitem">' + cfg.label + "</a>" +
+      '<button type="button" class="nav-sub-toggle" aria-expanded="false" aria-label="' + cfg.aria + '">+</button>' +
       "</div>" +
-      '<div class="nav-sub" role="menu">' +
-      '<a href="/servizi/google-ads/" role="menuitem">Panoramica</a>' +
-      '<a href="/servizi/google-ads/search/" role="menuitem">Search</a>' +
-      '<a href="/servizi/google-ads/shopping/" role="menuitem">Shopping</a>' +
-      '<a href="/servizi/google-ads/performance-max/" role="menuitem">Performance Max</a>' +
-      '<a href="/servizi/google-ads/demand-gen/" role="menuitem">Demand Gen</a>' +
-      '<a href="/servizi/google-ads/youtube/" role="menuitem">YouTube</a>' +
-      '<a href="/servizi/google-ads/remarketing/" role="menuitem">Remarketing</a>' +
-      "</div>";
+      '<div class="nav-sub" role="menu">' + itemsHtml + "</div>";
 
-    parentSub.insertBefore(wrap, adsLink);
-    adsLink.parentNode.removeChild(adsLink);
+    parentSub.insertBefore(wrap, link);
+    if (link.parentNode) link.parentNode.removeChild(link);
+  }
+
+  function ensureServiceSubmenus() {
+    SERVICE_MENUS.forEach(injectServiceMenu);
   }
 
   function bindSubToggles() {
@@ -76,7 +153,7 @@
   }
 
   function init() {
-    ensureAdsSubmenu();
+    ensureServiceSubmenus();
 
     var toggle = qs(".nav-toggle");
     var nav = qs("nav.nav");
