@@ -1,0 +1,29 @@
+name: Assemble pillars
+on:
+  workflow_dispatch:
+jobs:
+  assemble:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Decode
+        run: |
+          set -e
+          mkdir -p servizi/google-ads servizi/google-analytics-4 servizi/merchant-center-feed servizi/tag-manager-tracking servizi/consulenza-strategica-ai
+          cat assets/_g0_0.b64 assets/_g0_1.b64 | base64 -d | gunzip > servizi/google-ads/index.html
+          base64 -d assets/_full_ga4.b64 | gunzip > servizi/google-analytics-4/index.html
+          base64 -d assets/_full_mc.b64 | gunzip > servizi/merchant-center-feed/index.html
+          base64 -d assets/_full_gtm.b64 | gunzip > servizi/tag-manager-tracking/index.html
+          base64 -d assets/_full_ai.b64 | gunzip > servizi/consulenza-strategica-ai/index.html
+          for p in servizi/*/index.html; do echo $p $(wc -c < $p); head -c 40 $p; echo; done
+          rm -f assets/_g0_*.b64 assets/_full_*.b64
+      - name: Commit
+        run: |
+          git config user.name stefanosupernet-sudo
+          git config user.email stefanosupernet@gmail.com
+          git add servizi/
+          git add -u assets/_g0_*.b64 assets/_full_*.b64 || true
+          git status
+          git diff --staged --quiet || (git commit -m "feat: publish 5 service pillar pages" && git push)
