@@ -6,7 +6,7 @@
     <xhtml:link rel="alternate" hreflang="it" href="https://stefanosuperina.it/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://stefanosuperina.it/en/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://stefanosuperina.it/" />
-    <lastmod>2026-10-07</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -15,7 +15,7 @@
     <xhtml:link rel="alternate" hreflang="it" href="https://stefanosuperina.it/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://stefanosuperina.it/en/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://stefanosuperina.it/" />
-    <lastmod>2026-10-07</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
   </url>
@@ -24,7 +24,7 @@
     <xhtml:link rel="alternate" hreflang="it" href="https://stefanosuperina.it/chi-sono/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://stefanosuperina.it/en/who-i-am/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://stefanosuperina.it/chi-sono/" />
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -33,7 +33,7 @@
     <xhtml:link rel="alternate" hreflang="it" href="https://stefanosuperina.it/chi-sono/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://stefanosuperina.it/en/who-i-am/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://stefanosuperina.it/chi-sono/" />
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
@@ -51,46 +51,16 @@
     <xhtml:link rel="alternate" hreflang="it" href="https://stefanosuperina.it/servizi/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://stefanosuperina.it/en/services/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://stefanosuperina.it/servizi/" />
-    <lastmod>2026-10-07</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://stefanosuperina.it/servizi/google-ads/</loc>
-    <lastmod>2026-10-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://stefanosuperina.it/servizi/google-analytics-4/</loc>
-    <lastmod>2026-10-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://stefanosuperina.it/servizi/merchant-center-feed/</loc>
-    <lastmod>2026-10-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://stefanosuperina.it/servizi/tag-manager-tracking/</loc>
-    <lastmod>2026-10-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://stefanosuperina.it/servizi/consulenza-strategica-ai/</loc>
-    <lastmod>2026-10-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://stefanosuperina.it/blog/</loc>
     <xhtml:link rel="alternate" hreflang="it" href="https://stefanosuperina.it/blog/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://stefanosuperina.it/en/blog/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://stefanosuperina.it/blog/" />
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -99,110 +69,706 @@
     <xhtml:link rel="alternate" hreflang="it" href="https://stefanosuperina.it/blog/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://stefanosuperina.it/en/blog/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://stefanosuperina.it/blog/" />
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://stefanosuperina.it/servizi/google-ads/</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stefanosuperina.it/servizi/google-ads/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://stefanosuperina.it/en/services/google-ads/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stefanosuperina.it/servizi/google-ads/" />
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://stefanosuperina.it/en/services/google-ads/</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stefanosuperina.it/servizi/google-ads/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://stefanosuperina.it/en/services/google-ads/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stefanosuperina.it/servizi/google-ads/" />
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://stefanosuperina.it/servizi/google-ads/search/</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stefanosuperina.it/servizi/google-ads/search/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://stefanosuperina.it/en/services/google-ads/search/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stefanosuperina.it/servizi/google-ads/search/" />
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://stefanosuperina.it/en/services/google-ads/search/</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stefanosuperina.it/servizi/google-ads/search/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://stefanosuperina.it/en/services/google-ads/search/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stefanosuperina.it/servizi/google-ads/search/" />
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://stefanosuperina.it/servizi/google-ads/shopping/</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stefanosuperina.it/servizi/google-ads/shopping/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://stefanosuperina.it/en/services/google-ads/shopping/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stefanosuperina.it/servizi/google-ads/shopping/" />
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://stefanosuperina.it/en/services/google-ads/shopping/</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stefanosuperina.it/servizi/google-ads/shopping/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://stefanosuperina.it/en/services/google-ads/shopping/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stefanosuperina.it/servizi/google-ads/shopping/" />
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://stefanosuperina.it/servizi/google-ads/performance-max/</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stefanosuperina.it/servizi/google-ads/performance-max/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://stefanosuperina.it/en/services/google-ads/performance-max/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stefanosuperina.it/servizi/google-ads/performance-max/" />
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://stefanosuperina.it/en/services/google-ads/performance-max/</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stefanosuperina.it/servizi/google-ads/performance-max/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://stefanosuperina.it/en/services/google-ads/performance-max/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stefanosuperina.it/servizi/google-ads/performance-max/" />
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://stefanosuperina.it/servizi/google-ads/demand-gen/</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stefanosuperina.it/servizi/google-ads/demand-gen/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://stefanosuperina.it/en/services/google-ads/demand-gen/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stefanosuperina.it/servizi/google-ads/demand-gen/" />
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://stefanosuperina.it/en/services/google-ads/demand-gen/</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stefanosuperina.it/servizi/google-ads/demand-gen/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://stefanosuperina.it/en/services/google-ads/demand-gen/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stefanosuperina.it/servizi/google-ads/demand-gen/" />
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://stefanosuperina.it/servizi/google-ads/youtube/</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stefanosuperina.it/servizi/google-ads/youtube/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://stefanosuperina.it/en/services/google-ads/youtube/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stefanosuperina.it/servizi/google-ads/youtube/" />
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://stefanosuperina.it/en/services/google-ads/youtube/</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stefanosuperina.it/servizi/google-ads/youtube/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://stefanosuperina.it/en/services/google-ads/youtube/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stefanosuperina.it/servizi/google-ads/youtube/" />
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://stefanosuperina.it/servizi/google-ads/remarketing/</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stefanosuperina.it/servizi/google-ads/remarketing/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://stefanosuperina.it/en/services/google-ads/remarketing/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stefanosuperina.it/servizi/google-ads/remarketing/" />
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://stefanosuperina.it/en/services/google-ads/remarketing/</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stefanosuperina.it/servizi/google-ads/remarketing/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://stefanosuperina.it/en/services/google-ads/remarketing/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stefanosuperina.it/servizi/google-ads/remarketing/" />
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://stefanosuperina.it/servizi/google-analytics-4/</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stefanosuperina.it/servizi/google-analytics-4/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://stefanosuperina.it/en/services/google-analytics-4/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stefanosuperina.it/servizi/google-analytics-4/" />
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://stefanosuperina.it/en/services/google-analytics-4/</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stefanosuperina.it/servizi/google-analytics-4/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://stefanosuperina.it/en/services/google-analytics-4/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stefanosuperina.it/servizi/google-analytics-4/" />
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://stefanosuperina.it/servizi/google-analytics-4/eventi-chiave/</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stefanosuperina.it/servizi/google-analytics-4/eventi-chiave/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://stefanosuperina.it/en/services/google-analytics-4/key-events/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stefanosuperina.it/servizi/google-analytics-4/eventi-chiave/" />
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://stefanosuperina.it/en/services/google-analytics-4/key-events/</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stefanosuperina.it/servizi/google-analytics-4/eventi-chiave/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://stefanosuperina.it/en/services/google-analytics-4/key-events/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stefanosuperina.it/servizi/google-analytics-4/eventi-chiave/" />
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://stefanosuperina.it/servizi/google-analytics-4/metriche/</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stefanosuperina.it/servizi/google-analytics-4/metriche/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://stefanosuperina.it/en/services/google-analytics-4/metrics/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stefanosuperina.it/servizi/google-analytics-4/metriche/" />
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://stefanosuperina.it/en/services/google-analytics-4/metrics/</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stefanosuperina.it/servizi/google-analytics-4/metriche/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://stefanosuperina.it/en/services/google-analytics-4/metrics/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stefanosuperina.it/servizi/google-analytics-4/metriche/" />
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://stefanosuperina.it/servizi/google-analytics-4/remarketing-audience/</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stefanosuperina.it/servizi/google-analytics-4/remarketing-audience/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://stefanosuperina.it/en/services/google-analytics-4/remarketing-audiences/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stefanosuperina.it/servizi/google-analytics-4/remarketing-audience/" />
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://stefanosuperina.it/en/services/google-analytics-4/remarketing-audiences/</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stefanosuperina.it/servizi/google-analytics-4/remarketing-audience/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://stefanosuperina.it/en/services/google-analytics-4/remarketing-audiences/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stefanosuperina.it/servizi/google-analytics-4/remarketing-audience/" />
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://stefanosuperina.it/servizi/merchant-center-feed/</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stefanosuperina.it/servizi/merchant-center-feed/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://stefanosuperina.it/en/services/merchant-center-feed/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stefanosuperina.it/servizi/merchant-center-feed/" />
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://stefanosuperina.it/en/services/merchant-center-feed/</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stefanosuperina.it/servizi/merchant-center-feed/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://stefanosuperina.it/en/services/merchant-center-feed/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stefanosuperina.it/servizi/merchant-center-feed/" />
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://stefanosuperina.it/servizi/merchant-center-feed/feed-formati/</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stefanosuperina.it/servizi/merchant-center-feed/feed-formati/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://stefanosuperina.it/en/services/merchant-center-feed/feed-formats/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stefanosuperina.it/servizi/merchant-center-feed/feed-formati/" />
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://stefanosuperina.it/en/services/merchant-center-feed/feed-formats/</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stefanosuperina.it/servizi/merchant-center-feed/feed-formati/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://stefanosuperina.it/en/services/merchant-center-feed/feed-formats/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stefanosuperina.it/servizi/merchant-center-feed/feed-formati/" />
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://stefanosuperina.it/servizi/merchant-center-feed/policy/</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stefanosuperina.it/servizi/merchant-center-feed/policy/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://stefanosuperina.it/en/services/merchant-center-feed/policies/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stefanosuperina.it/servizi/merchant-center-feed/policy/" />
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://stefanosuperina.it/en/services/merchant-center-feed/policies/</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stefanosuperina.it/servizi/merchant-center-feed/policy/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://stefanosuperina.it/en/services/merchant-center-feed/policies/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stefanosuperina.it/servizi/merchant-center-feed/policy/" />
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://stefanosuperina.it/servizi/merchant-center-feed/regole-promozioni/</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stefanosuperina.it/servizi/merchant-center-feed/regole-promozioni/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://stefanosuperina.it/en/services/merchant-center-feed/rules-promotions/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stefanosuperina.it/servizi/merchant-center-feed/regole-promozioni/" />
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://stefanosuperina.it/en/services/merchant-center-feed/rules-promotions/</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stefanosuperina.it/servizi/merchant-center-feed/regole-promozioni/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://stefanosuperina.it/en/services/merchant-center-feed/rules-promotions/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stefanosuperina.it/servizi/merchant-center-feed/regole-promozioni/" />
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://stefanosuperina.it/servizi/tag-manager-tracking/</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stefanosuperina.it/servizi/tag-manager-tracking/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://stefanosuperina.it/en/services/tag-manager-tracking/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stefanosuperina.it/servizi/tag-manager-tracking/" />
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://stefanosuperina.it/en/services/tag-manager-tracking/</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stefanosuperina.it/servizi/tag-manager-tracking/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://stefanosuperina.it/en/services/tag-manager-tracking/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stefanosuperina.it/servizi/tag-manager-tracking/" />
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://stefanosuperina.it/servizi/tag-manager-tracking/data-layer/</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stefanosuperina.it/servizi/tag-manager-tracking/data-layer/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://stefanosuperina.it/en/services/tag-manager-tracking/data-layer/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stefanosuperina.it/servizi/tag-manager-tracking/data-layer/" />
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://stefanosuperina.it/en/services/tag-manager-tracking/data-layer/</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stefanosuperina.it/servizi/tag-manager-tracking/data-layer/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://stefanosuperina.it/en/services/tag-manager-tracking/data-layer/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stefanosuperina.it/servizi/tag-manager-tracking/data-layer/" />
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://stefanosuperina.it/servizi/tag-manager-tracking/eventi/</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stefanosuperina.it/servizi/tag-manager-tracking/eventi/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://stefanosuperina.it/en/services/tag-manager-tracking/events/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stefanosuperina.it/servizi/tag-manager-tracking/eventi/" />
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://stefanosuperina.it/en/services/tag-manager-tracking/events/</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stefanosuperina.it/servizi/tag-manager-tracking/eventi/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://stefanosuperina.it/en/services/tag-manager-tracking/events/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stefanosuperina.it/servizi/tag-manager-tracking/eventi/" />
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://stefanosuperina.it/servizi/tag-manager-tracking/conversion-linker/</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stefanosuperina.it/servizi/tag-manager-tracking/conversion-linker/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://stefanosuperina.it/en/services/tag-manager-tracking/conversion-linker/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stefanosuperina.it/servizi/tag-manager-tracking/conversion-linker/" />
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://stefanosuperina.it/en/services/tag-manager-tracking/conversion-linker/</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stefanosuperina.it/servizi/tag-manager-tracking/conversion-linker/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://stefanosuperina.it/en/services/tag-manager-tracking/conversion-linker/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stefanosuperina.it/servizi/tag-manager-tracking/conversion-linker/" />
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://stefanosuperina.it/servizi/tag-manager-tracking/multi-piattaforma/</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stefanosuperina.it/servizi/tag-manager-tracking/multi-piattaforma/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://stefanosuperina.it/en/services/tag-manager-tracking/multi-platform/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stefanosuperina.it/servizi/tag-manager-tracking/multi-piattaforma/" />
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://stefanosuperina.it/en/services/tag-manager-tracking/multi-platform/</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stefanosuperina.it/servizi/tag-manager-tracking/multi-piattaforma/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://stefanosuperina.it/en/services/tag-manager-tracking/multi-platform/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stefanosuperina.it/servizi/tag-manager-tracking/multi-piattaforma/" />
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://stefanosuperina.it/servizi/consulenza-strategica-ai/</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stefanosuperina.it/servizi/consulenza-strategica-ai/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://stefanosuperina.it/en/services/strategy-ai/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stefanosuperina.it/servizi/consulenza-strategica-ai/" />
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://stefanosuperina.it/en/services/strategy-ai/</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stefanosuperina.it/servizi/consulenza-strategica-ai/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://stefanosuperina.it/en/services/strategy-ai/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stefanosuperina.it/servizi/consulenza-strategica-ai/" />
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://stefanosuperina.it/servizi/consulenza-strategica-ai/smart-bidding/</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stefanosuperina.it/servizi/consulenza-strategica-ai/smart-bidding/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://stefanosuperina.it/en/services/strategy-ai/smart-bidding/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stefanosuperina.it/servizi/consulenza-strategica-ai/smart-bidding/" />
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://stefanosuperina.it/en/services/strategy-ai/smart-bidding/</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stefanosuperina.it/servizi/consulenza-strategica-ai/smart-bidding/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://stefanosuperina.it/en/services/strategy-ai/smart-bidding/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stefanosuperina.it/servizi/consulenza-strategica-ai/smart-bidding/" />
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://stefanosuperina.it/servizi/consulenza-strategica-ai/audit-strategico/</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stefanosuperina.it/servizi/consulenza-strategica-ai/audit-strategico/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://stefanosuperina.it/en/services/strategy-ai/strategic-audit/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stefanosuperina.it/servizi/consulenza-strategica-ai/audit-strategico/" />
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://stefanosuperina.it/en/services/strategy-ai/strategic-audit/</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stefanosuperina.it/servizi/consulenza-strategica-ai/audit-strategico/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://stefanosuperina.it/en/services/strategy-ai/strategic-audit/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stefanosuperina.it/servizi/consulenza-strategica-ai/audit-strategico/" />
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://stefanosuperina.it/servizi/consulenza-strategica-ai/ai-controllo-umano/</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stefanosuperina.it/servizi/consulenza-strategica-ai/ai-controllo-umano/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://stefanosuperina.it/en/services/strategy-ai/ai-human-control/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stefanosuperina.it/servizi/consulenza-strategica-ai/ai-controllo-umano/" />
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://stefanosuperina.it/en/services/strategy-ai/ai-human-control/</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stefanosuperina.it/servizi/consulenza-strategica-ai/ai-controllo-umano/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://stefanosuperina.it/en/services/strategy-ai/ai-human-control/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stefanosuperina.it/servizi/consulenza-strategica-ai/ai-controllo-umano/" />
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
   </url>
   <url>
     <loc>https://stefanosuperina.it/blog/roas-google-ads-200-agosto-2026/</loc>
-    <lastmod>2026-09-30</lastmod>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stefanosuperina.it/blog/roas-google-ads-200-agosto-2026/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://stefanosuperina.it/en/blog/google-ads-roas-200-percent/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stefanosuperina.it/blog/roas-google-ads-200-agosto-2026/" />
+    <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://stefanosuperina.it/en/blog/google-ads-roas-200-percent/</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stefanosuperina.it/blog/roas-google-ads-200-agosto-2026/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://stefanosuperina.it/en/blog/google-ads-roas-200-percent/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stefanosuperina.it/blog/roas-google-ads-200-agosto-2026/" />
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
   </url>
   <url>
     <loc>https://stefanosuperina.it/blog/hard-reset-campagne-google-ads/</loc>
-    <lastmod>2026-09-30</lastmod>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stefanosuperina.it/blog/hard-reset-campagne-google-ads/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://stefanosuperina.it/en/blog/hard-reset-google-ads-campaigns/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stefanosuperina.it/blog/hard-reset-campagne-google-ads/" />
+    <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://stefanosuperina.it/blog/quando-il-sito-blocca-la-strategia/</loc>
-    <lastmod>2026-09-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://stefanosuperina.it/blog/glossario-metriche-google-ads/</loc>
-    <lastmod>2026-09-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://stefanosuperina.it/blog/prestashop-ghost-tracking/</loc>
-    <lastmod>2026-09-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://stefanosuperina.it/blog/carosello-instagram-data-hero-tracking-gtm/</loc>
-    <lastmod>2026-09-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://stefanosuperina.it/blog/etichette-personalizzate-filtri-concorrenza/</loc>
-    <lastmod>2026-09-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://stefanosuperina.it/blog/lead-generation-b2b-salute-benessere/</loc>
-    <lastmod>2026-09-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://stefanosuperina.it/blog/lead-generation-b2b-certificazione-ambientale/</loc>
-    <lastmod>2026-09-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://stefanosuperina.it/en/blog/roas-200-cpc-halved/</loc>
-    <lastmod>2026-09-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://stefanosuperina.it/en/blog/hard-reset-google-ads-campaigns/</loc>
-    <lastmod>2026-09-30</lastmod>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stefanosuperina.it/blog/hard-reset-campagne-google-ads/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://stefanosuperina.it/en/blog/hard-reset-google-ads-campaigns/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stefanosuperina.it/blog/hard-reset-campagne-google-ads/" />
+    <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://stefanosuperina.it/blog/quando-il-sito-blocca-la-strategia/</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stefanosuperina.it/blog/quando-il-sito-blocca-la-strategia/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://stefanosuperina.it/en/blog/when-website-blocks-strategy/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stefanosuperina.it/blog/quando-il-sito-blocca-la-strategia/" />
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://stefanosuperina.it/en/blog/when-website-blocks-strategy/</loc>
-    <lastmod>2026-09-30</lastmod>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stefanosuperina.it/blog/quando-il-sito-blocca-la-strategia/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://stefanosuperina.it/en/blog/when-website-blocks-strategy/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stefanosuperina.it/blog/quando-il-sito-blocca-la-strategia/" />
+    <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://stefanosuperina.it/blog/etichette-personalizzate-filtri-concorrenza/</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stefanosuperina.it/blog/etichette-personalizzate-filtri-concorrenza/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://stefanosuperina.it/en/blog/custom-labels-competition-filters/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stefanosuperina.it/blog/etichette-personalizzate-filtri-concorrenza/" />
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://stefanosuperina.it/en/blog/custom-labels-competition-filters/</loc>
-    <lastmod>2026-09-30</lastmod>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stefanosuperina.it/blog/etichette-personalizzate-filtri-concorrenza/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://stefanosuperina.it/en/blog/custom-labels-competition-filters/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stefanosuperina.it/blog/etichette-personalizzate-filtri-concorrenza/" />
+    <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://stefanosuperina.it/blog/prestashop-tracciamenti-fantasma-data-hero/</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stefanosuperina.it/blog/prestashop-tracciamenti-fantasma-data-hero/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://stefanosuperina.it/en/blog/prestashop-ghost-tracking/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stefanosuperina.it/blog/prestashop-tracciamenti-fantasma-data-hero/" />
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://stefanosuperina.it/en/blog/prestashop-ghost-tracking/</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stefanosuperina.it/blog/prestashop-tracciamenti-fantasma-data-hero/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://stefanosuperina.it/en/blog/prestashop-ghost-tracking/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stefanosuperina.it/blog/prestashop-tracciamenti-fantasma-data-hero/" />
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://stefanosuperina.it/blog/faq-google-ads-analytics-tracking/</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stefanosuperina.it/blog/faq-google-ads-analytics-tracking/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://stefanosuperina.it/en/blog/faq-google-ads-analytics-tracking/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stefanosuperina.it/blog/faq-google-ads-analytics-tracking/" />
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://stefanosuperina.it/en/blog/faq-google-ads-analytics-tracking/</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stefanosuperina.it/blog/faq-google-ads-analytics-tracking/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://stefanosuperina.it/en/blog/faq-google-ads-analytics-tracking/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stefanosuperina.it/blog/faq-google-ads-analytics-tracking/" />
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://stefanosuperina.it/blog/glossario-metriche-google-ads/</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stefanosuperina.it/blog/glossario-metriche-google-ads/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://stefanosuperina.it/en/blog/google-ads-metrics-glossary/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stefanosuperina.it/blog/glossario-metriche-google-ads/" />
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://stefanosuperina.it/en/blog/google-ads-metrics-glossary/</loc>
-    <lastmod>2026-09-30</lastmod>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stefanosuperina.it/blog/glossario-metriche-google-ads/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://stefanosuperina.it/en/blog/google-ads-metrics-glossary/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stefanosuperina.it/blog/glossario-metriche-google-ads/" />
+    <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
+    <priority>0.65</priority>
   </url>
   <url>
-    <loc>https://stefanosuperina.it/en/blog/b2b-lead-generation-health-wellness/</loc>
-    <lastmod>2026-09-30</lastmod>
+    <loc>https://stefanosuperina.it/blog/google-ads-esperimento-77600/</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stefanosuperina.it/blog/google-ads-esperimento-77600/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://stefanosuperina.it/en/blog/google-ads-77600-experiment-comic/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stefanosuperina.it/blog/google-ads-esperimento-77600/" />
+    <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stefanosuperina.it/en/blog/b2b-lead-generation-environmental-certification/</loc>
-    <lastmod>2026-09-30</lastmod>
+    <loc>https://stefanosuperina.it/en/blog/google-ads-77600-experiment-comic/</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stefanosuperina.it/blog/google-ads-esperimento-77600/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://stefanosuperina.it/en/blog/google-ads-77600-experiment-comic/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stefanosuperina.it/blog/google-ads-esperimento-77600/" />
+    <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://stefanosuperina.it/blog/esperimento-spegnere-google-ads/</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stefanosuperina.it/blog/esperimento-spegnere-google-ads/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://stefanosuperina.it/en/blog/turning-off-google-ads-experiment/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stefanosuperina.it/blog/esperimento-spegnere-google-ads/" />
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://stefanosuperina.it/en/blog/turning-off-google-ads-experiment/</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stefanosuperina.it/blog/esperimento-spegnere-google-ads/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://stefanosuperina.it/en/blog/turning-off-google-ads-experiment/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stefanosuperina.it/blog/esperimento-spegnere-google-ads/" />
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://stefanosuperina.it/blog/roas-200-costo-cpc-dimezzati/</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stefanosuperina.it/blog/roas-200-costo-cpc-dimezzati/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://stefanosuperina.it/en/blog/roas-200-cpc-halved/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stefanosuperina.it/blog/roas-200-costo-cpc-dimezzati/" />
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://stefanosuperina.it/en/blog/roas-200-cpc-halved/</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stefanosuperina.it/blog/roas-200-costo-cpc-dimezzati/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://stefanosuperina.it/en/blog/roas-200-cpc-halved/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stefanosuperina.it/blog/roas-200-costo-cpc-dimezzati/" />
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://stefanosuperina.it/blog/carosello-instagram-data-hero-tracking-gtm/</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stefanosuperina.it/blog/carosello-instagram-data-hero-tracking-gtm/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://stefanosuperina.it/en/blog/instagram-carousel-dirty-tracking-gtm/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stefanosuperina.it/blog/carosello-instagram-data-hero-tracking-gtm/" />
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://stefanosuperina.it/en/blog/instagram-carousel-dirty-tracking-gtm/</loc>
-    <lastmod>2026-09-30</lastmod>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stefanosuperina.it/blog/carosello-instagram-data-hero-tracking-gtm/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://stefanosuperina.it/en/blog/instagram-carousel-dirty-tracking-gtm/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stefanosuperina.it/blog/carosello-instagram-data-hero-tracking-gtm/" />
+    <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://stefanosuperina.it/blog/lead-generation-certificazione-ambientale/</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stefanosuperina.it/blog/lead-generation-certificazione-ambientale/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://stefanosuperina.it/en/blog/b2b-lead-generation-environmental-certification/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stefanosuperina.it/blog/lead-generation-certificazione-ambientale/" />
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://stefanosuperina.it/en/blog/b2b-lead-generation-environmental-certification/</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stefanosuperina.it/blog/lead-generation-certificazione-ambientale/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://stefanosuperina.it/en/blog/b2b-lead-generation-environmental-certification/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stefanosuperina.it/blog/lead-generation-certificazione-ambientale/" />
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://stefanosuperina.it/blog/lead-generation-b2b-google-ads-salute-benessere/</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stefanosuperina.it/blog/lead-generation-b2b-google-ads-salute-benessere/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://stefanosuperina.it/en/blog/b2b-lead-generation-health-wellness/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stefanosuperina.it/blog/lead-generation-b2b-google-ads-salute-benessere/" />
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://stefanosuperina.it/en/blog/b2b-lead-generation-health-wellness/</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stefanosuperina.it/blog/lead-generation-b2b-google-ads-salute-benessere/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://stefanosuperina.it/en/blog/b2b-lead-generation-health-wellness/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stefanosuperina.it/blog/lead-generation-b2b-google-ads-salute-benessere/" />
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://stefanosuperina.it/blog/consent-mode-v2-fumetto/</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stefanosuperina.it/blog/consent-mode-v2-fumetto/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stefanosuperina.it/blog/consent-mode-v2-fumetto/" />
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://stefanosuperina.it/blog/ecommerce-beauty-tracciamento-roas/</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stefanosuperina.it/blog/ecommerce-beauty-tracciamento-roas/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stefanosuperina.it/blog/ecommerce-beauty-tracciamento-roas/" />
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://stefanosuperina.it/blog/gestione-google-ads-consulente/</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stefanosuperina.it/blog/gestione-google-ads-consulente/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stefanosuperina.it/blog/gestione-google-ads-consulente/" />
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://stefanosuperina.it/blog/incubo-dati-persi/</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://stefanosuperina.it/blog/incubo-dati-persi/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stefanosuperina.it/blog/incubo-dati-persi/" />
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
   </url>
 </urlset>
