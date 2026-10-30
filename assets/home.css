@@ -73,3 +73,5 @@ footer .partner-label{display:block;font-size:.72rem;letter-spacing:.1em;text-tr
 .pillar-wrap .blog-links a{display:block;color:var(--accent);padding:.35rem 0;font-size:.95rem}
 .pillar-wrap .blog-links a:hover{text-decoration:underline}
 .pillar-wrap code{font-size:.85em;background:rgba(34,211,238,.1);padding:.1em .35em;border-radius:.25rem;color:var(--accent)}
+.pillar-wrap a.ilink{color:var(--accent);text-decoration:underline;text-underline-offset:3px;text-decoration-color:rgba(34,211,238,.45)}
+.pillar-wrap a.ilink:hover{color:var(--text);text-decoration-color:var(--accent)}
