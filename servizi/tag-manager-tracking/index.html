@@ -1,145 +1,85 @@
 <!DOCTYPE html>
-<html lang="it">
-<head>
-    <script>
-  window.dataLayer=window.dataLayer||[];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('consent','default',{
-    ad_storage:'denied',
-    ad_user_data:'denied',
-    ad_personalization:'denied',
-    analytics_storage:'denied',
-    functionality_storage:'denied',
-    personalization_storage:'denied',
-    security_storage:'granted',
-    wait_for_update:500
-  });
-</script>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="it"><head>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied',functionality_storage:'granted',security_storage:'granted',wait_for_update:500});</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PJ43MG4PXR"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-PJ43MG4PXR');</script>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Bebas+Neue&display=swap" rel="stylesheet"/>
 <title>Google Tag Manager e Tracking conversioni | G-Man Data Hero</title>
-<meta name="description" content="Audit e sistemazione GTM, conversioni Google Ads, GA4, Consent Mode. Sensori affidabili per non ottimizzare alla cieca.">
-<link rel="canonical" href="https://stefanosuperina.it/servizi/tag-manager-tracking/">
-<link rel="alternate" hreflang="it" href="https://stefanosuperina.it/servizi/tag-manager-tracking/">
-<meta property="og:title" content="Google Tag Manager e Tracking conversioni">
-<meta property="og:description" content="GTM e tracking conversioni affidabili per Ads e Analytics.">
-<meta property="og:url" content="https://stefanosuperina.it/servizi/tag-manager-tracking/">
-<meta property="og:type" content="website">
-<meta name="robots" content="index, follow">
-<link rel="stylesheet" href="/assets/home.css">
-<link rel="stylesheet" href="/assets/nav.css">
-<link rel="stylesheet" href="/assets/consent-mode.css">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "Google Tag Manager e Tracking",
-  "provider": {"@type": "Person", "name": "Stefano Superina", "url": "https://stefanosuperina.it"},
-  "description": "Audit e sistemazione GTM, conversioni Google Ads e GA4, Consent Mode.",
-  "url": "https://stefanosuperina.it/servizi/tag-manager-tracking/"
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {"@type": "Question", "name": "Il tracking è già installato: perché fare un audit?", "acceptedAnswer": {"@type": "Answer", "text": "Perché spesso i tag sparano conversioni duplicate, eventi sbagliati o non rispettano il consenso. Un audit verifica cosa arriva davvero in Ads e in GA4."}},
-    {"@type": "Question", "name": "Lavori anche su server-side GTM?", "acceptedAnswer": {"@type": "Answer", "text": "Sì, quando ha senso (privacy, ad blocker, affidabilità). Non è la soluzione di default per tutti: si valuta caso per caso."}},
-    {"@type": "Question", "name": "Come gestisci Consent Mode v2?", "acceptedAnswer": {"@type": "Answer", "text": "Configuro i default, il comportamento dei tag con e senza consenso e il collegamento con il banner, così i numeri restano utilizzabili e compliant."}},
-    {"@type": "Question", "name": "Quanto tempo serve per sistemare il tracking?", "acceptedAnswer": {"@type": "Answer", "text": "Un audit e le correzioni critiche spesso in pochi giorni. Per container complessi, e-commerce e server-side si va da una a tre settimane."}},
-    {"@type": "Question", "name": "Cosa serve per iniziare?", "acceptedAnswer": {"@type": "Answer", "text": "Accesso in modifica a GTM e, se possibile, a GA4 e Google Ads (conversioni). Una call per capire obiettivi di misurazione."}}
-  ]
-}
-</script>
-</head>
-<body class="bg-slate-50 text-slate-800">
-<header class="site-header">
-  <div class="header-inner">
-    <a href="/" class="logo">G-Man Data Hero</a>
-    <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
-    <nav class="main-nav">
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li class="has-submenu">
-          <a href="/servizi/">Servizi <span class="submenu-plus">+</span></a>
-          <ul class="submenu">
-            <li><a href="/servizi/google-ads/">Google Ads</a></li>
-            <li><a href="/servizi/google-analytics-4/">Google Analytics 4</a></li>
-            <li><a href="/servizi/merchant-center-feed/">Merchant Center & Feed</a></li>
-            <li><a href="/servizi/tag-manager-tracking/">Tag Manager & Tracking</a></li>
-            <li><a href="/servizi/consulenza-strategica-ai/">Consulenza strategica AI</a></li>
-          </ul>
-        </li>
-        <li><a href="/blog/">Blog</a></li>
-        <li><a href="/#contatti">Contatti</a></li>
-        <li><a href="/en/" class="lang-switch">EN</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
-<main class="max-w-3xl mx-auto px-4 py-12">
-  <article>
-    <h1 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Google Tag Manager e Tracking conversioni</h1>
-    <p class="text-lg text-slate-600 mb-8">Se i sensori sono sporchi, ogni ottimizzazione è un azzardo. GTM, conversioni Ads e GA4 devono raccontare la stessa storia: altrimenti le offerte automatiche e i report mentono.</p>
-
-    <section class="prose prose-slate max-w-none mb-12">
-      <h2>Il problema che risolvo</h2>
-      <p>Tag che sparano due volte, conversioni che non arrivano, eventi che contano pageview come lead, Consent Mode non configurato. In Ads e in Analytics i numeri divergono. Si ottimizza su dati sbagliati.</p>
-      <p>Lavoro su GTM e sul tracking partendo da una domanda semplice: <strong>cosa arriva davvero in Ads e in GA4 quando un utente converte?</strong></p>
-
-      <h2>Cosa faccio in pratica</h2>
-      <ul>
-        <li><strong>Audit del container</strong> — Tag, trigger, variabili, duplicati, dipendenze e ordine di firing.</li>
-        <li><strong>Conversioni Google Ads e GA4</strong> — Allineamento, enhanced conversions, valore e parametri corretti.</li>
-        <li><strong>Consent Mode v2</strong> — Default, aggiornamento al consenso, comportamento dei tag in assenza di consenso.</li>
-        <li><strong>Debug e test</strong> — Preview, Tag Assistant, verifica end-to-end fino ai report.</li>
-        <li><strong>Documentazione</strong> — Mappa chiara di cosa misura cosa, così il team non rompe il tracking al prossimo cambio.</li>
-      </ul>
-
-      <h2>Per chi è pensato</h2>
-      <p>Aziende che usano Google Ads e GA4 e sospettano (o sanno) che i numeri non tornano. Team che vogliono smettere di "fidarsi del report" e verificare i sensori.</p>
-
-      <h2>Come iniziamo</h2>
-      <p>Accesso in modifica a GTM (e preferibilmente GA4 e Ads conversioni). Una call per obiettivi di misurazione. Poi un piano con priorità e test.</p>
-    </section>
-
-    <section class="bg-white rounded-xl shadow-sm border border-slate-200 p-6 mb-12">
-      <h2 class="text-xl font-semibold mb-4">Domande frequenti</h2>
-      <div class="space-y-4">
-        <details class="group"><summary class="font-medium cursor-pointer list-none flex justify-between items-center">Il tracking è già installato: perché fare un audit? <span class="text-slate-400 group-open:rotate-180 transition">▼</span></summary><p class="mt-2 text-slate-600 text-sm">Perché spesso i tag sparano conversioni duplicate, eventi sbagliati o non rispettano il consenso. Un audit verifica cosa arriva davvero in Ads e in GA4.</p></details>
-        <details class="group"><summary class="font-medium cursor-pointer list-none flex justify-between items-center">Lavori anche su server-side GTM? <span class="text-slate-400 group-open:rotate-180 transition">▼</span></summary><p class="mt-2 text-slate-600 text-sm">Sì, quando ha senso (privacy, ad blocker, affidabilità). Non è la soluzione di default per tutti: si valuta caso per caso.</p></details>
-        <details class="group"><summary class="font-medium cursor-pointer list-none flex justify-between items-center">Come gestisci Consent Mode v2? <span class="text-slate-400 group-open:rotate-180 transition">▼</span></summary><p class="mt-2 text-slate-600 text-sm">Configuro i default, il comportamento dei tag con e senza consenso e il collegamento con il banner, così i numeri restano utilizzabili e compliant.</p></details>
-        <details class="group"><summary class="font-medium cursor-pointer list-none flex justify-between items-center">Quanto tempo serve per sistemare il tracking? <span class="text-slate-400 group-open:rotate-180 transition">▼</span></summary><p class="mt-2 text-slate-600 text-sm">Un audit e le correzioni critiche spesso in pochi giorni. Per container complessi, e-commerce e server-side si va da una a tre settimane.</p></details>
-        <details class="group"><summary class="font-medium cursor-pointer list-none flex justify-between items-center">Cosa serve per iniziare? <span class="text-slate-400 group-open:rotate-180 transition">▼</span></summary><p class="mt-2 text-slate-600 text-sm">Accesso in modifica a GTM e, se possibile, a GA4 e Google Ads (conversioni). Una call per capire obiettivi di misurazione.</p></details>
-      </div>
-    </section>
-
-    <section class="mb-12">
-      <h2 class="text-xl font-semibold mb-4">Dal blog: tracking e GTM</h2>
-      <ul class="space-y-2 text-slate-700">
-        <li><a href="/blog/prestashop-ghost-tracking/" class="text-blue-600 hover:underline">PrestaShop e il tracking fantasma</a></li>
-        <li><a href="/blog/carosello-instagram-data-hero-tracking-gtm/" class="text-blue-600 hover:underline">Carosello Instagram e tracking sporco</a></li>
-        <li><a href="/blog/quando-il-sito-blocca-la-strategia/" class="text-blue-600 hover:underline">Quando il sito blocca la strategia</a></li>
-      </ul>
-    </section>
-
-    <div class="bg-slate-900 text-white rounded-xl p-8 text-center">
-      <p class="text-lg mb-4">Vuoi sensori di conversione affidabili?</p>
-      <a href="/#contatti" class="inline-block bg-blue-500 hover:bg-blue-400 text-white font-medium px-6 py-3 rounded-lg transition">Prenota una call</a>
-    </div>
-  </article>
+<meta name="description" content="GTM, data layer, eventi personalizzati, Conversion Linker, tracking multi-piattaforma."/>
+<link rel="canonical" href="https://stefanosuperina.it/servizi/tag-manager-tracking/"/>
+<link rel="stylesheet" href="/assets/home.css"/><link rel="stylesheet" href="/assets/nav.css"/><link rel="stylesheet" href="/assets/consent-mode.css"/>
+</head><body>
+<header class="site-header"><div class="container header-inner">
+<a href="/" class="logo">G-MAN <span class="accent">DATA HERO</span></a>
+<button type="button" class="nav-toggle" aria-label="Apri menu" aria-expanded="false"><span></span></button>
+<nav class="nav" aria-label="Principale">
+<a href="/">Home</a>
+<div class="nav-item has-sub"><div class="nav-parent"><a href="/servizi/">Servizi</a>
+<button type="button" class="nav-sub-toggle" aria-expanded="false">+</button></div>
+<div class="nav-sub">
+<a href="/servizi/google-ads/">Google Ads</a>
+<a href="/servizi/google-analytics-4/">Google Analytics 4</a>
+<a href="/servizi/merchant-center-feed/">Merchant Center & Feed</a>
+<a href="/servizi/tag-manager-tracking/">Tag Manager & Tracking</a>
+<a href="/servizi/consulenza-strategica-ai/">Consulenza strategica & AI</a>
+</div></div>
+<a href="/blog/">Blog</a><a href="/chi-sono/">Chi sono</a>
+</nav>
+<a class="btn btn-primary btn-header" href="/#contatti">Audit gratuito</a>
+</div></header>
+<main class="container pillar-wrap">
+<p class="label">Servizi · Tag Manager & Tracking</p>
+<h1>Google Tag Manager e Tracking conversioni</h1>
+<p class="lead">Se i sensori sono sporchi, ogni ottimizzazione è un azzardo. GTM, Ads e GA4 devono raccontare la stessa storia.</p>
+<h2>Il problema che risolvo</h2>
+<p>Tag duplicati, conversioni che non arrivano, pageview contate come lead, Consent Mode assente. In Ads e Analytics i numeri divergono.</p>
+<h2>Cosa faccio in pratica</h2>
+<ul class="check">
+<li><strong>Audit del container</strong> — Tag, trigger, variabili, duplicati e ordine di firing.</li>
+<li><strong>Conversioni Ads e GA4</strong> — Allineamento, enhanced, valore e parametri.</li>
+<li><strong>Consent Mode v2</strong> — Default e comportamento senza consenso.</li>
+<li><strong>Debug e test</strong> — Preview, Tag Assistant, verifica end-to-end.</li>
+<li><strong>Documentazione</strong> — Mappa di cosa misura cosa.</li>
+</ul>
+<h2>Data Layer: perché è importante</h2>
+<p>Il <strong>data layer</strong> (<code>window.dataLayer</code>) è dove il sito dichiara cosa è successo. GTM lo legge e decide quali tag sparare.</p>
+<ul class="bullets">
+<li><strong>Acquisto</strong> — <code>dataLayer.push({ event: 'purchase', ecommerce: { transaction_id, value, items } })</code> → stesso evento a GA4 e Ads.</li>
+<li><strong>Lead form</strong> — <code>dataLayer.push({ event: 'generate_lead', form_id: 'contatti' })</code> → una dichiarazione, più destinazioni.</li>
+<li><strong>Login / signup</strong> — eventi con status, utili per audience.</li>
+</ul>
+<p>Senza data layer si usano trigger fragili (click su CSS) che si rompono al primo restyling.</p>
+<h2>Eventi semplici vs personalizzati</h2>
+<div class="card-grid">
+<div class="mini-card"><span class="ico">📌</span><h3>Eventi semplici</h3><p>page_view, click, scroll, form_start. Spesso built-in. Bastano per basici.</p></div>
+<div class="mini-card"><span class="ico">⚙️</span><h3>Eventi personalizzati</h3><p>purchase, add_to_cart, generate_lead. Definiti nel data layer. Sono quelli che contano.</p></div>
+</div>
+<h2>Conversion Linker</h2>
+<p>Il tag <strong>Conversion Linker</strong> scrive i cookie di linker (<code>_gcl</code>) che permettono a Google Ads di attribuire le conversioni dopo un click, anche con restrizioni sui cookie di terze parti. Va su tutte le pagine, idealmente con Consent Mode.</p>
+<h2>Tracciamento multi-piattaforma</h2>
+<ul class="check">
+<li><strong>Google</strong> — GA4 + Ads (conversioni, remarketing, enhanced)</li>
+<li><strong>Meta</strong> — Pixel e Conversion API via GTM o server-side</li>
+<li><strong>Microsoft Ads</strong> — UET tag e conversioni</li>
+<li><strong>Clarity / Hotjar</strong> — Session recording (attenzione a privacy e consenso)</li>
+<li><strong>Altri</strong> — LinkedIn, TikTok, affiliate: stessi eventi di business dove ha senso</li>
+</ul>
+<h2>Domande frequenti</h2>
+<details class="faq-item"><summary>Il tracking è già installato: perché un audit?</summary><p>Per verificare conversioni duplicate, eventi sbagliati e consenso.</p></details>
+<details class="faq-item"><summary>Lavori su server-side GTM?</summary><p>Sì, quando ha senso per privacy e affidabilità.</p></details>
+<details class="faq-item"><summary>Come gestisci Consent Mode v2?</summary><p>Default, aggiornamento al consenso e comportamento tag senza consenso.</p></details>
+<details class="faq-item"><summary>Quanto tempo serve?</summary><p>Critici in pochi giorni; container complessi fino a tre settimane.</p></details>
+<details class="faq-item"><summary>Cosa serve per iniziare?</summary><p>Accesso in modifica a GTM, GA4 e Ads se possibile.</p></details>
+<div class="blog-links"><strong style="color:var(--text)">Dal blog</strong>
+<a href="/blog/prestashop-ghost-tracking/">PrestaShop e il tracking fantasma →</a>
+<a href="/blog/carosello-instagram-data-hero-tracking-gtm/">Carosello Instagram e tracking sporco →</a></div>
+<div class="cta-box"><p>Vuoi sensori di conversione affidabili?</p>
+<a class="btn btn-primary" href="/#contatti">Prenota una call</a></div>
 </main>
-
-<footer class="site-footer mt-16">
-  <div class="footer-inner max-w-3xl mx-auto px-4 py-8 text-sm text-slate-500">
-    <p>© G-Man Data Hero — Stefano Superina. Consulenza Google Ads, Analytics e misurazione.</p>
-    <p class="mt-2"><a href="/privacy/" class="hover:underline">Privacy</a> · <a href="/servizi/" class="hover:underline">Servizi</a></p>
-  </div>
-</footer>
-<script src="/assets/nav.js" defer></script>
-<script src="/assets/consent-mode.js" defer></script>
-<script src="/assets/contact-wa.js" defer></script>
-</body>
-</html>
+<footer><div class="container"><p>© Stefano Superina · <a href="/">Home</a> · <a href="/servizi/">Servizi</a> · <a href="/blog/">Blog</a></p>
+<a class="partner-badge" href="https://www.google.com/partners/agency?id=CMjR0J2H_fUCFQe_Gwod2nQK5A" target="_blank" rel="noopener"><img src="/assets/google-partner.webp" alt="Google Partner" width="180" height="72" loading="lazy"/></a>
+<span class="partner-label">Google Partner dal 2020</span></div></footer>
+<script src="/assets/nav.js" defer></script><script src="/assets/contact-wa.js" defer></script>
+</body></html>
