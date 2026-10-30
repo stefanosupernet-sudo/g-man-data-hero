@@ -54,6 +54,16 @@ nav.nav a:hover{color:var(--text)}
 .nav-sub a{font-size:.88rem;padding:.4rem 0;color:var(--text-muted)}
 .nav-sub a:hover{color:var(--accent)}
 
+/* Nested submenu (Google Ads > campaign types) */
+.nav-item.nested{margin:0}
+.nav-item.nested > .nav-sub{margin-left:.35rem;padding-left:0.75rem}
+@media(min-width:1024px){
+  .nav-item.nested > .nav-sub{
+    position:absolute;left:calc(100% + 8px);top:-8px;min-width:220px;margin:0;
+    border-left:1px solid var(--border);
+  }
+}
+
 /* Lang switcher */
 .lang-switch{
   display:flex;align-items:center;gap:.35rem;margin-left:.5rem;flex-shrink:0;
