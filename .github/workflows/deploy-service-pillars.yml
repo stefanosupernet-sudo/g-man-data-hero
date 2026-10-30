@@ -1,0 +1,33 @@
+name: Deploy service pillar pages
+on:
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Assemble pillar pages from base64 parts
+        run: |
+          set -e
+          mkdir -p servizi/google-ads servizi/google-analytics-4 servizi/merchant-center-feed servizi/tag-manager-tracking servizi/consulenza-strategica-ai
+          cat assets/_pillar_0_0.b64 assets/_pillar_0_1.b64 | base64 -d > index.html
+          cat assets/_pillar_1_0.b64 assets/_pillar_1_1.b64 | base64 -d > servizi/index.html
+          cat assets/_pillar_2_0.b64 assets/_pillar_2_1.b64 | base64 -d > sitemap.xml
+          cat assets/_pillar_3_0.b64 assets/_pillar_3_1.b64 | base64 -d > servizi/google-ads/index.html
+          cat assets/_pillar_4_0.b64 assets/_pillar_4_1.b64 | base64 -d > servizi/google-analytics-4/index.html
+          cat assets/_pillar_5_0.b64 assets/_pillar_5_1.b64 | base64 -d > servizi/merchant-center-feed/index.html
+          cat assets/_pillar_6_0.b64 assets/_pillar_6_1.b64 | base64 -d > servizi/tag-manager-tracking/index.html
+          cat assets/_pillar_7_0.b64 assets/_pillar_7_1.b64 | base64 -d > servizi/consulenza-strategica-ai/index.html
+          rm -f assets/_pillar_*.b64
+          head -c 80 index.html; echo
+          ls -la servizi/*/index.html servizi/index.html sitemap.xml index.html
+      - name: Commit
+        run: |
+          git config user.name stefanosupernet-sudo
+          git config user.email stefanosupernet@gmail.com
+          git add index.html sitemap.xml servizi/
+          git add -u assets/_pillar_*.b64 || true
+          git status
+          git diff --staged --quiet && echo No changes || (git commit -m "feat: pagine pilastro servizi + nav hub + sitemap" && git push)
