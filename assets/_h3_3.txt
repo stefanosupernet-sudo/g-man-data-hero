@@ -1,0 +1,18 @@
+nsori</h2>
+      <p>Audit gratuito. Risposta entro 24 ore.</p>
+      <a class="btn" href="/#contatti">Richiedi audit gratuito</a>
+    </div>
+
+  </main>
+  <footer>
+    <div class="container">
+      <p>© Stefano Superina — G-Man, Your Data Hero · <a href="/servizi/">Servizi</a> · <a href="/chi-sono/">Chi sono</a> · <a href="/blog/">Blog</a></p>
+      <a class="partner-badge" href="https://www.google.com/partners/agency?id=3219866425" target="_blank" rel="noopener noreferrer" title="Verifica Google Partner" aria-label="Google Partner verificato">
+        <img src="/assets/google-partner.webp" alt="Google Partner" width="56" height="54" loading="lazy" decoding="async" />
+      </a>
+      <span class="partner-label">Google Partner dal 2020 · Profilo verificato</span>
+    </div>
+  </footer>
+  <script src="/assets/contact-wa.js" defer></script>
+</body>
+</html>
