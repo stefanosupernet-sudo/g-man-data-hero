@@ -1,0 +1,155 @@
+name: Restore site and deploy pillars
+on:
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Restore index and servizi hub from good commit then patch nav
+        run: |
+          set -e
+          GOOD=434d23703bb5aeeb2dd68a04e11194b6681acc4b
+          curl -sL "https://raw.githubusercontent.com/stefanosupernet-sudo/g-man-data-hero/${GOOD}/index.html" -o index.html
+          curl -sL "https://raw.githubusercontent.com/stefanosupernet-sudo/g-man-data-hero/${GOOD}/servizi/index.html" -o servizi/index.html
+          curl -sL "https://raw.githubusercontent.com/stefanosupernet-sudo/g-man-data-hero/${GOOD}/sitemap.xml" -o sitemap.xml
+          grep -q PLACEHOLDER index.html && exit 1 || true
+          # Inject nav.css/js if missing
+          if ! grep -q 'nav.css' index.html; then
+            sed -i 's|<link rel="stylesheet" href="/assets/home.css" />|<link rel="stylesheet" href="/assets/home.css" />\n  <link rel="stylesheet" href="/assets/nav.css" />\n  <script src="/assets/nav.js" defer></script>|' index.html
+          fi
+          # Patch header for dropdown if still simple Servizi link
+          python3 << 'PY'
+from pathlib import Path
+html = Path('index.html').read_text()
+old = '''      <nav class="nav" aria-label="Principale">
+        <a href="#perche">Perché G-Man</a>
+        <a href="/servizi/">Servizi</a>
+        <a href="#casi">Casi</a>
+        <a href="#chi-sono">Chi sono</a>
+        <a href="#faq">FAQ</a>
+        <a href="/blog/">Blog</a>
+      </nav>'''
+new = '''      <button type="button" class="nav-toggle" aria-label="Apri menu" aria-expanded="false"><span></span></button>
+      <nav class="nav" aria-label="Principale">
+        <a href="#perche">Perché G-Man</a>
+        <div class="nav-item has-sub">
+          <div class="nav-parent">
+            <a href="/servizi/">Servizi</a>
+            <button type="button" class="nav-sub-toggle" aria-expanded="false" aria-label="Apri sottomenu Servizi">+</button>
+          </div>
+          <div class="nav-sub" role="menu">
+            <a href="/servizi/google-ads/" role="menuitem">Google Ads</a>
+            <a href="/servizi/google-analytics-4/" role="menuitem">Google Analytics 4</a>
+            <a href="/servizi/merchant-center-feed/" role="menuitem">Merchant Center &amp; Feed</a>
+            <a href="/servizi/tag-manager-tracking/" role="menuitem">Tag Manager &amp; Tracking</a>
+            <a href="/servizi/consulenza-strategica-ai/" role="menuitem">Consulenza strategica &amp; AI</a>
+          </div>
+        </div>
+        <a href="#casi">Casi</a>
+        <a href="#chi-sono">Chi sono</a>
+        <a href="#faq">FAQ</a>
+        <a href="/blog/">Blog</a>
+      </nav>'''
+if old in html:
+    html = html.replace(old, new)
+    print('header patched')
+else:
+    print('header pattern not found, skip')
+# service card links
+replacements = [
+('Google Ads</h3>\n            <p>È la vetrina', 'Google Ads</h3>\n            <p>È la vetrina'),
+]
+# append more links after each service card closing p before </div>
+import re
+def add_link(html, title, href):
+    # find card with h3 title and add link before closing div of that card if not present
+    if href in html and 'Scopri il servizio' in html and href in html[html.find(title):html.find(title)+500]:
+        return html
+    pattern = rf'(<h3>{re.escape(title)}</h3>\s*<p>.*?</p>)\s*</div>'
+    repl = rf'\1\n            <a class="more" href="{href}" style="display:inline-block;margin-top:.65rem;color:var(--accent);font-weight:600">Scopri il servizio →</a>\n          </div>'
+    html2, n = re.subn(pattern, repl, html, count=1, flags=re.S)
+    print(title, 'links added', n)
+    return html2
+for t,h in [
+('Google Ads','/servizi/google-ads/'),
+('Google Analytics 4','/servizi/google-analytics-4/'),
+('Merchant Center e Feed','/servizi/merchant-center-feed/'),
+('Tag Manager e Tracking','/servizi/tag-manager-tracking/'),
+('Consulenza strategica e AI','/servizi/consulenza-strategica-ai/'),
+]:
+    html = add_link(html, t, h)
+Path('index.html').write_text(html)
+print('index bytes', len(html))
+PY
+          # Add service URLs to sitemap if missing
+          if ! grep -q 'servizi/google-ads' sitemap.xml; then
+            python3 -c "
+from pathlib import Path
+sm=Path('sitemap.xml').read_text()
+extra='''  <url>
+    <loc>https://stefanosuperina.it/servizi/google-ads/</loc>
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://stefanosuperina.it/servizi/google-analytics-4/</loc>
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://stefanosuperina.it/servizi/merchant-center-feed/</loc>
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://stefanosuperina.it/servizi/tag-manager-tracking/</loc>
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://stefanosuperina.it/servizi/consulenza-strategica-ai/</loc>
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+'''
+Path('sitemap.xml').write_text(sm.replace('</urlset>', extra+'</urlset>'))
+print('sitemap updated')
+"
+          fi
+          # Patch servizi hub with links to pillars
+          python3 << 'PY'
+from pathlib import Path
+html = Path('servizi/index.html').read_text()
+# Add more links under each h2 section if missing
+links = {
+'Google Ads': '/servizi/google-ads/',
+'Google Analytics 4': '/servizi/google-analytics-4/',
+'Merchant Center e Feed': '/servizi/merchant-center-feed/',
+'Tag Manager e Tracking': '/servizi/tag-manager-tracking/',
+'Consulenza strategica e AI': '/servizi/consulenza-strategica-ai/',
+}
+for title, href in links.items():
+    if href in html:
+        continue
+    needle = f'<h2>{title}</h2>'
+    if needle in html:
+        html = html.replace(needle, needle + f'\n      <p><a href="{href}">Apri la guida completa del servizio →</a></p>', 1)
+        print('hub link', title)
+Path('servizi/index.html').write_text(html)
+PY
+          head -c 120 index.html; echo
+          grep -c nav-toggle index.html || true
+      - name: Commit restore
+        run: |
+          git config user.name stefanosupernet-sudo
+          git config user.email stefanosupernet@gmail.com
+          git add index.html servizi/index.html sitemap.xml
+          git diff --staged --quiet && echo No changes || (git commit -m "fix: restore homepage and servizi hub + nav dropdown + sitemap pillars" && git push)
