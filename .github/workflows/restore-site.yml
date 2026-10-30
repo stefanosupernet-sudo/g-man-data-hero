@@ -1,0 +1,48 @@
+name: Restore site
+on:
+  workflow_dispatch:
+jobs:
+  restore:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Restore from good commit
+        run: |
+          set -e
+          GOOD=434d23703bb5aeeb2dd68a04e11194b6681acc4b
+          curl -fsSL "https://raw.githubusercontent.com/stefanosupernet-sudo/g-man-data-hero/${GOOD}/index.html" -o index.html
+          curl -fsSL "https://raw.githubusercontent.com/stefanosupernet-sudo/g-man-data-hero/${GOOD}/servizi/index.html" -o servizi/index.html
+          curl -fsSL "https://raw.githubusercontent.com/stefanosupernet-sudo/g-man-data-hero/${GOOD}/sitemap.xml" -o sitemap.xml
+          if grep -q PLACEHOLDER index.html; then echo bad; exit 1; fi
+          if ! grep -q nav.css index.html; then
+            sed -i 's|href="/assets/home.css" />|href="/assets/home.css" />\n  <link rel="stylesheet" href="/assets/nav.css" />\n  <script src="/assets/nav.js" defer></script>|' index.html
+          fi
+          python3 -c "
+from pathlib import Path
+html=Path('index.html').read_text()
+old='''        <a href=\"/servizi/\">Servizi</a>'''
+new='''        <div class=\"nav-item has-sub\">\n          <div class=\"nav-parent\">\n            <a href=\"/servizi/\">Servizi</a>\n            <button type=\"button\" class=\"nav-sub-toggle\" aria-expanded=\"false\" aria-label=\"Apri sottomenu Servizi\">+</button>\n          </div>\n          <div class=\"nav-sub\" role=\"menu\">\n            <a href=\"/servizi/google-ads/\" role=\"menuitem\">Google Ads</a>\n            <a href=\"/servizi/google-analytics-4/\" role=\"menuitem\">Google Analytics 4</a>\n            <a href=\"/servizi/merchant-center-feed/\" role=\"menuitem\">Merchant Center &amp; Feed</a>\n            <a href=\"/servizi/tag-manager-tracking/\" role=\"menuitem\">Tag Manager &amp; Tracking</a>\n            <a href=\"/servizi/consulenza-strategica-ai/\" role=\"menuitem\">Consulenza strategica &amp; AI</a>\n          </div>\n        </div>'''
+if old in html and 'nav-sub-toggle' not in html:
+    html=html.replace(old,new,1)
+    print('submenu inserted')
+if 'nav-toggle' not in html:
+    html=html.replace('<nav class=\"nav\"', '<button type=\"button\" class=\"nav-toggle\" aria-label=\"Apri menu\" aria-expanded=\"false\"><span></span></button>\n      <nav class=\"nav\"',1)
+    print('hamburger inserted')
+Path('index.html').write_text(html)
+sm=Path('sitemap.xml').read_text()
+if 'servizi/google-ads' not in sm:
+    extra='''  <url><loc>https://stefanosuperina.it/servizi/google-ads/</loc><lastmod>2026-10-30</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>\n  <url><loc>https://stefanosuperina.it/servizi/google-analytics-4/</loc><lastmod>2026-10-30</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>\n  <url><loc>https://stefanosuperina.it/servizi/merchant-center-feed/</loc><lastmod>2026-10-30</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>\n  <url><loc>https://stefanosuperina.it/servizi/tag-manager-tracking/</loc><lastmod>2026-10-30</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>\n  <url><loc>https://stefanosuperina.it/servizi/consulenza-strategica-ai/</loc><lastmod>2026-10-30</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>\n'''
+    Path('sitemap.xml').write_text(sm.replace('</urlset>', extra+'</urlset>'))
+    print('sitemap ok')
+"
+          wc -c index.html servizi/index.html
+          head -c 100 index.html; echo
+      - name: Commit
+        run: |
+          git config user.name stefanosupernet-sudo
+          git config user.email stefanosupernet@gmail.com
+          git add index.html servizi/index.html sitemap.xml
+          git status
+          git diff --staged --quiet || (git commit -m "fix: restore homepage and servizi from good commit + nav submenu" && git push)
