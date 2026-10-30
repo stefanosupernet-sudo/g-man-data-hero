@@ -34,7 +34,7 @@ nav.nav.nav-open{display:flex}
 nav.nav a{color:var(--text-muted);font-size:.95rem;font-weight:500;padding:.55rem 0;text-decoration:none}
 nav.nav a:hover{color:var(--text)}
 
-/* Submenu */
+/* Submenu base — always hidden until .open */
 .nav-item{position:relative}
 .nav-parent{display:flex;align-items:center;gap:.35rem}
 .nav-parent > a{flex:1}
@@ -45,24 +45,19 @@ nav.nav a:hover{color:var(--text)}
   font-weight:600;cursor:pointer;flex-shrink:0;transition:transform .2s,background .15s;
 }
 .nav-sub-toggle:hover{background:rgba(34,211,238,.12)}
-.nav-item.open .nav-sub-toggle{transform:rotate(45deg)}
+.nav-item.open > .nav-parent > .nav-sub-toggle{transform:rotate(45deg)}
+
 .nav-sub{
   display:none;flex-direction:column;padding:.35rem 0 .35rem 0.85rem;
   border-left:2px solid rgba(34,211,238,.35);margin:.25rem 0 .4rem .15rem;gap:.1rem;
 }
-.nav-item.open .nav-sub{display:flex}
+.nav-item.open > .nav-sub{display:flex}
 .nav-sub a{font-size:.88rem;padding:.4rem 0;color:var(--text-muted)}
 .nav-sub a:hover{color:var(--accent)}
 
-/* Nested submenu (Google Ads > campaign types) */
-.nav-item.nested{margin:0}
-.nav-item.nested > .nav-sub{margin-left:.35rem;padding-left:0.75rem}
-@media(min-width:1024px){
-  .nav-item.nested > .nav-sub{
-    position:absolute;left:calc(100% + 8px);top:-8px;min-width:220px;margin:0;
-    border-left:1px solid var(--border);
-  }
-}
+/* Nested row inside Services list */
+.nav-item.nested{margin:0;width:100%}
+.nav-item.nested > .nav-parent{width:100%}
 
 /* Lang switcher */
 .lang-switch{
@@ -79,7 +74,7 @@ nav.nav a:hover{color:var(--text)}
   color:var(--text);border-color:var(--border);background:rgba(255,255,255,.06);
 }
 
-/* Desktop ≥1024px — must come AFTER base rules so cascade is correct */
+/* Desktop ≥1024px */
 @media(min-width:1024px){
   .nav-toggle{display:none}
   .btn-header{display:inline-flex}
@@ -92,14 +87,57 @@ nav.nav a:hover{color:var(--text)}
   .nav-parent{gap:.25rem}
   .nav-parent > a{padding:0;flex:none}
   .nav-sub-toggle{width:22px;height:22px;font-size:.95rem}
-  .nav-sub{
-    position:absolute;top:calc(100% + 10px);left:0;min-width:240px;
+
+  /* Level-1 dropdown (Services) */
+  .nav-item:not(.nested) > .nav-sub{
+    position:absolute;top:calc(100% + 10px);left:0;min-width:260px;
     background:rgba(17,24,39,.98);border:1px solid var(--border);border-radius:.65rem;
-    padding:.55rem .75rem;margin:0;border-left:1px solid var(--border);
+    padding:.55rem .65rem;margin:0;border-left:1px solid var(--border);
     box-shadow:0 12px 28px rgba(0,0,0,.4);z-index:120;
+    display:none;flex-direction:column;gap:.05rem;
   }
-  .nav-item.open .nav-sub{display:flex}
-  .nav-sub a{padding:.45rem .35rem;white-space:nowrap}
+  .nav-item:not(.nested).open > .nav-sub{display:flex}
+  .nav-item:not(.nested) > .nav-sub a{padding:.45rem .4rem;white-space:nowrap}
+
+  /* Nested items are rows inside level-1 panel */
+  .nav-item.nested{
+    position:relative;
+    display:block;
+    width:100%;
+  }
+  .nav-item.nested > .nav-parent{
+    display:flex;align-items:center;justify-content:space-between;gap:.35rem;width:100%;
+  }
+  .nav-item.nested > .nav-parent > a{
+    flex:1;padding:.45rem .4rem;white-space:nowrap;
+  }
+
+  /* Level-2 flyout: only when THIS nested item has .open */
+  .nav-item.nested > .nav-sub{
+    display:none !important;
+    position:absolute;left:calc(100% + 6px);top:0;min-width:220px;margin:0;
+    background:rgba(17,24,39,.98);border:1px solid var(--border);border-radius:.65rem;
+    padding:.55rem .75rem;border-left:1px solid var(--border);
+    box-shadow:0 12px 28px rgba(0,0,0,.45);z-index:130;
+    flex-direction:column;gap:.05rem;
+  }
+  .nav-item.nested.open > .nav-sub{
+    display:flex !important;
+  }
+  .nav-item.nested > .nav-sub a{
+    padding:.45rem .35rem;white-space:nowrap;
+  }
+}
+
+/* Mobile: nested expands inline under the parent row */
+@media(max-width:1023px){
+  .nav-item.nested > .nav-sub{
+    display:none;
+    margin-left:.35rem;padding-left:0.75rem;
+    position:static;box-shadow:none;background:transparent;border:0;
+    border-left:2px solid rgba(34,211,238,.35);
+  }
+  .nav-item.nested.open > .nav-sub{display:flex}
 }
 
 /* Pillar service pages */
@@ -127,6 +165,5 @@ nav.nav a:hover{color:var(--text)}
 .pillar-wrap .related span{display:block;font-size:.75rem;color:var(--accent);margin-bottom:.2rem}
 .service-card a.more{display:inline-block;margin-top:.65rem;color:var(--accent);font-weight:600;font-size:.9rem}
 
-/* Internal links on pillars */
 a.ilink{color:var(--accent);font-weight:600;text-decoration:underline;text-underline-offset:2px}
 a.ilink:hover{opacity:.85}
