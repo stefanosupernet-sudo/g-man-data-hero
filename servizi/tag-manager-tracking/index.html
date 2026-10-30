@@ -32,13 +32,13 @@
 <main class="container pillar-wrap">
 <p class="label">Servizi · Tag Manager & Tracking</p>
 <h1>Google Tag Manager e Tracking conversioni</h1>
-<p class="lead">Se i sensori sono sporchi, ogni ottimizzazione è un azzardo. GTM, Ads e GA4 devono raccontare la stessa storia.</p>
+<p class="lead">Se i sensori sono sporchi, ogni ottimizzazione è un azzardo. GTM, <a class="ilink" href="/servizi/google-ads/">Ads</a> e <a class="ilink" href="/servizi/google-analytics-4/">GA4</a> devono raccontare la stessa storia.</p>
 <h2>Il problema che risolvo</h2>
-<p>Tag duplicati, conversioni che non arrivano, pageview contate come lead, Consent Mode assente. In Ads e Analytics i numeri divergono.</p>
+<p>Tag duplicati, conversioni che non arrivano, pageview contate come lead, Consent Mode assente. In <a class="ilink" href="/servizi/google-ads/">Ads</a> e <a class="ilink" href="/servizi/google-analytics-4/">Analytics</a> i numeri divergono.</p>
 <h2>Cosa faccio in pratica</h2>
 <ul class="check">
 <li><strong>Audit del container</strong> — Tag, trigger, variabili, duplicati e ordine di firing.</li>
-<li><strong>Conversioni Ads e GA4</strong> — Allineamento, enhanced, valore e parametri.</li>
+<li><strong>Conversioni <a class="ilink" href="/servizi/google-ads/">Ads</a> e <a class="ilink" href="/servizi/google-analytics-4/">GA4</a></strong> — Allineamento, enhanced, valore e parametri.</li>
 <li><strong>Consent Mode v2</strong> — Default e comportamento senza consenso.</li>
 <li><strong>Debug e test</strong> — Preview, Tag Assistant, verifica end-to-end.</li>
 <li><strong>Documentazione</strong> — Mappa di cosa misura cosa.</li>
@@ -46,7 +46,7 @@
 <h2>Data Layer: perché è importante</h2>
 <p>Il <strong>data layer</strong> (<code>window.dataLayer</code>) è dove il sito dichiara cosa è successo. GTM lo legge e decide quali tag sparare.</p>
 <ul class="bullets">
-<li><strong>Acquisto</strong> — <code>dataLayer.push({ event: 'purchase', ecommerce: { transaction_id, value, items } })</code> → stesso evento a GA4 e Ads.</li>
+<li><strong>Acquisto</strong> — <code>dataLayer.push({ event: 'purchase', ecommerce: { transaction_id, value, items } })</code> → stesso evento a <a class="ilink" href="/servizi/google-analytics-4/">GA4</a> e <a class="ilink" href="/servizi/google-ads/">Ads</a>.</li>
 <li><strong>Lead form</strong> — <code>dataLayer.push({ event: 'generate_lead', form_id: 'contatti' })</code> → una dichiarazione, più destinazioni.</li>
 <li><strong>Login / signup</strong> — eventi con status, utili per audience.</li>
 </ul>
@@ -54,13 +54,13 @@
 <h2>Eventi semplici vs personalizzati</h2>
 <div class="card-grid">
 <div class="mini-card"><span class="ico">📌</span><h3>Eventi semplici</h3><p>page_view, click, scroll, form_start. Spesso built-in. Bastano per basici.</p></div>
-<div class="mini-card"><span class="ico">⚙️</span><h3>Eventi personalizzati</h3><p>purchase, add_to_cart, generate_lead. Definiti nel data layer. Sono quelli che contano.</p></div>
+<div class="mini-card"><span class="ico">⚙️</span><h3>Eventi personalizzati</h3><p>purchase, add_to_cart, generate_lead. Definiti nel data layer. Sono quelli che contano per <a class="ilink" href="/servizi/google-ads/">Ads</a> e i report.</p></div>
 </div>
 <h2>Conversion Linker</h2>
-<p>Il tag <strong>Conversion Linker</strong> scrive i cookie di linker (<code>_gcl</code>) che permettono a Google Ads di attribuire le conversioni dopo un click, anche con restrizioni sui cookie di terze parti. Va su tutte le pagine, idealmente con Consent Mode.</p>
+<p>Il tag <strong>Conversion Linker</strong> scrive i cookie di linker (<code>_gcl</code>) che permettono a <a class="ilink" href="/servizi/google-ads/">Google Ads</a> di attribuire le conversioni dopo un click, anche con restrizioni sui cookie di terze parti. Va su tutte le pagine, idealmente con Consent Mode.</p>
 <h2>Tracciamento multi-piattaforma</h2>
 <ul class="check">
-<li><strong>Google</strong> — GA4 + Ads (conversioni, remarketing, enhanced)</li>
+<li><strong>Google</strong> — <a class="ilink" href="/servizi/google-analytics-4/">GA4</a> + <a class="ilink" href="/servizi/google-ads/">Ads</a> (conversioni, remarketing, enhanced)</li>
 <li><strong>Meta</strong> — Pixel e Conversion API via GTM o server-side</li>
 <li><strong>Microsoft Ads</strong> — UET tag e conversioni</li>
 <li><strong>Clarity / Hotjar</strong> — Session recording (attenzione a privacy e consenso)</li>
@@ -71,7 +71,7 @@
 <details class="faq-item"><summary>Lavori su server-side GTM?</summary><p>Sì, quando ha senso per privacy e affidabilità.</p></details>
 <details class="faq-item"><summary>Come gestisci Consent Mode v2?</summary><p>Default, aggiornamento al consenso e comportamento tag senza consenso.</p></details>
 <details class="faq-item"><summary>Quanto tempo serve?</summary><p>Critici in pochi giorni; container complessi fino a tre settimane.</p></details>
-<details class="faq-item"><summary>Cosa serve per iniziare?</summary><p>Accesso in modifica a GTM, GA4 e Ads se possibile.</p></details>
+<details class="faq-item"><summary>Cosa serve per iniziare?</summary><p>Accesso in modifica a GTM, <a class="ilink" href="/servizi/google-analytics-4/">GA4</a> e <a class="ilink" href="/servizi/google-ads/">Ads</a> se possibile.</p></details>
 <div class="blog-links"><strong style="color:var(--text)">Dal blog</strong>
 <a href="/blog/prestashop-ghost-tracking/">PrestaShop e il tracking fantasma →</a>
 <a href="/blog/carosello-instagram-data-hero-tracking-gtm/">Carosello Instagram e tracking sporco →</a></div>
